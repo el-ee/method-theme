@@ -1,4 +1,4 @@
-<?php
+  <?php
 /**
  * The template used for displaying page content in page.php
  *
@@ -12,13 +12,9 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+    
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'method' ),
-				'after'  => '</div>',
-			) );
-		?>
+		
 	</div><!-- .entry-content -->
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'method' ), '<span class="edit-link">', '</span>' ); ?>

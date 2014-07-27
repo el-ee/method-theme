@@ -1,0 +1,252 @@
+/*
+Threme Name: Method
+Threme URI: #
+Author: Ellie Harmon
+Author URI: http://ellieharmon.com
+Description: Custom magazine threme for WordPress.
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Text Domain: method
+Domain Path: /languages/
+Tags: 
+
+Method is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc. 
+
+Additional inspiration from Sremicolon http://kovshenin.com/thremes/sremicolon/, by Konstantin Kovshenin
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Alef:400,700);
+@import url(http://fonts.googleapis.com/css?family=BenchNine:400,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,300italic,600italic);
+
+
+/*  
+  VARIABLES 
+*/
+
+$font-headings: "Alef", sans-serif;
+
+$font-regular: 'Open Sans', sans-serif;
+
+
+$weight-headings: 400;
+$weight-h-bold: 700;
+
+
+$weight-regular: 400;
+$weight-bold: 600;
+
+$color-brand: #2bcbf9; /* turquoise */
+
+$color-main: #111; /* just slightly not black */
+$color-text-alt: #666; /* a dark grey for text */
+$color-text-light: #fff; /* for shadows, text on brand filled boxes */
+
+$color-light-fill: #dddddd; /* a light grey for box fills */
+
+$padding: 20px;
+$margin: 10px;
+
+$margin-thin: $margin/5;
+
+
+/* 
+  IMPORTS 
+*/
+
+@import 'reset';
+//@import '../css/skeleton.css';
+@import "../css/underscores.css";
+
+
+/* 
+  TYPOGRAPHY
+*/
+
+body {
+	font-family: $font-regular;
+	font-weight: $weight-regular;
+  font-size: 1.5rem;
+  
+}
+
+h1 {
+	font-family: $font-headings;
+	font-weight: $weight-h-bold;
+	font-size: 1.5rem;
+}
+
+
+/* basic links */
+
+a, a:visited, a:link {
+	color: $color-main;
+	text-decoration: underline;
+
+	&:hover {
+		color: lighten( $color-main, 10% );
+	}
+}
+
+
+/* header and branding */
+
+.site-branding {
+ background-color: $color-brand; 
+}
+.site-title {
+  .first-letter {
+    font-size: 6rem*1.5;
+    font-weight: $weight-headings;
+  }
+  font-size: 6rem;
+  text-transform: uppercase;
+	line-height: 1em;
+	text-shadow: -.1em 0 $color-text-light; 
+  letter-spacing: .1em;
+  a {
+    text-decoration: none;
+  }
+  padding: $padding+$margin $padding 0 $padding;
+}
+
+.site-description {
+  color: $color-text-light;
+  font-family: $font-headings;
+  text-transform: lowercase;
+  font-size: 2rem;
+  line-height: .8em;
+  padding: $margin $padding $padding $padding;
+}
+
+/* menu */
+
+
+.main-navigation {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  margin: $margin-thin*2 0 ;
+  text-align: center;
+  
+  a {
+    text-decoration: none;
+    padding: $margin;
+  }
+  li {
+  }
+}
+
+.menu-item {
+  background: $color-light-fill;
+  &:hover {
+   background: lighten($color-light-fill, 5%); 
+  }
+}
+
+.current-menu-item, .current-menu-item:hover {
+  background: $color-brand;
+}
+
+//.sub-menu li {
+//  margin-left: -10px;
+//  background: lighten($color-light-fill, 10%);
+//}
+
+.menu-toggle {
+  // clear out underscore button defaults
+  border: none;
+  border-color: inherit;
+  border-radius: 0;
+  background: inherit;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+  -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+  font-size: inherit;
+  font-size: inherit;
+  line-height: 1rem;
+  padding: $margin;
+  text-shadow: none;
+  
+  &:hover {
+   border-color: inherit;
+   box-shadow: none; 
+ }
+ 
+ &:focus {
+  border-color: inherit;
+  box-shadow: none; 
+ }
+}
+
+
+
+/* main page layouts */
+
+article {
+}
+
+article-meta {
+  font-family: $font-headings;
+  font-weight: $weight-h-bold;
+  text-decoration: none;
+  line-height: 1em;
+  margin-top: $margin;
+  display: block;
+  font-size: 2rem;
+}
+
+.entry-title a {
+  @extend article-meta;
+}
+
+.entry-meta a {
+  @extend article-meta;
+  font-size: 1.8rem;
+}
+
+.entry-content {
+  margin-top: $margin;
+}
+
+
+/* ===============================
+SINGLE PAGE LAYOUT 
+================================ */
+
+.single  {
+  .wp-post-image {
+  width: 100%;
+  height: 200px;
+}
+
+.entry-header {
+  text-align: center;
+}
+
+
+.entry-content {
+  width: 768px; // this is the collapse width
+  margin-left: auto; 
+  margin-right: auto;
+}
+/* RESPONSIVE GRID */
+
+.entry-title {
+  font-size: 4rem;
+}
+
+.entry-excerpt {
+  font-size: 2rem;
+}
+
+}  
+@import "respond";

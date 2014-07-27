@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The template for displaying archive pages.
@@ -11,6 +12,7 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+      
 
 		<?php if ( have_posts() ) : ?>
 

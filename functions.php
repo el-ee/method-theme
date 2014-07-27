@@ -38,12 +38,24 @@ function method_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+  set_post_thumbnail_size( 480, 200, true ); //460 is max width a post will be based on responsive grid
+  
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'method' ),
 	) );
+  
+  
+  add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+  function special_nav_class($classes, $item){
+       // if(is_single() && $item->title == "Blog"){ //Notice you can change the conditional from is_single() and $item->title
+               $classes[] = "columns two";
+       // }
+       return $classes;
+  }
+  
 	
 	/*
 	 * Switch default core markup for search form, comment form, and comments
