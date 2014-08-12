@@ -40,8 +40,7 @@ function method_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
   set_post_thumbnail_size( 480, 200, true ); // for the main page grid
-	add_image_size( 'method-article-header', 940, 200, true ); // for the single article view
-	add_image_size( 'method-article-footer', 940, 200, true ); // for the single article view
+	add_image_size( 'method-header', 940, 137, true ); // for the single article view
   // TODO: Is it possible to control the crop here?
   
 
@@ -83,6 +82,12 @@ function method_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+  
+  
+  
+ 
+
+  
 }
 endif; // method_setup
 add_action( 'after_setup_theme', 'method_setup' );
@@ -148,3 +153,153 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/** 
+ * Custom category metatdata to support issue-ing
+ *
+ * See: http://www.techjunkie.com/custom-category-taxonomy-meta-wordpress/
+ * 
+ * Some code adapted from Featured Images for Categories plugin
+ * http://helpforwp.com/plugins/featured-images-for-categories/
+ * TODO: This code is GPL
+ */
+
+add_action('category_edit_form_fields', 'method_edit_fields');
+add_action('category_add_form_fields', 'method_create_fields');
+add_action('edited_category', 'method_fields_save', 10, 1);
+add_action('created_category', 'method_fields_save', 10, 1);
+
+
+function method_fields_save($term_id) {
+
+
+ if($_POST['issue_number']){
+		$issue_number = sanitize_text_field($_POST['issue_number']); //make sure nothing malicious
+		$issue_numbers = get_option('issue_numbers');
+		$issue_numbers = unserialize($issue_numbers);
+
+    $cat_ID = $term_id;
+
+		$issue_numbers[$cat_ID] = $issue_number;   //update the value for this category's ID
+
+		update_option('issue_numbers', $issue_numbers);  //store the array, WP handles the serialization
+ }
+ 
+ 
+ 
+if ( isset( $_POST['wpfifc_taxonomies_create_post_ID'] ) ) {
+	$default_post_ID = $_POST['wpfifc_taxonomies_create_post_ID'];
+}else if ( isset( $_POST['wpfifc_taxonomies_edit_post_ID'] ) ) {
+	$default_post_ID = $_POST['wpfifc_taxonomies_edit_post_ID'];
+}
+$thumbnail_id = get_post_meta( $default_post_ID, '_thumbnail_id', true );
+if( $thumbnail_id ){
+	update_option( '_wpfifc_taxonomy_term_'.$term_id.'_thumbnail_id_', $thumbnail_id );
+}
+
+}
+
+function method_create_fields ($tag) {
+  
+  //TODO: Remove featured image link doesn't work.
+  
+	$cat_ID = $tag->term_id;
+  
+  
+	?>
+	<div class="form-field">
+	  <label for="issue_number"><?php _e('Issue Number', ''); ?></label>
+	  <input id="issue_number" type="text" name="issue_number" size="10" value=""></input>
+    <p><span class="description">If this category is an issue, please enter the number here. Also, make sure to enter the issue overview in the description field above.</span></p>
+  </div>
+  
+	<?php
+  
+  $issue_images = get_option('issue_images');
+  $issue_image = $issue_images[$cat_ID];
+  
+	$post = get_default_post_to_edit( 'post', true );
+	$post_ID = $post->ID;
+  
+  ?>
+  
+      <div class="form-field">
+          	<div id="postimagediv" class="postbox" style="width:95%;" >
+                <div class="inside">
+                    <?php wp_enqueue_media( array('post' => $post_ID) ); ?>
+                    <?php	$thumbnail_ID = get_option( '_wpfifc_taxonomy_term_'.$cat_ID.'_thumbnail_id_', 0 );
+                      echo _wp_post_thumbnail_html( $thumbnail_ID, $post_ID );
+                      ?>
+                  </div>
+                  <input type="hidden" name="wpfifc_taxonomies_edit_post_ID" id="wpfifc_taxonomies_edit_post_ID_id" value="<?php echo $post_ID; ?>" />
+                  <input type="hidden" name="wpfifc_taxonomies_edit_term_ID" id="wpfifc_taxonomies_edit_term_ID_id" value="<?php echo $term_id; ?>" />
+                  
+              </div>
+</div>  
+  
+  <?php
+}
+
+function method_edit_fields ($tag) {
+	$cat_ID = $tag->term_id;
+  
+	$issue_numbers = get_option('issue_numbers');
+	$issue_number = $issue_numbers[$cat_ID];
+	?>
+	<tr class="form-field">
+	<th valign="top" scope="row">
+	<label for="issue_number"><?php _e('Issue Number', ''); ?></label>
+	</th>
+	<td>
+	<input type="text" name="issue_number" size="10" value="<?php echo $issue_number; ?>">
+  <p><span class="description">If this category is an issue, please enter the number here. Also, make sure to enter the issue overview in the description field above.</span></p>
+	</td>
+	</tr>
+	<?php
+  
+  $issue_images = get_option('issue_images');
+  $issue_image = $issue_images[$cat_ID];
+  
+	$post = get_default_post_to_edit( 'post', true );
+	$post_ID = $post->ID;
+  
+  ?>
+  
+      <tr class="form-field">
+		<th>Set Featured Image</th>
+          <td>
+          	<div id="postimagediv" class="postbox" style="width:95%;" >
+                <div class="inside">
+                    <?php wp_enqueue_media( array('post' => $post_ID) ); ?>
+                    <?php	$thumbnail_ID = get_option( '_wpfifc_taxonomy_term_'.$cat_ID.'_thumbnail_id_', 0 );
+                      echo _wp_post_thumbnail_html( $thumbnail_ID, $post_ID );
+                      ?>
+                  </div>
+                  <input type="hidden" name="wpfifc_taxonomies_edit_post_ID" id="wpfifc_taxonomies_edit_post_ID_id" value="<?php echo $post_ID; ?>" />
+                  <input type="hidden" name="wpfifc_taxonomies_edit_term_ID" id="wpfifc_taxonomies_edit_term_ID_id" value="<?php echo $term_id; ?>" />
+                  
+              </div>
+      	</td>
+	</tr>
+  
+  <?php
+	}
+  
+  function get_issue_number($tag) {
+   
+    	$cat_ID = $tag->term_id;
+  
+    	$issue_numbers = get_option('issue_numbers');
+    	$issue_number = $issue_numbers[$cat_ID];
+      
+      return $issue_number;
+  }
+  
+  function get_issue_image_ID($tag) {
+   
+    	$cat_ID = $tag->term_id;
+  
+      $image_id = get_option( '_wpfifc_taxonomy_term_'.$cat_ID.'_thumbnail_id_', 0 );
+    
+      return $image_ID;
+  }

@@ -135,7 +135,7 @@ a, a:visited, a:link {
   a {
     text-decoration: none;
   }
-  padding: $padding+$margin $padding 0 $padding;
+  padding: $padding $padding 0 $padding;
 }
 
 .site-description {
@@ -211,6 +211,32 @@ a, a:visited, a:link {
   box-shadow: none; 
  }
 }
+
+
+/** == == == == == == == == == == 
+    ISSUE PAGES
+== == == == == == == == == == **/
+
+#issue-headers {
+h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+ 
+  h1.issue-title {
+    color: lighten($color-main, 20%);
+  }
+}
+
+
+
+#issue-description {
+  p {
+    margin: 0;
+  }
+}
+
 
 
 /** == == == == == == == == == == 
