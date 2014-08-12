@@ -218,21 +218,30 @@ a, a:visited, a:link {
 == == == == == == == == == == **/
 
 
+#social-menu {
+  float: right;
+  position: relative;
+  top: -$padding * 2.5;
+  height: 0px; // because it takes up space in the header otherwise.
+  // TODO: not sure if this is x-browser compatible. needs testing.
+}
 
 ul.method-social {
-//  float: right;
-//  position: relative;
-//  top: -9rem;
   padding: 0;
 	list-style: none;
 	float: right;
 	margin-right: 12px;
 	color: transparent;
+  
+  li {
+    display: inline;
+  }
 
 	li a {
 		padding-left: 8px;
 		padding-right: 8px;
 		line-height: 1;
+    text-decoration: none;
 	}
 
 	li:hover { background: none; }
@@ -273,10 +282,37 @@ ul.method-social {
 == == == == == == == == == == **/
 
 .site-footer { // 940 x 150
-  background: url('../images/footer.png') center center #555;
-  height: 150px;
+  background: url('../images/footer.png') left center #555;
   margin-bottom: $margin;
+  font-family: $font-headings;
+  font-weight: $weight-headings;
+  padding: $margin;
+  a {
+    color: $color-text-light;
+    text-decoration: none;
+  }
+  li {
+
+  }
+  ul {
+    margin-bottom: $padding;
+  }
+  .credits {
+    float: left;
+    line-height: 5rem;
+    margin: 0 0 -2.5rem;
+    padding: 0;
+    color: $color-text-light;
+    font-size: 1.25rem;
+    vertical-align: text-bottom;
+  }
+  img {
+    float: right;
+    height: 3rem;
+  }
 }
+
+
 
 /** == == == == == == == == == == 
     MAIN PAGE LAYOUTS

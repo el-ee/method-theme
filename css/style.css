@@ -293,7 +293,15 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     SOCIAL MENU
 == == == == == == == == == == **/
-/* line 222, ../scss/style.scss */
+/* line 221, ../scss/style.scss */
+#social-menu {
+  float: right;
+  position: relative;
+  top: -50px;
+  height: 0px;
+}
+
+/* line 229, ../scss/style.scss */
 ul.method-social {
   padding: 0;
   list-style: none;
@@ -301,115 +309,120 @@ ul.method-social {
   margin-right: 12px;
   color: transparent;
 }
-/* line 232, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
+ul.method-social li {
+  display: inline;
+}
+/* line 240, ../scss/style.scss */
 ul.method-social li a {
   padding-left: 8px;
   padding-right: 8px;
   line-height: 1;
+  text-decoration: none;
 }
-/* line 238, ../scss/style.scss */
+/* line 247, ../scss/style.scss */
 ul.method-social li:hover {
   background: none;
 }
-/* line 239, ../scss/style.scss */
+/* line 248, ../scss/style.scss */
 ul.method-social a span {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
-/* line 241, ../scss/style.scss */
+/* line 250, ../scss/style.scss */
 ul.method-social li a::before {
   color: white;
   font: normal 20px/40px 'Genericons';
   content: '\f408';
 }
-/* line 242, ../scss/style.scss */
+/* line 251, ../scss/style.scss */
 ul.method-social li a:hover::before {
   color: white;
 }
-/* line 244, ../scss/style.scss */
+/* line 253, ../scss/style.scss */
 ul.method-social li a[href*="codepen.io"]::before {
   content: '\f216';
 }
-/* line 245, ../scss/style.scss */
+/* line 254, ../scss/style.scss */
 ul.method-social li a[href*="digg.com"]::before {
   content: '\f221';
 }
-/* line 246, ../scss/style.scss */
+/* line 255, ../scss/style.scss */
 ul.method-social li a[href*="dribbble.com"]::before {
   content: '\f201';
 }
-/* line 247, ../scss/style.scss */
+/* line 256, ../scss/style.scss */
 ul.method-social li a[href*="facebook.com"]::before {
   content: '\f203';
 }
-/* line 248, ../scss/style.scss */
+/* line 257, ../scss/style.scss */
 ul.method-social li a[href*="flickr.com"]::before {
   content: '\f211';
 }
-/* line 249, ../scss/style.scss */
+/* line 258, ../scss/style.scss */
 ul.method-social li a[href*="plus.google.com"]::before {
   content: '\f206';
 }
-/* line 250, ../scss/style.scss */
+/* line 259, ../scss/style.scss */
 ul.method-social li a[href*="github.com"]::before {
   content: '\f200';
 }
-/* line 251, ../scss/style.scss */
+/* line 260, ../scss/style.scss */
 ul.method-social li a[href*="instagram.com"]::before {
   content: '\f215';
 }
-/* line 252, ../scss/style.scss */
+/* line 261, ../scss/style.scss */
 ul.method-social li a[href*="linkedin.com"]::before {
   content: '\f208';
 }
-/* line 253, ../scss/style.scss */
+/* line 262, ../scss/style.scss */
 ul.method-social li a[href*="pinterest.com"]::before {
   content: '\f210';
 }
-/* line 254, ../scss/style.scss */
+/* line 263, ../scss/style.scss */
 ul.method-social li a[href*="polldaddy.com"]::before {
   content: '\f217';
 }
-/* line 255, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 ul.method-social li a[href*="getpocket.com"]::before {
   content: '\f224';
 }
-/* line 256, ../scss/style.scss */
+/* line 265, ../scss/style.scss */
 ul.method-social li a[href*="reddit.com"]::before {
   content: '\f222';
 }
-/* line 258, ../scss/style.scss */
+/* line 267, ../scss/style.scss */
 ul.method-social li a[href*="skype.com"]::before,
 ul.method-social li a[href*="skype:"]::before {
   content: '\f220';
 }
-/* line 259, ../scss/style.scss */
+/* line 268, ../scss/style.scss */
 ul.method-social li a[href*="stumbleupon.com"]::before {
   content: '\f223';
 }
-/* line 260, ../scss/style.scss */
+/* line 269, ../scss/style.scss */
 ul.method-social li a[href*="tumblr.com"]::before {
   content: '\f214';
 }
-/* line 261, ../scss/style.scss */
+/* line 270, ../scss/style.scss */
 ul.method-social li a[href*="twitter.com"]::before {
   content: '\f202';
 }
-/* line 262, ../scss/style.scss */
+/* line 271, ../scss/style.scss */
 ul.method-social li a[href*="vimeo.com"]::before {
   content: '\f212';
 }
-/* line 264, ../scss/style.scss */
+/* line 273, ../scss/style.scss */
 ul.method-social li a[href*="wordpress.org"]::before,
 ul.method-social li a[href*="wordpress.com"]::before {
   content: '\f205';
 }
-/* line 265, ../scss/style.scss */
+/* line 274, ../scss/style.scss */
 ul.method-social li a[href*="youtube.com"]::before {
   content: '\f213';
 }
-/* line 268, ../scss/style.scss */
+/* line 277, ../scss/style.scss */
 ul.method-social li a[href$="/feed/"]::before,
 ul.method-social li a[href$="/feed"]::before,
 ul.method-social li a[href$="?feed=rss2"]::before {
@@ -419,17 +432,43 @@ ul.method-social li a[href$="?feed=rss2"]::before {
 /** == == == == == == == == == == 
     FOOTER 
 == == == == == == == == == == **/
-/* line 275, ../scss/style.scss */
+/* line 284, ../scss/style.scss */
 .site-footer {
-  background: url("../images/footer.png") center center #555555;
-  height: 150px;
+  background: url("../images/footer.png") left center #555555;
   margin-bottom: 10px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}
+/* line 290, ../scss/style.scss */
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+/* line 297, ../scss/style.scss */
+.site-footer ul {
+  margin-bottom: 20px;
+}
+/* line 300, ../scss/style.scss */
+.site-footer .credits {
+  float: left;
+  line-height: 5rem;
+  margin: 0 0 -2.5rem;
+  padding: 0;
+  color: white;
+  font-size: 1.25rem;
+  vertical-align: text-bottom;
+}
+/* line 309, ../scss/style.scss */
+.site-footer img {
+  float: right;
+  height: 3rem;
 }
 
 /** == == == == == == == == == == 
     MAIN PAGE LAYOUTS
 == == == == == == == == == == **/
-/* line 288, ../scss/style.scss */
+/* line 324, ../scss/style.scss */
 article-meta, .entry-title a, .entry-meta a {
   font-family: "Cabin", sans-serif;
   font-weight: 600;
@@ -440,7 +479,7 @@ article-meta, .entry-title a, .entry-meta a {
   font-size: 2rem;
 }
 
-/* line 302, ../scss/style.scss */
+/* line 338, ../scss/style.scss */
 .entry-meta a {
   font-family: "Cabin", sans-serif;
   font-weight: 400;
@@ -449,7 +488,7 @@ article-meta, .entry-title a, .entry-meta a {
   text-decoration: none;
 }
 
-/* line 307, ../scss/style.scss */
+/* line 343, ../scss/style.scss */
 .entry-content {
   margin-top: 10px;
 }
@@ -457,33 +496,33 @@ article-meta, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     SINGLE ARTICLE LAYOUT
 == == == == == == == == == == **/
-/* line 317, ../scss/style.scss */
+/* line 353, ../scss/style.scss */
 .single .site-title {
   padding: 20px;
 }
-/* line 318, ../scss/style.scss */
+/* line 354, ../scss/style.scss */
 .single .site-title .first-letter {
   font-size: 6rem;
   display: block;
 }
-/* line 322, ../scss/style.scss */
+/* line 358, ../scss/style.scss */
 .single .site-title .remaining-letters {
   display: none;
 }
-/* line 328, ../scss/style.scss */
+/* line 364, ../scss/style.scss */
 .single .site-description {
   display: none;
 }
-/* line 332, ../scss/style.scss */
+/* line 368, ../scss/style.scss */
 .single .wp-post-image {
   width: 100%;
   height: 200px;
 }
-/* line 337, ../scss/style.scss */
+/* line 373, ../scss/style.scss */
 .single .entry-header {
   text-align: center;
 }
-/* line 340, ../scss/style.scss */
+/* line 376, ../scss/style.scss */
 .single .entry-header a {
   font-family: "Cabin", sans-serif;
   font-weight: 400;
@@ -492,17 +531,17 @@ article-meta, .entry-title a, .entry-meta a {
   text-decoration: none;
   font-size: 1.8rem;
 }
-/* line 347, ../scss/style.scss */
+/* line 383, ../scss/style.scss */
 .single .entry-content {
   width: 768px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 353, ../scss/style.scss */
+/* line 389, ../scss/style.scss */
 .single .entry-title {
   font-size: 3.5rem;
 }
-/* line 357, ../scss/style.scss */
+/* line 393, ../scss/style.scss */
 .single .entry-excerpt {
   font-family: "Cabin", sans-serif;
   font-weight: 400;
