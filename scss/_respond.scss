@@ -1,4 +1,4 @@
-/* heavily modified responsive grid layout based on skeleton */
+/* customized responsive grid layout derived from skeleton */
 
 /*
 * Skeleton V1.2
@@ -23,6 +23,7 @@ body {
   position: relative; width: 960px; margin: 0 auto; padding: 0;  
 }
 
+footer,
 .single-post article,
 .site-branding {
   margin-left: $margin;
@@ -30,7 +31,7 @@ body {
 }
 
 .row article,
-.main-navigation li { 
+.main-navigation .method-navigation li { 
   float: left;
   display: inline; 
 }
@@ -45,12 +46,12 @@ body {
   padding-left: $margin - $margin-thin;
   padding-right: $margin - $margin-thin;
   
-  li {
-  margin-left: $margin-thin;
-  width: ((960px) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
-  margin-left: $margin-thin;
-  margin-right: $margin-thin;
-  display: inline;
+  .method-navigation li {
+    margin-left: $margin-thin;
+    width: ((960px) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
+    margin-left: $margin-thin;
+    margin-right: $margin-thin;
+    display: inline;
 }}
 
 
@@ -69,7 +70,7 @@ body {
     
   .row article     { width: 236px; }
   
-  .main-navigation li {
+  .main-navigation  .method-navigation li {
   width: ((768px) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
   }
   
@@ -91,6 +92,7 @@ body {
   
     body { width: 100%; }
     
+    footer,
     .site-branding {
       margin-left: 0;
       margin-right: 0;
@@ -116,7 +118,7 @@ body {
     }
     
     #menu-menu,
-    .main-navigation li {
+    .main-navigation .method-navigation li {
       width: 100%;
       margin: 0;
     }

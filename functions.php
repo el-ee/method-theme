@@ -39,22 +39,27 @@ function method_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-  set_post_thumbnail_size( 480, 200, true ); //460 is max width a post will be based on responsive grid
+  set_post_thumbnail_size( 480, 200, true ); // for the main page grid
+	add_image_size( 'method-article-header', 940, 200, true ); // for the single article view
+	add_image_size( 'method-article-footer', 940, 200, true ); // for the single article view
+  // TODO: Is it possible to control the crop here?
   
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'method' ),
+    'social'  => __( 'Social Menu', 'method' ),
+    'footer'  => __( 'Footer Menu', 'method' ),
 	) );
   
-  
-  add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-  function special_nav_class($classes, $item){
-       // if(is_single() && $item->title == "Blog"){ //Notice you can change the conditional from is_single() and $item->title
-               $classes[] = "columns two";
-       // }
-       return $classes;
-  }
+  //
+  // add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+  // function special_nav_class($classes, $item){
+  //      // if(is_single() && $item->title == "Blog"){ //Notice you can change the conditional from is_single() and $item->title
+  //              $classes[] = "columns two";
+  //      // }
+  //      return $classes;
+  // }
   
 	
 	/*

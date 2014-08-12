@@ -22,22 +22,21 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 
-@import url(http://fonts.googleapis.com/css?family=Alef:400,700);
-@import url(http://fonts.googleapis.com/css?family=BenchNine:400,600);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,300italic,600italic);
+//@import url(http://fonts.googleapis.com/css?family=Alef:400,700);
+//@import url(http://fonts.googleapis.com/css?family=BenchNine:400,600);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,300italic,600italic);
 
 
-/*  
-  VARIABLES 
-*/
+/** == == == == == == == == == == 
+    SASS VARS
+== == == == == == == == == == **/
 
-$font-headings: "Alef", sans-serif;
-
-$font-regular: 'Open Sans', sans-serif;
+$font-headings: "Cabin", sans-serif;
+$font-regular: 'Lora', serif;
 
 
 $weight-headings: 400;
-$weight-h-bold: 700;
+$weight-h-bold: 600;
 
 
 $weight-regular: 400;
@@ -45,9 +44,9 @@ $weight-bold: 600;
 
 $color-brand: #2bcbf9; /* turquoise */
 
-$color-main: #111; /* just slightly not black */
-$color-text-alt: #666; /* a dark grey for text */
-$color-text-light: #fff; /* for shadows, text on brand filled boxes */
+$color-main: #404040; /* a bit lighter than black */
+$color-text-alt: #888; /* a dark grey for text */
+$color-text-light: #fff; /* for header 'shadow'; social icons */
 
 $color-light-fill: #dddddd; /* a light grey for box fills */
 
@@ -56,24 +55,38 @@ $margin: 10px;
 
 $margin-thin: $margin/5;
 
+@mixin author-text { 
+  font-family: $font-headings;
+  font-weight: $weight-headings;
+  font-style: italic;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
 
-/* 
-  IMPORTS 
-*/
+
+
+/** == == == == == == == == == == 
+    IMPORT STYLES
+== == == == == == == == == == **/
 
 @import 'reset';
 //@import '../css/skeleton.css';
 @import "../css/underscores.css";
+@import "../css/genericons.css";
 
 
-/* 
-  TYPOGRAPHY
-*/
+/** == == == == == == == == == == 
+    TYPOGRAPHY
+== == == == == == == == == == **/
 
 body {
 	font-family: $font-regular;
 	font-weight: $weight-regular;
   font-size: 1.5rem;
+  
+  p {
+    margin: $margin 0;
+  }
   
 }
 
@@ -91,16 +104,24 @@ a, a:visited, a:link {
 	text-decoration: underline;
 
 	&:hover {
-		color: lighten( $color-main, 10% );
+		color: lighten( $color-main, 30% );
 	}
 }
 
 
-/* header and branding */
 
+
+/** == == == == == == == == == == 
+    HEADER & BRANDING
+== == == == == == == == == == **/
 .site-branding {
  background-color: $color-brand; 
 }
+
+.site-branding a:hover {
+  color: inherit;
+}
+
 .site-title {
   .first-letter {
     font-size: 6rem*1.5;
@@ -120,16 +141,20 @@ a, a:visited, a:link {
 .site-description {
   color: $color-text-light;
   font-family: $font-headings;
+  font-weight: $weight-headings;
   text-transform: lowercase;
   font-size: 2rem;
   line-height: .8em;
   padding: $margin $padding $padding $padding;
 }
 
-/* menu */
-
+/** == == == == == == == == == == 
+    HEADER MENU
+== == == == == == == == == == **/
 
 .main-navigation {
+  font-family: $font-headings;
+  font-weight: $weight-headings;
   text-transform: uppercase;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -144,10 +169,10 @@ a, a:visited, a:link {
   }
 }
 
-.menu-item {
+.method-navigation .menu-item {
   background: $color-light-fill;
   &:hover {
-   background: lighten($color-light-fill, 5%); 
+   background: lighten($color-light-fill, 8%); 
   }
 }
 
@@ -188,8 +213,74 @@ a, a:visited, a:link {
 }
 
 
+/** == == == == == == == == == == 
+    SOCIAL MENU
+== == == == == == == == == == **/
 
-/* main page layouts */
+
+
+ul.method-social {
+//  float: right;
+//  position: relative;
+//  top: -9rem;
+  padding: 0;
+	list-style: none;
+	float: right;
+	margin-right: 12px;
+	color: transparent;
+
+	li a {
+		padding-left: 8px;
+		padding-right: 8px;
+		line-height: 1;
+	}
+
+	li:hover { background: none; }
+	a span { position: absolute; top: -9999px; left: -9999px; }
+
+	li a::before       { color: $color-text-light; font: normal 20px/40px 'Genericons'; content: '\f408'; }
+	li a:hover::before { color: $color-text-light; }
+
+	li a[href*="codepen.io"]::before      { content: '\f216'; }
+	li a[href*="digg.com"]::before        { content: '\f221'; }
+	li a[href*="dribbble.com"]::before    { content: '\f201'; }
+	li a[href*="facebook.com"]::before    { content: '\f203'; }
+	li a[href*="flickr.com"]::before      { content: '\f211'; }
+	li a[href*="plus.google.com"]::before { content: '\f206'; }
+	li a[href*="github.com"]::before      { content: '\f200'; }
+	li a[href*="instagram.com"]::before   { content: '\f215'; }
+	li a[href*="linkedin.com"]::before    { content: '\f208'; }
+	li a[href*="pinterest.com"]::before   { content: '\f210'; }
+	li a[href*="polldaddy.com"]::before   { content: '\f217'; }
+	li a[href*="getpocket.com"]::before   { content: '\f224'; }
+	li a[href*="reddit.com"]::before      { content: '\f222'; }
+	li a[href*="skype.com"]::before,
+	li a[href*="skype:"]::before          { content: '\f220'; }
+	li a[href*="stumbleupon.com"]::before { content: '\f223'; }
+	li a[href*="tumblr.com"]::before      { content: '\f214'; }
+	li a[href*="twitter.com"]::before     { content: '\f202'; }
+	li a[href*="vimeo.com"]::before       { content: '\f212'; }
+	li a[href*="wordpress.org"]::before,
+	li a[href*="wordpress.com"]::before   { content: '\f205'; }
+	li a[href*="youtube.com"]::before     { content: '\f213'; }
+	li a[href$="/feed/"]::before,
+	li a[href$="/feed"]::before,
+	li a[href$="?feed=rss2"]::before      { content: '\f413'; }
+}
+
+/** == == == == == == == == == == 
+    FOOTER 
+== == == == == == == == == == **/
+
+.site-footer { // 940 x 150
+  background: url('../images/footer.png') center center #555;
+  height: 150px;
+  margin-bottom: $margin;
+}
+
+/** == == == == == == == == == == 
+    MAIN PAGE LAYOUTS
+== == == == == == == == == == **/
 
 article {
 }
@@ -210,43 +301,70 @@ article-meta {
 
 .entry-meta a {
   @extend article-meta;
-  font-size: 1.8rem;
+  @include author-text;
 }
 
 .entry-content {
   margin-top: $margin;
 }
 
-
-/* ===============================
-SINGLE PAGE LAYOUT 
-================================ */
+/** == == == == == == == == == == 
+    SINGLE ARTICLE LAYOUT
+== == == == == == == == == == **/
 
 .single  {
+  
+  .site-title {
+    .first-letter {
+      font-size: 6rem;
+      display: block;
+    }
+    .remaining-letters {
+      display: none;
+    }
+    padding: $padding;    
+  }
+
+  .site-description {
+    display: none;
+  }
+
   .wp-post-image {
-  width: 100%;
-  height: 200px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .entry-header {
+    text-align: center;
+    
+    a { // this is the author link
+      @include author-text;
+      font-size: 1.8rem;
+    }
+  }
+
+
+  .entry-content {
+    width: 768px; // this is the collapse width
+    margin-left: auto; 
+    margin-right: auto;
+  }
+
+  .entry-title {
+    font-size: 3.5rem;
+  }
+
+  .entry-excerpt {
+    font-family: $font-headings;
+    font-weight: $weight-headings;
+    font-size: 1.8rem;
+  }
+  
+  
 }
 
-.entry-header {
-  text-align: center;
-}
-
-
-.entry-content {
-  width: 768px; // this is the collapse width
-  margin-left: auto; 
-  margin-right: auto;
-}
-/* RESPONSIVE GRID */
-
-.entry-title {
-  font-size: 4rem;
-}
-
-.entry-excerpt {
-  font-size: 2rem;
-}
-
-}  
+/** == == == == == == == == == == 
+    RESPONSIVE GRID STUFF
+== == == == == == == == == == **/
+  
 @import "respond";
