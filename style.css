@@ -1,1 +1,24 @@
+/*
+Theme Name: Method
+Theme URI: #
+Author: Ellie Harmon
+Author URI: http://ellieharmon.com
+Description: Custom magazine threme for WordPress.
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Text Domain: method
+Domain Path: /languages/
+Tags:
+
+Method is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+Additional inspiration from Semicolon http://kovshenin.com/themes/semicolon/, by Konstantin Kovshenin
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
 @import 'css/style.css';
