@@ -25,6 +25,7 @@ body {
 #issue-image,
 footer,
 .single-post article,
+article.type-page ,
 .site-branding {
   margin-left: $margin;
   margin-right: $margin;
@@ -53,6 +54,12 @@ footer,
   margin-bottom: $padding;
 }
 
+#issue-listing{
+
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
 .main-navigation  {
   padding-left: $margin - $margin-thin;
   padding-right: $margin - $margin-thin;
@@ -77,8 +84,11 @@ footer,
 ================================================== */
 
 @media only screen and (min-width: $collapse-width) and (max-width: $first-break-width) {
+
   body             { width: 768px; }
-  
+
+  #issue-listing  { width: 748px; }
+    
   #issue-headers,  
   .row article     { width: 236px; }
   
@@ -128,7 +138,7 @@ footer,
       font-size: 1.8rem;
     }
 
-
+    #issue-listing,
     #issue-headers,
     #issue-image,
     #issue-description,

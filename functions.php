@@ -172,18 +172,27 @@ add_action('created_category', 'method_fields_save', 10, 1);
 
 function method_fields_save($term_id) {
 
-
- if($_POST['issue_number']){
-		$issue_number = sanitize_text_field($_POST['issue_number']); //make sure nothing malicious
-		$issue_numbers = get_option('issue_numbers');
-		$issue_numbers = unserialize($issue_numbers);
-
     $cat_ID = $term_id;
 
-		$issue_numbers[$cat_ID] = $issue_number;   //update the value for this category's ID
+ if($_POST['issue_number']){
 
-		update_option('issue_numbers', $issue_numbers);  //store the array, WP handles the serialization
+		$issue_number = sanitize_text_field($_POST['issue_number']); 
+		$issue_numbers = get_option('issue_numbers');
+    
+		$issue_numbers[$cat_ID] = $issue_number;   
+
+		update_option('issue_numbers', $issue_numbers);  
  }
+ 
+ 
+ if($_POST['issue_date']){
+
+		$issue_date = sanitize_text_field($_POST['issue_date']);
+		$issue_dates = get_option('issue_dates');
+    
+		$issue_dates[$cat_ID] = $issue_date;   
+
+		update_option('issue_dates', $issue_dates); }
  
  
  
@@ -200,11 +209,8 @@ if( $thumbnail_id ){
 }
 
 function method_create_fields ($tag) {
-  
-  //TODO: Remove featured image link doesn't work.
-  
+    
 	$cat_ID = $tag->term_id;
-  
   
 	?>
 	<div class="form-field">
@@ -212,6 +218,13 @@ function method_create_fields ($tag) {
 	  <input id="issue_number" type="text" name="issue_number" size="10" value=""></input>
     <p><span class="description">If this category is an issue, please enter the number here. Also, make sure to enter the issue overview in the description field above.</span></p>
   </div>
+
+	<div class="form-field">
+	  <label for="issue_date"><?php _e('Issue Date', ''); ?></label>
+	  <input id="issue_date" type="text" name="issue_date" size="10" value=""></input>
+    <p><span class="description">Enter the date in plain text for the issue, like 'Fall 2014'.</span></p>
+  </div>
+
   
 	<?php
   
@@ -245,6 +258,8 @@ function method_edit_fields ($tag) {
   
 	$issue_numbers = get_option('issue_numbers');
 	$issue_number = $issue_numbers[$cat_ID];
+  $issue_dates = get_option('issue_dates');
+  $issue_date = $issue_dates[$cat_ID];
 	?>
 	<tr class="form-field">
 	<th valign="top" scope="row">
@@ -252,9 +267,20 @@ function method_edit_fields ($tag) {
 	</th>
 	<td>
 	<input type="text" name="issue_number" size="10" value="<?php echo $issue_number; ?>">
-  <p><span class="description">If this category is an issue, please enter the number here. Also, make sure to enter the issue overview in the description field above.</span></p>
+  <p><span class="description"> If this category is an issue, please enter the number here. Also, make sure to enter the issue overview in the description field above.</span></p>
 	</td>
 	</tr>
+  
+	<tr class="form-field">
+	<th valign="top" scope="row">
+	<label for="issue_date"><?php _e('Issue Date', ''); ?></label>
+	</th>
+	<td>
+	<input type="text" name="issue_date" size="10" value="<?php echo $issue_date; ?>">
+  <p><span class="description">Enter the date in plain text for the issue, like 'Fall 2014'.</span></p>
+	</td>
+	</tr>
+  
 	<?php
   
   $issue_images = get_option('issue_images');

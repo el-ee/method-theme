@@ -28,7 +28,7 @@
         
         <p class="credits">Unless otherwise noted, images from the CDC image library.</p>
         
-        <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="wp-content/themes/method/images/by-nc.png" /></a>
+        <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="<?php bloginfo('template_directory');?>/images/by-nc.png" /></a>
         
     </div><!-- .site-info -->
       

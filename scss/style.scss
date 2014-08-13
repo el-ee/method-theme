@@ -176,7 +176,8 @@ a, a:visited, a:link {
   }
 }
 
-.current-menu-item, .current-menu-item:hover {
+.main-navigation .current-menu-item, 
+.main-navigation .current-menu-item:hover {
   background: $color-brand;
 }
 
@@ -212,10 +213,50 @@ a, a:visited, a:link {
  }
 }
 
+/** == == == == == == == == == == 
+    ISSUE LISTING
+== == == == == == == == == == **/
+
+#issue-listing {
+ h1 {
+   text-transform: uppercase;
+   font-size: 2.5rem;
+ } 
+ .issue-number {
+   clear: both;
+   margin-top: $padding;
+ }
+ .issue-name {
+   position: absolute;
+   display: block;
+   width: 100%;
+   a {
+     color: $color-main;
+     text-decoration: none;
+   }
+   h1 {
+     display: block;
+     position: relative;
+     top: -9rem;
+     font-size: 3.5rem;
+     text-align: center;
+     display: block;
+     width: 100%;
+     z-index: 1000;
+   }
+ }
+ .issue-image img {
+   opacity: .4;
+ }
+}
 
 /** == == == == == == == == == == 
     ISSUE PAGES
 == == == == == == == == == == **/
+
+#issue-image {
+  opacity: .4;
+}
 
 #issue-headers {
 h1 {
@@ -308,6 +349,7 @@ ul.method-social {
 == == == == == == == == == == **/
 
 .site-footer { // 940 x 150
+  opacity: .5;
   background: url('../images/footer.png') left center #555;
   margin-bottom: $margin;
   font-family: $font-headings;
@@ -371,10 +413,10 @@ article-meta {
 }
 
 /** == == == == == == == == == == 
-    SINGLE ARTICLE LAYOUT
+    SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
 
-.single  {
+.single, .page  {
   
   .site-title {
     .first-letter {
