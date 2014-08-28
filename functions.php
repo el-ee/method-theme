@@ -40,7 +40,7 @@ function method_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
   set_post_thumbnail_size( 480, 200, true ); // for the main page grid
-	add_image_size( 'method-header', 940, 137, true ); // for the single article view
+	add_image_size( 'method-header', 940, 200, true ); // for the single article view
   // TODO: Is it possible to control the crop here?
   
 

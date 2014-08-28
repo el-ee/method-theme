@@ -7,7 +7,7 @@
 <?php
 
 if(($wp_query->current_post)==0) {
-	echo('<div class="row">');
+	echo('<div><div class="row">');
 }
 ?>
 
@@ -35,6 +35,6 @@ if(($wp_query->current_post)==0) {
 <?php
 	
 if(($wp_query->current_post + 4)%3==0) {
-	echo('</div><div class="row">');
+	echo('</div></div><div><div class="row">');
 }
 ?>

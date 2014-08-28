@@ -22,8 +22,8 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 
-//@import url(http://fonts.googleapis.com/css?family=Alef:400,700);
-//@import url(http://fonts.googleapis.com/css?family=BenchNine:400,600);
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,600;);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
 //@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,300italic,600italic);
 
 
@@ -40,7 +40,7 @@ $weight-h-bold: 600;
 
 
 $weight-regular: 400;
-$weight-bold: 600;
+$weight-bold: 700;
 
 $color-brand: #2bcbf9; /* turquoise */
 
@@ -118,6 +118,7 @@ a, a:visited, a:link {
  background-color: $color-brand; 
 }
 
+.main-navigation a:hover,
 .site-branding a:hover {
   color: inherit;
 }
@@ -172,7 +173,7 @@ a, a:visited, a:link {
 .method-navigation .menu-item {
   background: $color-light-fill;
   &:hover {
-   background: lighten($color-light-fill, 8%); 
+   background: lighten($color-light-fill, 4%); 
   }
 }
 
@@ -237,7 +238,8 @@ a, a:visited, a:link {
    h1 {
      display: block;
      position: relative;
-     top: -9rem;
+     top: -200px;
+     line-height: 200px;
      font-size: 3.5rem;
      text-align: center;
      display: block;
@@ -245,8 +247,15 @@ a, a:visited, a:link {
      z-index: 1000;
    }
  }
- .issue-image img {
-   opacity: .4;
+ .issue-image {
+   overflow: hidden;
+   margin-left: 0;
+   margin-right: 0;
+   img {
+   opacity: .3;
+   max-width: none;
+   height: 200px;
+   }
  }
 }
 
@@ -254,11 +263,23 @@ a, a:visited, a:link {
     ISSUE PAGES
 == == == == == == == == == == **/
 
-#issue-image {
-  opacity: .4;
+.issue-image {
+  overflow: hidden;
+  height: 200px;
+  img {
+  opacity: .5;
+  max-width: none;
+  height: 200px;
+  }
+}
+.issue-box {
+//background: lighten($color-light-fill, 4%);
+//margin-top: $margin-thin * 2;
+
 }
 
 #issue-headers {
+
 h1 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -276,6 +297,7 @@ h1 {
   p {
     margin: 0;
   }
+
 }
 
 
@@ -349,7 +371,7 @@ ul.method-social {
 == == == == == == == == == == **/
 
 .site-footer { // 940 x 150
-  opacity: .5;
+  opacity: .9;
   background: url('../images/footer.png') left center #555;
   margin-bottom: $margin;
   font-family: $font-headings;
@@ -386,7 +408,28 @@ ul.method-social {
     MAIN PAGE LAYOUTS
 == == == == == == == == == == **/
 
-article {
+
+// when in a list, highlight featured articles
+.row {
+  overflow: hidden;
+}
+.row article {
+  padding-bottom: 99999px;
+  margin-bottom: -99999px;
+
+//  overflow: hidden;
+
+//  padding-bottom: $margin;
+border-top: $margin  solid #ffffff ;
+//border-top: $margin  solid lighten($color-light-fill, 4%) ;
+//border-bottom: $margin-thin  solid $color-light-fill ;
+//background: lighten($color-light-fill, 4%);
+
+  &.tag-featured {
+   border-top: $margin  solid $color-brand ;
+//   border-bottom: $margin-thin  solid $color-brand ;
+   background: lighten($color-brand, 37%);
+  }
 }
 
 article-meta {
@@ -394,7 +437,7 @@ article-meta {
   font-weight: $weight-h-bold;
   text-decoration: none;
   line-height: 1em;
-  margin-top: $margin;
+  margin-top: 0;
   display: block;
   font-size: 2rem;
 }
@@ -416,7 +459,8 @@ article-meta {
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
 
-.single, .page  {
+.single {
+  // custom header for article display
   
   .site-title {
     .first-letter {
@@ -432,11 +476,25 @@ article-meta {
   .site-description {
     display: none;
   }
+  
+}
 
-  .wp-post-image {
-    width: 100%;
-    height: 200px;
-  }
+
+.page-template-default .entry-header
+ {
+   overflow: hidden;
+
+   img {
+   max-width: none;
+   height: 200px;
+   }
+ }
+ 
+// otherwise articles and pages are the same
+
+.single, .page  { 
+
+  
 
   .entry-header {
     text-align: center;
@@ -449,7 +507,7 @@ article-meta {
 
 
   .entry-content {
-    width: 768px; // this is the collapse width
+    max-width: 600px;
     margin-left: auto; 
     margin-right: auto;
   }

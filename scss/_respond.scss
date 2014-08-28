@@ -13,16 +13,14 @@
 $first-break-width: 959px;
 $collapse-width: 768px; 
 
-$margin: 10px;
-$padding: 20px;
-
-$number-menu-items: 6;
+$number-menu-items: 5;
 
 body {
   position: relative; width: 960px; margin: 0 auto; padding: 0;  
 }
 
-#issue-image,
+.page-header,
+.issue-box,
 footer,
 .single-post article,
 article.type-page ,
@@ -30,6 +28,12 @@ article.type-page ,
   margin-left: $margin;
   margin-right: $margin;
 }
+
+footer {
+        margin-top: $padding;
+}
+
+
 
 #issue-headers,
 #issue-description,
@@ -42,23 +46,21 @@ article.type-page ,
 #issue-headers,
 .row article {
   width: 300px;
-  margin-left: $margin; 
-  margin-right: $margin;  
-  margin-bottom: $padding;
+  margin-top: $padding;
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+
+#issue-headers {
+  margin: $margin;
 }
 
 #issue-description {
   width: 300px * 2;
-  margin-left: $margin;
-  margin-right: $margin;
-  margin-bottom: $padding;
+  margin: $margin;
 }
 
-#issue-listing{
-
-  margin-left: $margin;
-  margin-right: $margin;
-}
 
 .main-navigation  {
   padding-left: $margin - $margin-thin;
@@ -98,6 +100,11 @@ article.type-page ,
   width: ((768px) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
   }
   
+   .page-template-default .entry-header img,
+  .issue-image img {
+    margin-left: -(960 - $first-break-width) / 2;
+  }
+  
   
 }
 
@@ -114,6 +121,11 @@ article.type-page ,
 
 @media screen and (max-width: $collapse-width - 1) { 
   
+  article.type-page {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
     body { width: 100%; }
     
 
@@ -121,7 +133,6 @@ article.type-page ,
     .site-branding {
       margin-left: 0;
       margin-right: 0;
-
     }
     
     
@@ -138,15 +149,28 @@ article.type-page ,
       font-size: 1.8rem;
     }
 
+    .page-header,
+    .issue-box,
     #issue-listing,
     #issue-headers,
-    #issue-image,
-    #issue-description,
-    .row article    { 
+    .issue-image,
+    { 
       width: 100%; 
-      margin: 0 0 $padding 0;
+      margin: 0;
     }
+
+    .row article {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: $padding;
+      margin-bottom: 0;
+      padding: 0;
+    }    
+
+   
     
+    #issue-description,
     #menu-menu,
     .main-navigation .method-navigation li {
       width: 100%;
@@ -179,6 +203,11 @@ article.type-page ,
     
     .single .entry-content {
      width: 100%;
+    }
+    
+    .page-template-default .entry-header img,
+    .issue-image img {
+      margin-left: -(960 - $collapse-width) / 2;
     }
     
 }

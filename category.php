@@ -88,15 +88,16 @@ get_header(); ?>
 
           // THIS IS AN ISSUE, CREATE SPECIAL HEADER 
           
+          
             $image_id = get_option( '_wpfifc_taxonomy_term_'.$cat.'_thumbnail_id_', 0 );
         
             $image_url = wp_get_attachment_image_src($image_id, 'method-header');
         
-            printf( '<div id="issue-image"><img src="%s"></img></div>', $image_url[0]);
+            printf( '<div class="issue-image"><img src="%s"></img></div>', $image_url[0]);
 
              ?>
 
-
+<div class="row">
             <div id="issue-headers">
     				<h1 class="issue-number">
     					<?php
@@ -117,6 +118,13 @@ get_header(); ?>
     			printf( '<p>%s</p>', $term_description );
     		endif;
     	
+       ?>
+      
+      </div><!-- description -->
+       </div><!-- row -->          
+      
+      <?php
+      
         }
         else
         {
@@ -129,7 +137,7 @@ get_header(); ?>
 	 
 
         
-			</header><!-- .page-header -->
+   </header><!-- .page-header -->
       
   		<?php if ( have_posts() ) : ?>
       
