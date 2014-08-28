@@ -306,6 +306,44 @@ h1 {
 }
 
 
+/** == == == == == == == == == == 
+    LIBRARY PAGE
+== == == == == == == == == == **/
+
+
+
+.method_library {
+
+  .entry-content {
+    
+    h1 {
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+    
+    ul {
+     
+    }
+     li {
+       margin-top: $padding *2;
+      
+       ul {
+         
+       }
+       li {
+         /* author name */
+         margin-top: $margin;
+         
+         a {
+           /* Book link */
+           font-style: italic; 
+         }
+         
+       }
+     }
+  }
+}
+
 
 /** == == == == == == == == == == 
     SOCIAL MENU
