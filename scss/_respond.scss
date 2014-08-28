@@ -39,6 +39,10 @@ column-third {
   width: $third-width;
 }
 
+column-fifth {
+  @extend column;
+  width: (960px - (10 * $margin)) / 5;
+}
 
 /** SPECIFIC ELEMENTS **/
 
@@ -69,6 +73,8 @@ article.type-page ,
 .row article {
   @extend column-third;
 }
+
+
 
 #issue-description {
   @extend column-third;
@@ -106,6 +112,31 @@ article.type-page ,
   }
 }
 
+.method_library {
+
+  .entry-content {
+    width: 100%;
+    max-width: none;
+    ul {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+     li {
+       display: inline;
+       @extend column-fifth;
+       ul {
+         margin-left: 0;
+       }
+       li {
+         margin-left: 0;
+         margin-right: 0;
+         padding: 0;
+       }
+     }
+  }
+}
+
+
 /* FIRST BREAK 
 ================================================== */
 
@@ -129,8 +160,16 @@ article.type-page ,
     margin-left: -(960 - $first-break-width) / 2;
   }
   
+  .method_library {
+    .entry-content {  
+       li { 
+         width: (768px - (4 * 2 * $margin)) / 4;
+       }
+    }
+  }
   
-}
+  
+} // Media first break
 
 
 
@@ -225,8 +264,23 @@ collapsed-column {
     .issue-image img {
       margin-left: -(960 - $collapse-width) / 2;
     }
+
+
+    .method_library {
+      .entry-content {  
+        ul {
+          margin: 0;
+        }
+         li { 
+           width: 100%;
+           margin: 0;
+         }
+      }
+    }
+
     
 }
+
 
 
 
@@ -239,6 +293,19 @@ collapsed-column {
       body { width: 480px;}
       
       /* keep everything as above, but never let the body get wider than 480px */
+
+      .method_library {
+        .entry-content {  
+          ul {
+            margin: 0 -10px;
+          }
+           li { 
+             width: (480px - (2 * 2 * $margin)) / 3;
+             margin-left: $margin;
+             margin-right: $margin;
+           }
+        }
+      }
 
     }
 

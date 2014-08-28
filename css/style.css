@@ -687,7 +687,7 @@ footer,
 article.type-page,
 .site-branding, column-third, #issue-headers,
 .row article,
-#issue-description,
+#issue-description, column-fifth, .method_library .entry-content li,
 .main-navigation .method-navigation li {
   margin-left: 10px;
   margin-right: 10px;
@@ -712,8 +712,13 @@ column-third, #issue-headers,
   width: 300px;
 }
 
+/* line 42, ../scss/_respond.scss */
+column-fifth, .method_library .entry-content li {
+  width: 172px;
+}
+
 /** SPECIFIC ELEMENTS **/
-/* line 45, ../scss/_respond.scss */
+/* line 49, ../scss/_respond.scss */
 body {
   position: relative;
   width: 960px;
@@ -722,25 +727,25 @@ body {
 }
 
 /* special cases */
-/* line 78, ../scss/_respond.scss */
+/* line 84, ../scss/_respond.scss */
 #issue-headers {
   margin-left: 0;
   /* already has a left margin because it's inside the header */
 }
 
-/* line 81, ../scss/_respond.scss */
+/* line 87, ../scss/_respond.scss */
 #issue-description {
   width: 600px;
   margin-right: 0;
   /* already has a right margin bc inside header */
 }
 
-/* line 89, ../scss/_respond.scss */
+/* line 95, ../scss/_respond.scss */
 .main-navigation {
   padding-left: 8px;
   padding-right: 8px;
 }
-/* line 93, ../scss/_respond.scss */
+/* line 99, ../scss/_respond.scss */
 .main-navigation .method-navigation li {
   margin-left: 2px;
   width: 184.8px;
@@ -749,48 +754,78 @@ body {
   display: inline;
 }
 
-/* line 102, ../scss/_respond.scss */
+/* line 108, ../scss/_respond.scss */
 .main-navigation ul ul {
   top: 2.1em;
 }
-/* line 104, ../scss/_respond.scss */
+/* line 110, ../scss/_respond.scss */
 .main-navigation ul ul a {
   width: 100%;
+}
+
+/* line 117, ../scss/_respond.scss */
+.method_library .entry-content {
+  width: 100%;
+  max-width: none;
+}
+/* line 120, ../scss/_respond.scss */
+.method_library .entry-content ul {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+/* line 124, ../scss/_respond.scss */
+.method_library .entry-content li {
+  display: inline;
+}
+/* line 127, ../scss/_respond.scss */
+.method_library .entry-content li ul {
+  margin-left: 0;
+}
+/* line 130, ../scss/_respond.scss */
+.method_library .entry-content li li {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
 }
 
 /* FIRST BREAK 
 ================================================== */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 114, ../scss/_respond.scss */
+  /* line 145, ../scss/_respond.scss */
   body {
     width: 768px;
   }
 
-  /* line 116, ../scss/_respond.scss */
+  /* line 147, ../scss/_respond.scss */
   #issue-listing {
     width: 748px;
   }
 
-  /* line 119, ../scss/_respond.scss */
+  /* line 150, ../scss/_respond.scss */
   #issue-headers,
   .row article {
     width: 236px;
   }
 
-  /* line 121, ../scss/_respond.scss */
+  /* line 152, ../scss/_respond.scss */
   #issue-description {
     width: 472px;
   }
 
-  /* line 123, ../scss/_respond.scss */
+  /* line 154, ../scss/_respond.scss */
   .main-navigation .method-navigation li {
     width: 146.4px;
   }
 
-  /* line 128, ../scss/_respond.scss */
+  /* line 159, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -0.5px;
+  }
+
+  /* line 165, ../scss/_respond.scss */
+  .method_library .entry-content li {
+    width: 172px;
   }
 }
 /* COLLAPSE EVERYTHING
@@ -799,12 +834,12 @@ body {
 ================================================== */
 /* Note: Design for a width of 320px */
 @media screen and (max-width: 767px) {
-  /* line 148, ../scss/_respond.scss */
+  /* line 187, ../scss/_respond.scss */
   body {
     width: 100%;
   }
 
-  /* line 151, ../scss/_respond.scss */
+  /* line 190, ../scss/_respond.scss */
   collapsed-column, .single .entry-content,
   #issue-description,
   .main-navigation .method-navigation li,
@@ -825,40 +860,40 @@ body {
   }
 
   /* specific overrides */
-  /* line 176, ../scss/_respond.scss */
+  /* line 215, ../scss/_respond.scss */
   .page-header, .issue-image {
     margin-top: 0;
   }
 
-  /* line 181, ../scss/_respond.scss */
+  /* line 220, ../scss/_respond.scss */
   .site-title {
     font-size: 5rem;
   }
-  /* line 183, ../scss/_respond.scss */
+  /* line 222, ../scss/_respond.scss */
   .site-title .first-letter {
     font-size: 7.5rem;
   }
 
-  /* line 188, ../scss/_respond.scss */
+  /* line 227, ../scss/_respond.scss */
   .site-description {
     padding-bottom: 20px;
     font-size: 1.8rem;
   }
 
-  /* line 195, ../scss/_respond.scss */
+  /* line 234, ../scss/_respond.scss */
   #menu-menu {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 201, ../scss/_respond.scss */
+  /* line 240, ../scss/_respond.scss */
   .main-navigation {
     background: #dddddd;
     width: 100%;
   }
 
-  /* line 207, ../scss/_respond.scss */
+  /* line 246, ../scss/_respond.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -866,39 +901,59 @@ body {
     text-align: left;
   }
 
-  /* line 213, ../scss/_respond.scss */
+  /* line 252, ../scss/_respond.scss */
   .menu-toggle {
     font-size: 3rem;
     line-height: 3rem;
     padding: 5px 10px;
   }
 
-  /* line 219, ../scss/_respond.scss */
+  /* line 258, ../scss/_respond.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 225, ../scss/_respond.scss */
+  /* line 264, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -96px;
+  }
+
+  /* line 271, ../scss/_respond.scss */
+  .method_library .entry-content ul {
+    margin: 0;
+  }
+  /* line 274, ../scss/_respond.scss */
+  .method_library .entry-content li {
+    width: 100%;
+    margin: 0;
   }
 }
 /* #Mobile (Landscape)
 ================================================== */
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 239, ../scss/_respond.scss */
+  /* line 293, ../scss/_respond.scss */
   body {
     width: 480px;
   }
 
   /* keep everything as above, but never let the body get wider than 480px */
+  /* line 299, ../scss/_respond.scss */
+  .method_library .entry-content ul {
+    margin: 0 -10px;
+  }
+  /* line 302, ../scss/_respond.scss */
+  .method_library .entry-content li {
+    width: 146.66667px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 /* #Clearing
 ================================================== */
 /* Self Clearing Goodness */
-/* line 249, ../scss/_respond.scss */
+/* line 316, ../scss/_respond.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -909,7 +964,7 @@ body {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 256, ../scss/_respond.scss */
+/* line 323, ../scss/_respond.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -922,20 +977,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 264, ../scss/_respond.scss */
+/* line 331, ../scss/_respond.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 267, ../scss/_respond.scss */
+/* line 334, ../scss/_respond.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 271, ../scss/_respond.scss */
+/* line 338, ../scss/_respond.scss */
 .clear {
   clear: both;
   display: block;
