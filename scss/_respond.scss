@@ -15,9 +15,37 @@ $collapse-width: 768px;
 
 $number-menu-items: 5;
 
+$third-width: 300px;
+$two-thirds-width: 2 * $third-width;
+
+/** BASE **/
+
+
+column {
+  margin-left: $margin;
+  margin-right: $margin;
+  float: left;
+  display: inline;
+}
+
+column-full {
+  @extend column;
+  float: none;
+  display: block;
+}
+
+column-third {
+  @extend column;
+  width: $third-width;
+}
+
+
+/** SPECIFIC ELEMENTS **/
+
 body {
   position: relative; width: 960px; margin: 0 auto; padding: 0;  
 }
+
 
 .page-header,
 .issue-box,
@@ -25,41 +53,37 @@ footer,
 .single-post article,
 article.type-page ,
 .site-branding {
-  margin-left: $margin;
-  margin-right: $margin;
+  @extend column-full;
 }
-
-footer {
-        margin-top: $padding;
-}
-
 
 
 #issue-headers,
 #issue-description,
 .row article,
 .main-navigation .method-navigation li { 
-  float: left;
-  display: inline; 
+  @extend column;
 }
+
 
 #issue-headers,
 .row article {
-  width: 300px;
-  margin-top: $padding;
-  margin-left: $margin;
-  margin-right: $margin;
-}
-
-
-#issue-headers {
-  margin: $margin;
+  @extend column-third;
 }
 
 #issue-description {
-  width: 300px * 2;
-  margin: $margin;
+  @extend column-third;
 }
+
+/* special cases */
+#issue-headers {
+  margin-left: 0; /* already has a left margin because it's inside the header */
+}
+#issue-description {
+  width: $two-thirds-width;
+  margin-right: 0; /* already has a right margin bc inside header */
+}
+
+
 
 
 .main-navigation  {
@@ -121,20 +145,37 @@ footer {
 
 @media screen and (max-width: $collapse-width - 1) { 
   
-  article.type-page {
-    margin-left: 0;
-    margin-right: 0;
+  body { width: 100%; }
+  
+  
+collapsed-column {
+  width: 100%;
+  float: none;
+  display: block;
+  padding: 0;
+  margin: $padding 0 0 0;
+}
+
+.single .entry-content,
+#issue-description,
+.main-navigation .method-navigation li,
+.page-header,
+.issue-box,
+#issue-listing,
+#issue-headers,
+.issue-image,
+.row article,
+  .row article,
+  article.type-page,
+  footer,
+  .site-branding {
+    @extend collapsed-column;
   }
   
-    body { width: 100%; }
-    
-
-    footer,
-    .site-branding {
-      margin-left: 0;
-      margin-right: 0;
+  /* specific overrides */  
+    .page-header, .issue-image {
+      margin-top: 0;
     }
-    
     
 
  .site-title {
@@ -149,38 +190,16 @@ footer {
       font-size: 1.8rem;
     }
 
-    .page-header,
-    .issue-box,
-    #issue-listing,
-    #issue-headers,
-    .issue-image,
-    { 
-      width: 100%; 
-      margin: 0;
-    }
-
-    .row article {
-      width: 100%;
+   
+   
+    #menu-menu {
       margin-left: 0;
       margin-right: 0;
-      margin-top: $padding;
-      margin-bottom: 0;
-      padding: 0;
-    }    
-
-   
-    
-    #issue-description,
-    #menu-menu,
-    .main-navigation .method-navigation li {
       width: 100%;
-      margin: 0;
     }
-    
+
     .main-navigation  {
       background: $color-light-fill;
-      margin-top: $margin;
-      margin-bottom: $margin;
       width: 100%;
     }
     
@@ -201,9 +220,6 @@ footer {
   		display: none;
   	}
     
-    .single .entry-content {
-     width: 100%;
-    }
     
     .page-template-default .entry-header img,
     .issue-image img {

@@ -279,6 +279,9 @@ a, a:visited, a:link {
 }
 
 #issue-headers {
+  
+      margin-top: $margin;
+    
 
 h1 {
   font-size: 2rem;
@@ -294,6 +297,8 @@ h1 {
 
 
 #issue-description {
+  margin-top: $margin;
+  
   p {
     margin: 0;
   }
@@ -371,6 +376,7 @@ ul.method-social {
 == == == == == == == == == == **/
 
 .site-footer { // 940 x 150
+  margin-top: $padding;
   opacity: .9;
   background: url('../images/footer.png') left center #555;
   margin-bottom: $margin;
@@ -414,6 +420,7 @@ ul.method-social {
   overflow: hidden;
 }
 .row article {
+  margin-top: $padding;
   padding-bottom: 99999px;
   margin-bottom: -99999px;
 

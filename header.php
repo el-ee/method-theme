@@ -18,7 +18,11 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class("container container-twelve"); ?>>
+
+
+<body <?php body_class("method_".$pagename); ?>>
+  
+    
     
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'method' ); ?></a>
