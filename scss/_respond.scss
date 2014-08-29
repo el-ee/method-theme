@@ -9,6 +9,11 @@
 * 6/20/2012
 */
 
+/* 
+TODO: http://webdesignetc.co/faking-css-nth-child-support-in-ie8/ 
+*/
+
+
 
 $first-break-width: 959px;
 $collapse-width: 768px; 
@@ -120,6 +125,11 @@ article.type-page ,
     ul {
       margin-left: -10px;
       margin-right: -10px;
+      clear: both;
+      overflow: auto;
+    }
+    p {
+      clear: both;
     }
 
     li:nth-child(5n+6) {

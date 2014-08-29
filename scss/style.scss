@@ -109,7 +109,11 @@ a, a:visited, a:link {
 }
 
 
-
+.image-credit {
+  font-size: .9em;
+  font-style: italic;
+  color: $color-text-alt;
+}
 
 /** == == == == == == == == == == 
     HEADER & BRANDING
@@ -322,6 +326,7 @@ h1 {
     }
     
     ul {
+  
      
     }
      li {
