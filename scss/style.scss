@@ -23,6 +23,7 @@ and Blueprint http://www.blueprintcss.org/
 
 
 @import url(http://fonts.googleapis.com/css?family=Cabin:400,600;);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
 //@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,300italic,600italic);
 
@@ -31,12 +32,16 @@ and Blueprint http://www.blueprintcss.org/
     SASS VARS
 == == == == == == == == == == **/
 
-$font-headings: "Cabin", sans-serif;
+$font-logo: "Cabin", sans-serif;
+$font-headings: "Roboto", sans-serif;
 $font-regular: 'Lora', serif;
 
+$weight-logo: 600;
+$weight-logo-light: 400;
 
-$weight-headings: 400;
-$weight-h-bold: 600;
+$weight-h-light: 300;
+$weight-h: 400;
+$weight-h-bold: 500;
 
 
 $weight-regular: 400;
@@ -57,7 +62,7 @@ $margin-thin: $margin/5;
 
 @mixin author-text { 
   font-family: $font-headings;
-  font-weight: $weight-headings;
+  font-weight: $weight-h-light;
   font-style: italic;
   font-size: 1.4rem;
   text-decoration: none;
@@ -82,7 +87,8 @@ $margin-thin: $margin/5;
 body {
 	font-family: $font-regular;
 	font-weight: $weight-regular;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.8em;
   
   p {
     margin: $margin 0;
@@ -94,6 +100,7 @@ h1 {
 	font-family: $font-headings;
 	font-weight: $weight-h-bold;
 	font-size: 1.5rem;
+  line-height: 1.2em;
 }
 
 
@@ -128,10 +135,12 @@ a, a:visited, a:link {
 }
 
 .site-title {
+  font-family: $font-logo;
   .first-letter {
     font-size: 6rem*1.5;
-    font-weight: $weight-headings;
+    font-weight: $weight-logo-light;
   }
+  font-weight: $weight-logo;
   font-size: 6rem;
   text-transform: uppercase;
 	line-height: 1em;
@@ -146,7 +155,7 @@ a, a:visited, a:link {
 .site-description {
   color: $color-text-light;
   font-family: $font-headings;
-  font-weight: $weight-headings;
+  font-weight: $weight-h-light;
   text-transform: lowercase;
   font-size: 2rem;
   line-height: .8em;
@@ -159,7 +168,7 @@ a, a:visited, a:link {
 
 .main-navigation {
   font-family: $font-headings;
-  font-weight: $weight-headings;
+  font-weight: $weight-h;
   text-transform: uppercase;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -256,11 +265,11 @@ a, a:visited, a:link {
    margin-left: 0;
    margin-right: 0;
    img {
-   opacity: .3;
+   opacity: .5;
    max-width: none;
    height: 200px;
-   }
- }
+    }
+  }
 }
 
 /** == == == == == == == == == == 
@@ -271,7 +280,7 @@ a, a:visited, a:link {
   overflow: hidden;
   height: 200px;
   img {
-  opacity: .5;
+  //opacity: .5;
   max-width: none;
   height: 200px;
   }
@@ -414,18 +423,19 @@ ul.method-social {
 	li a[href$="?feed=rss2"]::before      { content: '\f413'; }
 }
 
+
 /** == == == == == == == == == == 
-    FOOTER 
+    FOOTER
 == == == == == == == == == == **/
 
 .site-footer { // 940 x 150
   margin-top: $padding;
-  opacity: .9;
   background: url('../images/footer.png') left center #555;
   margin-bottom: $margin;
   font-family: $font-headings;
-  font-weight: $weight-headings;
+  font-weight: $weight-h;
   padding: $margin;
+  //opacity: .9;
   a {
     color: $color-text-light;
     text-decoration: none;
@@ -445,9 +455,72 @@ ul.method-social {
     font-size: 1.25rem;
     vertical-align: text-bottom;
   }
-  img {
+  #license img {
     float: right;
     height: 3rem;
+  }
+}
+
+
+.site-footer-single {
+  
+  font-family: $font-headings;
+  font-weight: $weight-h;
+  
+  padding: 0 0 0 0;
+  background: $color-light-fill;
+  
+  .credits {
+    padding: 0 0 $margin $margin;
+    margin: 0;
+    font-size: 1.25rem;
+    color: $color-text-light;
+    line-height: 1em;
+    text-align: bottom;
+  }
+  
+  #license img {
+    padding-right: $margin;
+    float: right;
+    height: 3rem;
+    margin-top: -4rem;
+  }
+  .issue-image {
+    overflow: hidden;
+    height: 200px;
+  }
+
+  .issue-image img {
+    opacity: .8;
+  }
+  
+  #footer-issue-title {
+    h1 {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      padding-left: $margin;
+      padding-top: 0;
+    }
+    
+  }
+  
+  #footer-article-listing {
+    padding: $margin;
+    font-family: $font-regular;
+    p {
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+      font-weight: .9em;
+    }
+    ul {
+      padding: 0;
+      margin: $margin 0 0 0;
+      .author {
+        font-style: italic;
+        font-size: .8em;
+      }
+    }
   }
 }
 
@@ -484,7 +557,7 @@ border-top: $margin  solid #ffffff ;
 
 article-meta {
   font-family: $font-headings;
-  font-weight: $weight-h-bold;
+  font-weight: $weight-h;
   text-decoration: none;
   line-height: 1em;
   margin-top: 0;
@@ -513,6 +586,7 @@ article-meta {
   // custom header for article display
   
   .site-title {
+    font-family: $font-logo;
     .first-letter {
       font-size: 6rem;
       display: block;
@@ -529,7 +603,7 @@ article-meta {
   
 }
 
-
+.single-post .entry-header,
 .page-template-default .entry-header
  {
    overflow: hidden;
@@ -568,7 +642,7 @@ article-meta {
 
   .entry-excerpt {
     font-family: $font-headings;
-    font-weight: $weight-headings;
+    font-weight: $weight-h;
     font-size: 1.8rem;
   }
   

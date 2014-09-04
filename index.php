@@ -37,15 +37,16 @@ if(isset($parent_id)) {
     $issue_array[$issue_numbers[$cat]] = $cat;
   }
 
-  // get last key in issue array, this is most recent issue
+  // get last key in issue array, this is most recent issue 
+  // (this is by issue number not by date)
   $last_key = key( array_slice( $issue_array, -1, 1, TRUE ) );
 
   //
    $cat = $issue_array[$last_key];
  
    $cat_object = get_the_category_by_ID( $cat );
-
-  query_posts('cat='.$cat);
+   
+   query_posts('cat='.$cat);
     
           // CREATE ISSUE HEADER 
           
@@ -114,5 +115,4 @@ else {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

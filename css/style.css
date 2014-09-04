@@ -21,6 +21,7 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 @import url(http://fonts.googleapis.com/css?family=Cabin:400,600;);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
 /** == == == == == == == == == == 
     SASS VARS
@@ -158,36 +159,38 @@ a img {
 /** == == == == == == == == == == 
     TYPOGRAPHY
 == == == == == == == == == == **/
-/* line 82, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 body {
   font-family: "Lora", serif;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.8em;
 }
-/* line 87, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 body p {
   margin: 10px 0;
 }
 
-/* line 93, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 h1 {
-  font-family: "Cabin", sans-serif;
-  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
   font-size: 1.5rem;
+  line-height: 1.2em;
 }
 
 /* basic links */
-/* line 102, ../scss/style.scss */
+/* line 109, ../scss/style.scss */
 a, a:visited, a:link {
   color: #404040;
   text-decoration: underline;
 }
-/* line 106, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 a:hover, a:visited:hover, a:link:hover {
   color: #8c8c8c;
 }
 
-/* line 112, ../scss/style.scss */
+/* line 119, ../scss/style.scss */
 .image-credit {
   font-size: .9em;
   font-style: italic;
@@ -197,19 +200,21 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     HEADER & BRANDING
 == == == == == == == == == == **/
-/* line 121, ../scss/style.scss */
+/* line 128, ../scss/style.scss */
 .site-branding {
   background-color: #2bcbf9;
 }
 
-/* line 126, ../scss/style.scss */
+/* line 133, ../scss/style.scss */
 .main-navigation a:hover,
 .site-branding a:hover {
   color: inherit;
 }
 
-/* line 130, ../scss/style.scss */
+/* line 137, ../scss/style.scss */
 .site-title {
+  font-family: "Cabin", sans-serif;
+  font-weight: 600;
   font-size: 6rem;
   text-transform: uppercase;
   line-height: 1em;
@@ -217,21 +222,21 @@ a:hover, a:visited:hover, a:link:hover {
   letter-spacing: .1em;
   padding: 20px 20px 0 20px;
 }
-/* line 131, ../scss/style.scss */
+/* line 139, ../scss/style.scss */
 .site-title .first-letter {
   font-size: 9rem;
   font-weight: 400;
 }
-/* line 140, ../scss/style.scss */
+/* line 149, ../scss/style.scss */
 .site-title a {
   text-decoration: none;
 }
 
-/* line 146, ../scss/style.scss */
+/* line 155, ../scss/style.scss */
 .site-description {
   color: white;
-  font-family: "Cabin", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   text-transform: lowercase;
   font-size: 2rem;
   line-height: .8em;
@@ -241,9 +246,9 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     HEADER MENU
 == == == == == == == == == == **/
-/* line 160, ../scss/style.scss */
+/* line 169, ../scss/style.scss */
 .main-navigation {
-  font-family: "Cabin", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -251,28 +256,28 @@ a:hover, a:visited:hover, a:link:hover {
   margin: 4px 0;
   text-align: center;
 }
-/* line 169, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 .main-navigation a {
   text-decoration: none;
   padding: 10px;
 }
 
-/* line 177, ../scss/style.scss */
+/* line 186, ../scss/style.scss */
 .method-navigation .menu-item {
   background: #dddddd;
 }
-/* line 179, ../scss/style.scss */
+/* line 188, ../scss/style.scss */
 .method-navigation .menu-item:hover {
   background: #e7e7e7;
 }
 
-/* line 185, ../scss/style.scss */
+/* line 194, ../scss/style.scss */
 .main-navigation .current-menu-item,
 .main-navigation .current-menu-item:hover {
   background: #2bcbf9;
 }
 
-/* line 194, ../scss/style.scss */
+/* line 203, ../scss/style.scss */
 .menu-toggle {
   border: none;
   border-color: inherit;
@@ -290,12 +295,12 @@ a:hover, a:visited:hover, a:link:hover {
   padding: 10px;
   text-shadow: none;
 }
-/* line 210, ../scss/style.scss */
+/* line 219, ../scss/style.scss */
 .menu-toggle:hover {
   border-color: inherit;
   box-shadow: none;
 }
-/* line 215, ../scss/style.scss */
+/* line 224, ../scss/style.scss */
 .menu-toggle:focus {
   border-color: inherit;
   box-shadow: none;
@@ -304,28 +309,28 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     ISSUE LISTING
 == == == == == == == == == == **/
-/* line 226, ../scss/style.scss */
+/* line 235, ../scss/style.scss */
 #issue-listing h1 {
   text-transform: uppercase;
   font-size: 2.5rem;
 }
-/* line 230, ../scss/style.scss */
+/* line 239, ../scss/style.scss */
 #issue-listing .issue-number {
   clear: both;
   margin-top: 20px;
 }
-/* line 234, ../scss/style.scss */
+/* line 243, ../scss/style.scss */
 #issue-listing .issue-name {
   position: absolute;
   display: block;
   width: 100%;
 }
-/* line 238, ../scss/style.scss */
+/* line 247, ../scss/style.scss */
 #issue-listing .issue-name a {
   color: #404040;
   text-decoration: none;
 }
-/* line 242, ../scss/style.scss */
+/* line 251, ../scss/style.scss */
 #issue-listing .issue-name h1 {
   display: block;
   position: relative;
@@ -337,15 +342,15 @@ a:hover, a:visited:hover, a:link:hover {
   width: 100%;
   z-index: 1000;
 }
-/* line 254, ../scss/style.scss */
+/* line 263, ../scss/style.scss */
 #issue-listing .issue-image {
   overflow: hidden;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 258, ../scss/style.scss */
+/* line 267, ../scss/style.scss */
 #issue-listing .issue-image img {
-  opacity: .3;
+  opacity: .5;
   max-width: none;
   height: 200px;
 }
@@ -353,38 +358,37 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     ISSUE PAGES
 == == == == == == == == == == **/
-/* line 270, ../scss/style.scss */
+/* line 279, ../scss/style.scss */
 .issue-image {
   overflow: hidden;
   height: 200px;
 }
-/* line 273, ../scss/style.scss */
+/* line 282, ../scss/style.scss */
 .issue-image img {
-  opacity: .5;
   max-width: none;
   height: 200px;
 }
 
-/* line 285, ../scss/style.scss */
+/* line 294, ../scss/style.scss */
 #issue-headers {
   margin-top: 10px;
 }
-/* line 290, ../scss/style.scss */
+/* line 299, ../scss/style.scss */
 #issue-headers h1 {
   font-size: 2rem;
   text-transform: uppercase;
   text-align: right;
 }
-/* line 296, ../scss/style.scss */
+/* line 305, ../scss/style.scss */
 #issue-headers h1.issue-title {
   color: #737373;
 }
 
-/* line 303, ../scss/style.scss */
+/* line 312, ../scss/style.scss */
 #issue-description {
   margin-top: 10px;
 }
-/* line 306, ../scss/style.scss */
+/* line 315, ../scss/style.scss */
 #issue-description p {
   margin: 0;
 }
@@ -392,21 +396,21 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     LIBRARY PAGE
 == == == == == == == == == == **/
-/* line 323, ../scss/style.scss */
+/* line 332, ../scss/style.scss */
 .method_library .entry-content h1 {
   font-size: 1.5em;
   text-transform: uppercase;
 }
-/* line 332, ../scss/style.scss */
+/* line 341, ../scss/style.scss */
 .method_library .entry-content li {
   margin-top: 40px;
 }
-/* line 338, ../scss/style.scss */
+/* line 347, ../scss/style.scss */
 .method_library .entry-content li li {
   /* author name */
   margin-top: 10px;
 }
-/* line 342, ../scss/style.scss */
+/* line 351, ../scss/style.scss */
 .method_library .entry-content li li a {
   /* Book link */
   font-style: italic;
@@ -415,7 +419,7 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     SOCIAL MENU
 == == == == == == == == == == **/
-/* line 358, ../scss/style.scss */
+/* line 367, ../scss/style.scss */
 #social-menu {
   float: right;
   position: relative;
@@ -423,7 +427,7 @@ a:hover, a:visited:hover, a:link:hover {
   height: 0px;
 }
 
-/* line 366, ../scss/style.scss */
+/* line 375, ../scss/style.scss */
 ul.method-social {
   padding: 0;
   list-style: none;
@@ -431,120 +435,120 @@ ul.method-social {
   margin-right: 12px;
   color: transparent;
 }
-/* line 373, ../scss/style.scss */
+/* line 382, ../scss/style.scss */
 ul.method-social li {
   display: inline;
 }
-/* line 377, ../scss/style.scss */
+/* line 386, ../scss/style.scss */
 ul.method-social li a {
   padding-left: 8px;
   padding-right: 8px;
   line-height: 1;
   text-decoration: none;
 }
-/* line 384, ../scss/style.scss */
+/* line 393, ../scss/style.scss */
 ul.method-social li:hover {
   background: none;
 }
-/* line 385, ../scss/style.scss */
+/* line 394, ../scss/style.scss */
 ul.method-social a span {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
-/* line 387, ../scss/style.scss */
+/* line 396, ../scss/style.scss */
 ul.method-social li a::before {
   color: white;
   font: normal 20px/40px 'Genericons';
   content: '\f408';
 }
-/* line 388, ../scss/style.scss */
+/* line 397, ../scss/style.scss */
 ul.method-social li a:hover::before {
   color: white;
 }
-/* line 390, ../scss/style.scss */
+/* line 399, ../scss/style.scss */
 ul.method-social li a[href*="codepen.io"]::before {
   content: '\f216';
 }
-/* line 391, ../scss/style.scss */
+/* line 400, ../scss/style.scss */
 ul.method-social li a[href*="digg.com"]::before {
   content: '\f221';
 }
-/* line 392, ../scss/style.scss */
+/* line 401, ../scss/style.scss */
 ul.method-social li a[href*="dribbble.com"]::before {
   content: '\f201';
 }
-/* line 393, ../scss/style.scss */
+/* line 402, ../scss/style.scss */
 ul.method-social li a[href*="facebook.com"]::before {
   content: '\f203';
 }
-/* line 394, ../scss/style.scss */
+/* line 403, ../scss/style.scss */
 ul.method-social li a[href*="flickr.com"]::before {
   content: '\f211';
 }
-/* line 395, ../scss/style.scss */
+/* line 404, ../scss/style.scss */
 ul.method-social li a[href*="plus.google.com"]::before {
   content: '\f206';
 }
-/* line 396, ../scss/style.scss */
+/* line 405, ../scss/style.scss */
 ul.method-social li a[href*="github.com"]::before {
   content: '\f200';
 }
-/* line 397, ../scss/style.scss */
+/* line 406, ../scss/style.scss */
 ul.method-social li a[href*="instagram.com"]::before {
   content: '\f215';
 }
-/* line 398, ../scss/style.scss */
+/* line 407, ../scss/style.scss */
 ul.method-social li a[href*="linkedin.com"]::before {
   content: '\f208';
 }
-/* line 399, ../scss/style.scss */
+/* line 408, ../scss/style.scss */
 ul.method-social li a[href*="pinterest.com"]::before {
   content: '\f210';
 }
-/* line 400, ../scss/style.scss */
+/* line 409, ../scss/style.scss */
 ul.method-social li a[href*="polldaddy.com"]::before {
   content: '\f217';
 }
-/* line 401, ../scss/style.scss */
+/* line 410, ../scss/style.scss */
 ul.method-social li a[href*="getpocket.com"]::before {
   content: '\f224';
 }
-/* line 402, ../scss/style.scss */
+/* line 411, ../scss/style.scss */
 ul.method-social li a[href*="reddit.com"]::before {
   content: '\f222';
 }
-/* line 404, ../scss/style.scss */
+/* line 413, ../scss/style.scss */
 ul.method-social li a[href*="skype.com"]::before,
 ul.method-social li a[href*="skype:"]::before {
   content: '\f220';
 }
-/* line 405, ../scss/style.scss */
+/* line 414, ../scss/style.scss */
 ul.method-social li a[href*="stumbleupon.com"]::before {
   content: '\f223';
 }
-/* line 406, ../scss/style.scss */
+/* line 415, ../scss/style.scss */
 ul.method-social li a[href*="tumblr.com"]::before {
   content: '\f214';
 }
-/* line 407, ../scss/style.scss */
+/* line 416, ../scss/style.scss */
 ul.method-social li a[href*="twitter.com"]::before {
   content: '\f202';
 }
-/* line 408, ../scss/style.scss */
+/* line 417, ../scss/style.scss */
 ul.method-social li a[href*="vimeo.com"]::before {
   content: '\f212';
 }
-/* line 410, ../scss/style.scss */
+/* line 419, ../scss/style.scss */
 ul.method-social li a[href*="wordpress.org"]::before,
 ul.method-social li a[href*="wordpress.com"]::before {
   content: '\f205';
 }
-/* line 411, ../scss/style.scss */
+/* line 420, ../scss/style.scss */
 ul.method-social li a[href*="youtube.com"]::before {
   content: '\f213';
 }
-/* line 414, ../scss/style.scss */
+/* line 423, ../scss/style.scss */
 ul.method-social li a[href$="/feed/"]::before,
 ul.method-social li a[href$="/feed"]::before,
 ul.method-social li a[href$="?feed=rss2"]::before {
@@ -552,28 +556,27 @@ ul.method-social li a[href$="?feed=rss2"]::before {
 }
 
 /** == == == == == == == == == == 
-    FOOTER 
+    FOOTER
 == == == == == == == == == == **/
-/* line 421, ../scss/style.scss */
+/* line 431, ../scss/style.scss */
 .site-footer {
   margin-top: 20px;
-  opacity: .9;
   background: url("../images/footer.png") left center #555555;
   margin-bottom: 10px;
-  font-family: "Cabin", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   padding: 10px;
 }
-/* line 429, ../scss/style.scss */
+/* line 439, ../scss/style.scss */
 .site-footer a {
   color: white;
   text-decoration: none;
 }
-/* line 436, ../scss/style.scss */
+/* line 446, ../scss/style.scss */
 .site-footer ul {
   margin-bottom: 20px;
 }
-/* line 439, ../scss/style.scss */
+/* line 449, ../scss/style.scss */
 .site-footer .credits {
   float: left;
   line-height: 5rem;
@@ -583,37 +586,99 @@ ul.method-social li a[href$="?feed=rss2"]::before {
   font-size: 1.25rem;
   vertical-align: text-bottom;
 }
-/* line 448, ../scss/style.scss */
-.site-footer img {
+/* line 458, ../scss/style.scss */
+.site-footer #license img {
   float: right;
   height: 3rem;
+}
+
+/* line 465, ../scss/style.scss */
+.site-footer-single {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  padding: 0 0 0 0;
+  background: #dddddd;
+}
+/* line 473, ../scss/style.scss */
+.site-footer-single .credits {
+  padding: 0 0 10px 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  color: white;
+  line-height: 1em;
+  text-align: bottom;
+}
+/* line 482, ../scss/style.scss */
+.site-footer-single #license img {
+  padding-right: 10px;
+  float: right;
+  height: 3rem;
+  margin-top: -4rem;
+}
+/* line 488, ../scss/style.scss */
+.site-footer-single .issue-image {
+  overflow: hidden;
+  height: 200px;
+}
+/* line 493, ../scss/style.scss */
+.site-footer-single .issue-image img {
+  opacity: .8;
+}
+/* line 498, ../scss/style.scss */
+.site-footer-single #footer-issue-title h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  padding-left: 10px;
+  padding-top: 0;
+}
+/* line 507, ../scss/style.scss */
+.site-footer-single #footer-article-listing {
+  padding: 10px;
+  font-family: "Lora", serif;
+}
+/* line 510, ../scss/style.scss */
+.site-footer-single #footer-article-listing p {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-weight: .9em;
+}
+/* line 516, ../scss/style.scss */
+.site-footer-single #footer-article-listing ul {
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+/* line 519, ../scss/style.scss */
+.site-footer-single #footer-article-listing ul .author {
+  font-style: italic;
+  font-size: .8em;
 }
 
 /** == == == == == == == == == == 
     MAIN PAGE LAYOUTS
 == == == == == == == == == == **/
-/* line 462, ../scss/style.scss */
+/* line 535, ../scss/style.scss */
 .row {
   overflow: hidden;
 }
 
-/* line 465, ../scss/style.scss */
+/* line 538, ../scss/style.scss */
 .row article {
   margin-top: 20px;
   padding-bottom: 99999px;
   margin-bottom: -99999px;
   border-top: 10px solid white;
 }
-/* line 478, ../scss/style.scss */
+/* line 551, ../scss/style.scss */
 .row article.tag-featured {
   border-top: 10px solid #2bcbf9;
   background: #e3f8fe;
 }
 
-/* line 485, ../scss/style.scss */
+/* line 558, ../scss/style.scss */
 article-meta, .entry-title a, .entry-meta a {
-  font-family: "Cabin", sans-serif;
-  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   text-decoration: none;
   line-height: 1em;
   margin-top: 0;
@@ -621,16 +686,16 @@ article-meta, .entry-title a, .entry-meta a {
   font-size: 2rem;
 }
 
-/* line 499, ../scss/style.scss */
+/* line 572, ../scss/style.scss */
 .entry-meta a {
-  font-family: "Cabin", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-style: italic;
   font-size: 1.4rem;
   text-decoration: none;
 }
 
-/* line 504, ../scss/style.scss */
+/* line 577, ../scss/style.scss */
 .entry-content {
   margin-top: 10px;
 }
@@ -638,60 +703,63 @@ article-meta, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
-/* line 515, ../scss/style.scss */
+/* line 588, ../scss/style.scss */
 .single .site-title {
+  font-family: "Cabin", sans-serif;
   padding: 20px;
 }
-/* line 516, ../scss/style.scss */
+/* line 590, ../scss/style.scss */
 .single .site-title .first-letter {
   font-size: 6rem;
   display: block;
 }
-/* line 520, ../scss/style.scss */
+/* line 594, ../scss/style.scss */
 .single .site-title .remaining-letters {
   display: none;
 }
-/* line 526, ../scss/style.scss */
+/* line 600, ../scss/style.scss */
 .single .site-description {
   display: none;
 }
 
-/* line 534, ../scss/style.scss */
+/* line 608, ../scss/style.scss */
+.single-post .entry-header,
 .page-template-default .entry-header {
   overflow: hidden;
 }
-/* line 537, ../scss/style.scss */
+/* line 611, ../scss/style.scss */
+.single-post .entry-header img,
 .page-template-default .entry-header img {
   max-width: none;
   height: 200px;
 }
 
-/* line 549, ../scss/style.scss */
+/* line 623, ../scss/style.scss */
 .single .entry-header, .page .entry-header {
   text-align: center;
 }
-/* line 552, ../scss/style.scss */
+/* line 626, ../scss/style.scss */
 .single .entry-header a, .page .entry-header a {
-  font-family: "Cabin", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-style: italic;
   font-size: 1.4rem;
   text-decoration: none;
   font-size: 1.8rem;
 }
-/* line 559, ../scss/style.scss */
+/* line 633, ../scss/style.scss */
 .single .entry-content, .page .entry-content {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 565, ../scss/style.scss */
+/* line 639, ../scss/style.scss */
 .single .entry-title, .page .entry-title {
   font-size: 3.5rem;
 }
-/* line 569, ../scss/style.scss */
+/* line 643, ../scss/style.scss */
 .single .entry-excerpt, .page .entry-excerpt {
-  font-family: "Cabin", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.8rem;
 }
@@ -900,6 +968,7 @@ body {
   #issue-headers,
   .issue-image,
   .row article,
+  .single-post article,
   article.type-page,
   footer,
   .site-branding {
@@ -911,40 +980,42 @@ body {
   }
 
   /* specific overrides */
-  /* line 237, ../scss/_respond.scss */
+  /* line 241, ../scss/_respond.scss */
+  .single-post article,
+  article.type-page,
   .page-header, .issue-image {
     margin-top: 0;
   }
 
-  /* line 242, ../scss/_respond.scss */
+  /* line 246, ../scss/_respond.scss */
   .site-title {
     font-size: 5rem;
   }
-  /* line 244, ../scss/_respond.scss */
+  /* line 248, ../scss/_respond.scss */
   .site-title .first-letter {
     font-size: 7.5rem;
   }
 
-  /* line 249, ../scss/_respond.scss */
+  /* line 253, ../scss/_respond.scss */
   .site-description {
     padding-bottom: 20px;
     font-size: 1.8rem;
   }
 
-  /* line 256, ../scss/_respond.scss */
+  /* line 260, ../scss/_respond.scss */
   #menu-menu {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 262, ../scss/_respond.scss */
+  /* line 266, ../scss/_respond.scss */
   .main-navigation {
     background: #dddddd;
     width: 100%;
   }
 
-  /* line 268, ../scss/_respond.scss */
+  /* line 272, ../scss/_respond.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -952,43 +1023,43 @@ body {
     text-align: left;
   }
 
-  /* line 274, ../scss/_respond.scss */
+  /* line 278, ../scss/_respond.scss */
   .menu-toggle {
     font-size: 3rem;
     line-height: 3rem;
     padding: 5px 10px;
   }
 
-  /* line 280, ../scss/_respond.scss */
+  /* line 284, ../scss/_respond.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 286, ../scss/_respond.scss */
+  /* line 290, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -96px;
   }
 
-  /* line 293, ../scss/_respond.scss */
+  /* line 297, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0;
   }
-  /* line 296, ../scss/_respond.scss */
+  /* line 300, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 301, ../scss/_respond.scss */
+  /* line 305, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(5n+6) {
     clear: none;
   }
-  /* line 304, ../scss/_respond.scss */
+  /* line 308, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(4n+5) {
     clear: none;
   }
-  /* line 307, ../scss/_respond.scss */
+  /* line 311, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(3n+4) {
     clear: both;
   }
@@ -997,17 +1068,17 @@ body {
 ================================================== */
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 325, ../scss/_respond.scss */
+  /* line 329, ../scss/_respond.scss */
   body {
     width: 480px;
   }
 
   /* keep everything as above, but never let the body get wider than 480px */
-  /* line 331, ../scss/_respond.scss */
+  /* line 335, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0 -10px;
   }
-  /* line 334, ../scss/_respond.scss */
+  /* line 338, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 146.66667px;
     margin-left: 10px;
@@ -1017,7 +1088,7 @@ body {
 /* #Clearing
 ================================================== */
 /* Self Clearing Goodness */
-/* line 348, ../scss/_respond.scss */
+/* line 352, ../scss/_respond.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -1028,7 +1099,7 @@ body {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 355, ../scss/_respond.scss */
+/* line 359, ../scss/_respond.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -1041,20 +1112,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 363, ../scss/_respond.scss */
+/* line 367, ../scss/_respond.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 366, ../scss/_respond.scss */
+/* line 370, ../scss/_respond.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 370, ../scss/_respond.scss */
+/* line 374, ../scss/_respond.scss */
 .clear {
   clear: both;
   display: block;

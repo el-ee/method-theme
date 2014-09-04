@@ -227,13 +227,17 @@ collapsed-column {
 .issue-image,
 .row article,
   .row article,
+  .single-post article,
   article.type-page,
   footer,
   .site-branding {
     @extend collapsed-column;
   }
   
+  
   /* specific overrides */  
+  .single-post article,
+  article.type-page,
     .page-header, .issue-image {
       margin-top: 0;
     }
