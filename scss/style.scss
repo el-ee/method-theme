@@ -96,6 +96,8 @@ body {
   
 }
 
+
+
 h1 {
 	font-family: $font-headings;
 	font-weight: $weight-h-bold;
@@ -308,10 +310,18 @@ h1 {
 }
 
 
+#issue-description, 
+.archive .entry-content p,
+.home .entry-content p {
+  font-size: .9em;
+  line-height: 1.5em;
+  margin-top: 0;
+}
+
 
 #issue-description {
   margin-top: $margin;
-  
+
   p {
     margin: 0;
   }
@@ -435,6 +445,7 @@ ul.method-social {
   font-family: $font-headings;
   font-weight: $weight-h;
   padding: $margin;
+  font-size: .8em;
   //opacity: .9;
   a {
     color: $color-text-light;
@@ -572,7 +583,10 @@ article-meta {
 .entry-meta a {
   @extend article-meta;
   @include author-text;
+  margin-top: $margin;
 }
+
+
 
 .entry-content {
   margin-top: $margin;

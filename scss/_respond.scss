@@ -15,8 +15,8 @@ TODO: http://webdesignetc.co/faking-css-nth-child-support-in-ie8/
 
 
 
-$first-break-width: 959px;
-$collapse-width: 768px; 
+$first-break-width: 961px;
+$collapse-width: 761px; 
 
 $number-menu-items: 5;
 
@@ -46,13 +46,13 @@ column-third {
 
 column-book {
   @extend column;
-  width: (960px - (5 * 2 * $margin)) / 5;
+  width: ($first-break-width - (5 * 2 * $margin)) / 5;
 }
 
 /** SPECIFIC ELEMENTS **/
 
 body {
-  position: relative; width: 960px; margin: 0 auto; padding: 0;  
+  position: relative; width: $first-break-width; margin: 0 auto; padding: 0;  
 }
 
 
@@ -103,7 +103,7 @@ article.type-page ,
   
   .method-navigation li {
     margin-left: $margin-thin;
-    width: ((960px) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
+    width: (($first-break-width) - (2 * $margin) - (($number-menu-items - 1) * $margin-thin * 2)) / $number-menu-items;
     margin-left: $margin-thin;
     margin-right: $margin-thin;
     display: inline;
@@ -156,30 +156,30 @@ article.type-page ,
 /* FIRST BREAK 
 ================================================== */
 
-@media only screen and (min-width: $collapse-width) and (max-width: $first-break-width) {
+@media only screen and (min-width: $collapse-width) and (max-width: $first-break-width - 1) {
 
-  body             { width: 768px; }
+  body             { width: $collapse-width; }
 
-  #issue-listing  { width: 748px; }
+  #issue-listing  { width: $collapse-width; }
     
   #issue-headers,  
-  .row article     { width: 236px; }
+  .row article     { width: ($collapse-width - (3 * 2 * $margin)) / 3 }
   
-  #issue-description { width: 236px * 2; }
+  #issue-description { width: ($collapse-width - (3 * 2 * $margin)) / 3 * 2; }
   
   .main-navigation  .method-navigation li {
-  width: ((768px) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
+  width: (($collapse-width) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
   }
   
    .page-template-default .entry-header img,
   .issue-image img {
-    margin-left: -(960 - $first-break-width) / 2;
+    margin-left: 0;
   }
   
   .method_library {
     .entry-content {  
        li { 
-         width: (768px - (4 * 2 * $margin)) / 4;
+         width: ($collapse-width - (4 * 2 * $margin)) / 4;
        }
        li:nth-child(5n+6) {
             clear: none;
@@ -201,12 +201,13 @@ article.type-page ,
 /*  #Mobile (Portrait)
 ================================================== */
 
-/* Note: Design for a width of 320px */
 
 
 @media screen and (max-width: $collapse-width - 1) { 
   
-  body { width: 100%; }
+  body { width: auto;
+  margin-left: $margin;
+margin-right: $margin; }
   
   
 collapsed-column {
@@ -288,7 +289,7 @@ collapsed-column {
     
     .page-template-default .entry-header img,
     .issue-image img {
-      margin-left: -(960 - $collapse-width) / 2;
+      margin-left: -($first-break-width - $collapse-width) / 2;
     }
 
 
@@ -326,16 +327,17 @@ collapsed-column {
     /* Note: Design for a width of 480px */
 
     @media only screen and (min-width: 480px) and (max-width: $collapse-width - 1) {
-      body { width: 480px;}
-      
+      body { width: 480px;
+        margin: 0 auto;}
+
       /* keep everything as above, but never let the body get wider than 480px */
 
       .method_library {
-        .entry-content {  
+        .entry-content {
           ul {
             margin: 0 -10px;
           }
-           li { 
+           li {
              width: (480px - (2 * 2 * $margin)) / 3;
              margin-left: $margin;
              margin-right: $margin;
