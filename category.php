@@ -29,49 +29,24 @@ get_header(); ?>
         
         // FOR ISSUES CATEGORY, DO SOMETHING SPECIAL
         if($this_category->cat_name == "Issues" || $this_category->cat_name == "issues" ) {
-          $hide_posts = true;
+            $hide_posts = true;
           
-          // get child categories; for each:
+            // get child categories; for each:
             // display header image for that child category
             // display child category name 
             // display description of child category
             printf('<div id="issue-listing">');
         
-          $child_categories = get_categories('child_of='.$cat); 
+            $child_categories = get_categories('child_of='.$cat); 
        
-          foreach ($child_categories as $child_category) {
+            foreach ($child_categories as $child_category) {
+              
+              print_issue_header($child_category);
             
-            $child_id = $child_category->term_id;
-            $child_name = $child_category->name;
-            $child_description = $child_category->category_description;
-          
-            $issue_dates = get_option('issue_dates');
-            $child_date = $issue_dates[$child_id];
-          
-            $issue_numbers = get_option('issue_numbers');
-            $child_number = $issue_numbers[$child_id];
-            
-            $category_link = get_category_link( $child_id );
-            $category_link_html = '<a href="'.esc_url( $category_link ).'"title="'.$child_name.'">';
-          
-            // display child category issue number and date
-            printf('<div class="issue-number"><h1>Issue %s: %s</h1></div>', $child_number, $child_date);
-
-            // display category header image
-            $image_id = get_option( '_wpfifc_taxonomy_term_'.$child_id.'_thumbnail_id_', 0 );
-            $image_url = wp_get_attachment_image_src($image_id, 'method-header');
-            printf( '<div class="issue-image">%s<img src="%s"></img></a></div>', $category_link_html, $image_url[0]);
-            
-            // display child category name
-            printf('<div class="issue-name">%s<h1>%s</h1></a></div>', $category_link_html, $child_name);
-            
-            // display description
-            printf('<div class="issue-description"><p>%s</p></div>', $child_description);
-
-            
-          }
-          
+            } // end for each issue loop
+       
           printf('</div> <!-- end of #issue-listing -->');
+        
          
         }
         

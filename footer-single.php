@@ -10,9 +10,12 @@
 
 	</div><!-- #content -->
 <footer id="colophon" class="site-footer-single" role="contentinfo">
+  
+  
         <?php 
         
-        $category_to_list = 0;
+        $category_to_list = NULL;
+        $category_to_list_id = 0;
         $category_to_list_name = '';
         
         $issue_numbers = get_option('issue_numbers');
@@ -25,39 +28,76 @@
        
             $a_parent = get_category($a_parent);   
             if($a_parent->slug == 'issues') {
-               $category_to_list = $a_category->term_id;
-               $category_to_list_name = $a_category->cat_name;
+              $category_to_list = $a_category;
             }
           }
         }
+
+        $category_to_list_id = $category_to_list->term_id;
+        $category_to_list_name = $category_to_list->cat_name;
+
+        $category_link = get_category_link( $category_to_list_id );
+        $category_link_html = '<a href="'.esc_url( $category_link ).'"title="'.$category_to_list_name.'">';
         
-        $image_id = get_option( '_wpfifc_taxonomy_term_'.$category_to_list.'_thumbnail_id_', 0 );
+        printf('<div id="issue-listing">');        
+        
+        // display category header image
+        $image_id = get_option( '_wpfifc_taxonomy_term_'.$category_to_list_id.'_thumbnail_id_', 0 );
         $image_url = wp_get_attachment_image_src($image_id, 'method-header');
-        printf( '<div class="issue-image"><img src="%s"></img></div>', $image_url[0]);
+        printf( '<div class="issue-image">%s<img src="%s"></img></a></div>', $category_link_html, $image_url[0]);
+  
+        // display child category name
+        printf('<div class="issue-name">%s<h1>%s</h1></a></div>', $category_link_html, $category_to_list_name);
+  
+        printf('</div>');
+        
 
     
-        printf('<div id="footer-issue-title"><h1 >Issue %s: %s </h1></div>', $issue_numbers[$category_to_list], $category_to_list_name);
-    
-        printf('<div id="footer-article-listing">');
+        // display other articles in this issue
+        
         printf('<p>Also in this issue:</p>');
-        printf('<ul>');
+        printf('<div class="row">');
         
         /* Create new query to loop other articles in this issue */
       
-        $query2 = new WP_Query( 'cat='.$category_to_list );
+        $query2 = new WP_Query( 'cat='.$category_to_list_id );
+        $num_posts_printed = 0;
 
         // The 2nd Loop
-        while ( $query2->have_posts() ) {
+        while ( $query2->have_posts() && $num_posts_printed < 4) {
         	$query2->next_post();
-        	echo '<li><a href="' . get_permalink($query2->post->ID) . '">' . get_the_title( $query2->post->ID ) . '</a><span class="author"> by ' . get_the_author($query2->post->ID) . '</span></li>';
+        	
+          
+          
+          echo '<li><a href="' . get_permalink($query2->post->ID) . '">' . get_the_title( $query2->post->ID ) . '</a><span class="author"> by ' . get_the_author($query2->post->ID) . '</span></li>';
+        
+          
+          
+          ?>
+          
+          
+         
+         <article>
+         	<header class="entry-header">
+         		<a class="post-thumbnail" href="<?php get_permalink($query2->post->ID); ?>"><span><?php the_post_thumbnail(); ?></span></a>
+             <h1 class="entry-title"><a href="<?php get_permalink( $query2->post->ID )?>"><?php get_the_title( $query2->post->ID )?></a></h1>
+
+         	<div class="entry-content">
+         		<?php the_excerpt(); ?>
+	
+         	</div><!-- .entry-content -->
+
+
+         </article><!-- #post-## -->
+         
+          <?php     
+          $num_posts_printed = $num_posts_printed +1;  
         }
 
-        // Restore original Post Data
         wp_reset_postdata();
      
-
-        printf('</ul></div>');
-       
+        printf('</div>');
+        
  
    
 

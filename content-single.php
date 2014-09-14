@@ -22,6 +22,21 @@
 		<?php the_content(); ?>
 		
 	</div><!-- .entry-content -->
+  
+  <h1>Share this article:</h1>
+  <div id="share-buttons">
+    <ul class="method-social-share">
+      <li>
+        <a href="http://twitter.com"><span class="genericon genericon-facebook"></span></a>
+      </li>
+      <li>
+        <a href="http://twitter.com"><span class="genericon genericon-twitter"></span></a>
+      </li>
+    </ul>
+  </div>
+
+  
+  <h1>Also in this issue:</h1>
 
 	<footer class="entry-footer">
 	</footer><!-- .entry-footer -->
