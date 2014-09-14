@@ -22,7 +22,6 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 
-@import url(http://fonts.googleapis.com/css?family=Cabin:400,600;);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
 @import url(http://fonts.googleapis.com/css?family=Bevan);
@@ -32,7 +31,7 @@ and Blueprint http://www.blueprintcss.org/
     SASS VARS
 == == == == == == == == == == **/
 
-$font-logo: "Cabin", sans-serif;
+$font-logo: "Bevan", sans-serif;
 $font-headings: "Roboto", sans-serif;
 $font-regular: 'Lora', serif;
 
@@ -94,6 +93,13 @@ body {
     margin: $margin 0;
   }
   
+  strong{
+    font-weight: $weight-bold;
+  }
+  em {
+    font-style: italic;
+  }
+  
 }
 
 
@@ -129,7 +135,7 @@ a, a:visited, a:link {
     HEADER & BRANDING
 == == == == == == == == == == **/
 .site-branding {
- background: $color-brand url("../images/header.png"); 
+ background: $color-brand url("../images/header.png") center center; 
 }
 
 .main-navigation a:hover,
@@ -141,14 +147,17 @@ a, a:visited, a:link {
   font-family: $font-logo;
   font-weight: $weight-logo;
   font-size: 6rem;
-	line-height: 1em;
-	text-shadow: -.1em 0 $color-text-light; 
-  letter-spacing: .1em;
+	line-height: .9em;
   a {
+    color: $color-text-light;
     text-decoration: none;
+    &:hover {
+     color: $color-text-light; 
+    }
   }
-  padding: $padding $padding 0 $padding; //TODO: X wants top padding smaller?
+  padding: $margin; //TODO: check with X about this value
   color: $color-text-light;
+  margin-bottom: -4px; // trying to even out margins; this font doesn't fill line
 }
 
 .site-description {
@@ -156,9 +165,9 @@ a, a:visited, a:link {
   font-family: $font-headings;
   font-weight: $weight-h-light;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: .8em;
-  padding: $margin $padding $margin $padding;
+  padding: 0 $margin $margin $margin; //TODO: Check with X about this
 }
 
 /** == == == == == == == == == == 
@@ -232,8 +241,10 @@ a, a:visited, a:link {
 
 #issue-listing {
  h1 {
-   text-transform: uppercase;
-   font-size: 2.5rem;
+   text-transform: none;
+   font-size: 1.8rem;
+   margin-left: $margin;
+   font-weight: $weight-h-light;
  } 
  .issue-number {
    clear: both;
@@ -268,6 +279,9 @@ a, a:visited, a:link {
    max-width: none;
    height: 200px;
     }
+  }
+  .entry-meta {
+    padding-bottom: $margin;
   }
 }
 
@@ -383,7 +397,7 @@ h1 {
 #social-menu {
   float: right;
   position: relative;
-  top: -$padding * 2.5;
+  top: -2.5em;
   height: 0px; // because it takes up space in the header otherwise.
   // TODO: not sure if this is x-browser compatible. needs testing.
 }
@@ -392,7 +406,7 @@ ul.method-social {
   padding: 0;
 	list-style: none;
 	float: right;
-	margin-right: 12px;
+	margin-right: $margin;
 	color: transparent;
   
   li {
@@ -400,8 +414,8 @@ ul.method-social {
   }
 
 	li a {
-		padding-left: 5px; // TODO: does this mess up alignment?
-		padding-right: 5px; // TODO: was 8
+		padding-left: 4px; 
+		padding-right: 4px; 
 		line-height: 1;
     text-decoration: none;
 	}
@@ -409,7 +423,7 @@ ul.method-social {
 	li:hover { background: none; }
 	a span { position: absolute; top: -9999px; left: -9999px; }
 
-	li a::before       { color: $color-text-light; font: normal 20px/40px 'Genericons'; content: '\f408'; }
+	li a::before       { color: $color-text-light; font: normal 20px/46px 'Genericons'; content: '\f408'; }
 	li a:hover::before { color: $color-text-light; }
 
 	li a[href*="codepen.io"]::before      { content: '\f216'; }
@@ -447,8 +461,6 @@ ul.method-social {
 .site-footer { // 940 x 150
   margin-top: $padding;
   background: url('../images/footer.jpg') left center #555; 
-  //TODO: replace footer image in repository
-  //TODO: ask for larger base image?
   margin-bottom: $margin;
   font-family: $font-headings;
   font-weight: $weight-h-light;
@@ -483,11 +495,17 @@ ul.method-social {
   
   font-family: $font-headings;
   font-weight: $weight-h-light;
+  line-height: 60px;
   
+  margin-top: $padding;
   padding: 0 0 0 0;
-  background: $color-brand url('../images/header.png');
+  background: $color-brand url('../images/header.png') center center;
   
   height: 60px;
+  
+  p {
+    margin: 0;
+  }
   
   a {
     margin: $padding;
@@ -496,38 +514,38 @@ ul.method-social {
     font-size: .9em;
     text-transform: uppercase;
     &:hover {
-     color: $color-text; 
+     color: $color-main; 
     }
   }
   
-  #footer-issue-title {
-    h1 {
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      padding-left: $margin;
-      padding-top: 0;
-    }
-    
-  }
+//  #footer-issue-title {
+//    h1 {
+//      text-transform: uppercase;
+//      font-size: 2.5rem;
+//      padding-left: $margin;
+//      padding-top: 0;
+//    }
+//
+//  }
   
-  #footer-article-listing {
-    padding: $margin;
-    font-family: $font-regular;
-    p {
-      padding: 0;
-      margin: 0;
-      font-style: italic;
-      font-weight: .9em;
-    }
-    ul {
-      padding: 0;
-      margin: $margin 0 0 0;
-      .author {
-        font-style: italic;
-        font-size: .8em;
-      }
-    }
-  }
+//  #footer-article-listing {
+//    padding: $margin;
+//    font-family: $font-regular;
+//    p {
+//      padding: 0;
+//      margin: 0;
+//      font-style: italic;
+//      font-weight: .9em;
+//    }
+//    ul {
+//      padding: 0;
+//      margin: $margin 0 0 0;
+//      .author {
+//        font-style: italic;
+//        font-size: .8em;
+//      }
+//    }
+//  }
 }
 
 
@@ -565,47 +583,42 @@ article-meta {
   font-family: $font-headings;
   font-weight: $weight-h-light;
   text-decoration: none;
-  line-height: 1em;
-  margin-top: $margin; // TODO: Was zero. Does this make anything weird?
+  line-height: 1.2em; // long letters like g were running into lines below at 1
+  margin-top: 0; 
   display: block;
   font-size: 1.9rem;
 }
 
-.entry-title a {
+.page-title a, .entry-title a {
   @extend article-meta;
 }
 
 .entry-meta a {
   @extend article-meta;
   @include author-text;
-  margin-top: $margin - 3; // TODO: was just margin, does this look funky?
+  margin-top: $margin-thin * 2; 
   font-size: 1.2rem;
 }
 
 
 
 .entry-content {
-  margin-top: $margin + 5; // TODO: was just margin, does this look funky?
+  margin-top: $margin; 
 }
 
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
 
-.single {
+#primary .single {
   // custom header for article display
   
   .site-title {
     font-family: $font-logo;
-    .first-letter {
-      font-size: 7rem;
-      display: block; // TODO: why was this removed?
-    }
     .remaining-letters {
       display: none;
     }
-    padding: $margin; 
-    // TODO: how's this? was $padding, but X added -20px m-bottom and -6px m-top.     
+
   }
 
   .site-description {
@@ -614,25 +627,23 @@ article-meta {
   
 }
 
-.single-post .entry-header,
+#primary .single-post .entry-header,
 .page-template-default .entry-header
  {
    overflow: hidden;
-   //TODO: x wants -20px bottom margin here. why?
-
+   
    img {
    max-width: none;
    height: 200px;
    }
  }
  
+ 
 // otherwise articles and pages are the same
 
 .single, .page  { 
 
-  
-
-  .entry-header {
+  #primary .entry-header {
     text-align: center;
     
     a { // this is the author link
@@ -642,15 +653,15 @@ article-meta {
   }
 
 
-  .entry-content {
+  #primary .entry-content {
     max-width: 600px;
     margin-left: auto; 
     margin-right: auto;
   }
 
-  .entry-title {
+  .page-title, .entry-title {
     font-size: 3.5rem;
-    margin-top: $padding; // TODO: X wants 15 px here?
+    margin-top: $margin; 
   }
 
   .entry-excerpt {
@@ -666,11 +677,6 @@ article-meta {
     MISC ADDITIONS
 == == == == == == == == == == **/
 
-//TODO: What's this for? Does this margin look ok? X wants 25. What's this overriding?
-.page-title {
-  font-size: 1.5em;
-  margin-top: $padding;
-}
 
 .author-page {
   font-size: 1.5em;

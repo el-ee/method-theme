@@ -26,9 +26,8 @@
       <span class="sep"> | </span>
       <?php printf( __( 'Theme: %1$s by %2$s.', 'method' ), 'method', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?> -->
         
-        <p class="credits">Unless otherwise noted, images from the CDC image library.</p>
+        <p class="credits">Unless otherwise noted, images are in the public domain and sourced from the <a href="http://phil.cdc.gov/phil/home.asp">CDC Public Health image library</a>.</p>
         
-        <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="<?php bloginfo('template_directory');?>/images/by-nc.png" /></a>
         
     </div><!-- .site-info -->
       

@@ -1,6 +1,6 @@
 /*
-Theme Name: Method
-Theme URI: #
+Threme Name: Method
+Threme URI: #
 Author: Ellie Harmon
 Author URI: http://ellieharmon.com
 Description: Custom magazine threme for WordPress.
@@ -20,9 +20,9 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,600;);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Bevan);
 /** == == == == == == == == == == 
     SASS VARS
 == == == == == == == == == == **/
@@ -159,46 +159,38 @@ a img {
 /** == == == == == == == == == == 
     TYPOGRAPHY
 == == == == == == == == == == **/
-/* line 86, ../scss/style.scss */
+/* line 87, ../scss/style-new.scss */
 body {
   font-family: "Lora", serif;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.8em;
 }
-/* line 92, ../scss/style.scss */
+/* line 93, ../scss/style-new.scss */
 body p {
   margin: 10px 0;
 }
-/* line 96, ../scss/style.scss */
-body strong {
-  font-weight: 700;
-}
-/* line 99, ../scss/style.scss */
-body em {
-  font-style: italic;
-}
 
-/* line 107, ../scss/style.scss */
+/* line 101, ../scss/style-new.scss */
 h1 {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.2em;
 }
 
 /* basic links */
-/* line 117, ../scss/style.scss */
+/* line 111, ../scss/style-new.scss */
 a, a:visited, a:link {
   color: #404040;
   text-decoration: underline;
 }
-/* line 121, ../scss/style.scss */
+/* line 115, ../scss/style-new.scss */
 a:hover, a:visited:hover, a:link:hover {
   color: #8c8c8c;
 }
 
-/* line 127, ../scss/style.scss */
+/* line 121, ../scss/style-new.scss */
 .image-credit {
   font-size: .9em;
   font-style: italic;
@@ -208,83 +200,84 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     HEADER & BRANDING
 == == == == == == == == == == **/
-/* line 137, ../scss/style.scss */
+/* line 130, ../scss/style-new.scss */
 .site-branding {
-  background: #2bcbf9 url("../images/header.png") center center;
+  background-color: #2bcbf9;
 }
 
-/* line 142, ../scss/style.scss */
+/* line 135, ../scss/style-new.scss */
 .main-navigation a:hover,
 .site-branding a:hover {
   color: inherit;
 }
 
-/* line 146, ../scss/style.scss */
+/* line 139, ../scss/style-new.scss */
 .site-title {
-  font-family: "Bevan", sans-serif;
+  font-family: "Cabin", sans-serif;
   font-weight: 600;
   font-size: 6rem;
-  line-height: .9em;
-  padding: 10px;
-  color: white;
-  margin-bottom: -4px;
+  text-transform: uppercase;
+  line-height: 1em;
+  text-shadow: -0.1em 0 white;
+  letter-spacing: .1em;
+  padding: 20px 20px 0 20px;
 }
-/* line 151, ../scss/style.scss */
+/* line 141, ../scss/style-new.scss */
+.site-title .first-letter {
+  font-size: 9rem;
+  font-weight: 400;
+}
+/* line 151, ../scss/style-new.scss */
 .site-title a {
-  color: white;
   text-decoration: none;
 }
-/* line 154, ../scss/style.scss */
-.site-title a:hover {
-  color: white;
-}
 
-/* line 163, ../scss/style.scss */
+/* line 157, ../scss/style-new.scss */
 .site-description {
   color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  text-transform: uppercase;
-  font-size: 1.6rem;
+  text-transform: lowercase;
+  font-size: 2rem;
   line-height: .8em;
-  padding: 0 10px 10px 10px;
+  padding: 10px 20px 20px 20px;
 }
 
 /** == == == == == == == == == == 
     HEADER MENU
 == == == == == == == == == == **/
-/* line 177, ../scss/style.scss */
+/* line 171, ../scss/style-new.scss */
 .main-navigation {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1.1rem;
-  line-height: .5rem;
+  line-height: 1rem;
   margin: 4px 0;
   text-align: center;
 }
-/* line 186, ../scss/style.scss */
+/* line 180, ../scss/style-new.scss */
 .main-navigation a {
   text-decoration: none;
   padding: 10px;
 }
 
-/* line 194, ../scss/style.scss */
+/* line 188, ../scss/style-new.scss */
 .method-navigation .menu-item {
   background: #dddddd;
 }
-/* line 196, ../scss/style.scss */
+/* line 190, ../scss/style-new.scss */
 .method-navigation .menu-item:hover {
   background: #e7e7e7;
 }
 
-/* line 202, ../scss/style.scss */
+/* line 196, ../scss/style-new.scss */
 .main-navigation .current-menu-item,
 .main-navigation .current-menu-item:hover {
   background: #2bcbf9;
 }
 
-/* line 211, ../scss/style.scss */
+/* line 205, ../scss/style-new.scss */
 .menu-toggle {
   border: none;
   border-color: inherit;
@@ -302,12 +295,12 @@ a:hover, a:visited:hover, a:link:hover {
   padding: 10px;
   text-shadow: none;
 }
-/* line 227, ../scss/style.scss */
+/* line 221, ../scss/style-new.scss */
 .menu-toggle:hover {
   border-color: inherit;
   box-shadow: none;
 }
-/* line 232, ../scss/style.scss */
+/* line 226, ../scss/style-new.scss */
 .menu-toggle:focus {
   border-color: inherit;
   box-shadow: none;
@@ -316,30 +309,28 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     ISSUE LISTING
 == == == == == == == == == == **/
-/* line 243, ../scss/style.scss */
+/* line 237, ../scss/style-new.scss */
 #issue-listing h1 {
-  text-transform: none;
-  font-size: 1.8rem;
-  margin-left: 10px;
-  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 2.5rem;
 }
-/* line 249, ../scss/style.scss */
+/* line 241, ../scss/style-new.scss */
 #issue-listing .issue-number {
   clear: both;
   margin-top: 20px;
 }
-/* line 253, ../scss/style.scss */
+/* line 245, ../scss/style-new.scss */
 #issue-listing .issue-name {
   position: absolute;
   display: block;
   width: 100%;
 }
-/* line 257, ../scss/style.scss */
+/* line 249, ../scss/style-new.scss */
 #issue-listing .issue-name a {
   color: #404040;
   text-decoration: none;
 }
-/* line 261, ../scss/style.scss */
+/* line 253, ../scss/style-new.scss */
 #issue-listing .issue-name h1 {
   display: block;
   position: relative;
@@ -351,53 +342,49 @@ a:hover, a:visited:hover, a:link:hover {
   width: 100%;
   z-index: 1000;
 }
-/* line 273, ../scss/style.scss */
+/* line 265, ../scss/style-new.scss */
 #issue-listing .issue-image {
   overflow: hidden;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 277, ../scss/style.scss */
+/* line 269, ../scss/style-new.scss */
 #issue-listing .issue-image img {
   opacity: .5;
   max-width: none;
   height: 200px;
 }
-/* line 283, ../scss/style.scss */
-#issue-listing .entry-meta {
-  padding-bottom: 10px;
-}
 
 /** == == == == == == == == == == 
     ISSUE PAGES
 == == == == == == == == == == **/
-/* line 292, ../scss/style.scss */
+/* line 281, ../scss/style-new.scss */
 .issue-image {
   overflow: hidden;
   height: 200px;
 }
-/* line 295, ../scss/style.scss */
+/* line 284, ../scss/style-new.scss */
 .issue-image img {
   max-width: none;
   height: 200px;
 }
 
-/* line 307, ../scss/style.scss */
+/* line 296, ../scss/style-new.scss */
 #issue-headers {
   margin-top: 10px;
 }
-/* line 312, ../scss/style.scss */
+/* line 301, ../scss/style-new.scss */
 #issue-headers h1 {
   font-size: 2rem;
   text-transform: uppercase;
   text-align: right;
 }
-/* line 318, ../scss/style.scss */
+/* line 307, ../scss/style-new.scss */
 #issue-headers h1.issue-title {
   color: #737373;
 }
 
-/* line 326, ../scss/style.scss */
+/* line 315, ../scss/style-new.scss */
 #issue-description,
 .archive .entry-content p,
 .home .entry-content p {
@@ -406,11 +393,11 @@ a:hover, a:visited:hover, a:link:hover {
   margin-top: 0;
 }
 
-/* line 333, ../scss/style.scss */
+/* line 322, ../scss/style-new.scss */
 #issue-description {
   margin-top: 10px;
 }
-/* line 336, ../scss/style.scss */
+/* line 325, ../scss/style-new.scss */
 #issue-description p {
   margin: 0;
 }
@@ -418,199 +405,217 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     LIBRARY PAGE
 == == == == == == == == == == **/
-/* line 353, ../scss/style.scss */
+/* line 342, ../scss/style-new.scss */
 .method_library .entry-content h1 {
   font-size: 1.5em;
   text-transform: uppercase;
 }
-/* line 362, ../scss/style.scss */
+/* line 351, ../scss/style-new.scss */
 .method_library .entry-content li {
   margin-top: 40px;
 }
-/* line 368, ../scss/style.scss */
+/* line 357, ../scss/style-new.scss */
 .method_library .entry-content li li {
   /* author name */
   margin-top: 10px;
 }
-/* line 372, ../scss/style.scss */
+/* line 361, ../scss/style-new.scss */
 .method_library .entry-content li li a {
   /* Book link */
   font-style: italic;
 }
 
 /** == == == == == == == == == == 
-    SHARING BUTTONS
-== == == == == == == == == == **/
-/* line 387, ../scss/style.scss */
-.ssba {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/** == == == == == == == == == == 
     SOCIAL MENU
 == == == == == == == == == == **/
-/* line 397, ../scss/style.scss */
+/* line 377, ../scss/style-new.scss */
 #social-menu {
   float: right;
   position: relative;
-  top: -2.5em;
+  top: -50px;
   height: 0px;
 }
 
-/* line 405, ../scss/style.scss */
+/* line 387, ../scss/style-new.scss */
 ul.method-social {
   padding: 0;
   list-style: none;
   float: right;
-  margin-right: 10px;
+  margin-right: 12px;
   color: transparent;
 }
-/* line 412, ../scss/style.scss */
+/* line 394, ../scss/style-new.scss */
 ul.method-social li {
   display: inline;
 }
-/* line 416, ../scss/style.scss */
+/* line 398, ../scss/style-new.scss */
 ul.method-social li a {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
   line-height: 1;
   text-decoration: none;
 }
-/* line 423, ../scss/style.scss */
+/* line 405, ../scss/style-new.scss */
 ul.method-social li:hover {
   background: none;
 }
-/* line 424, ../scss/style.scss */
+/* line 406, ../scss/style-new.scss */
 ul.method-social a span {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
-/* line 426, ../scss/style.scss */
+/* line 408, ../scss/style-new.scss */
 ul.method-social li a::before {
   color: white;
-  font: normal 20px/46px 'Genericons';
+  font: normal 20px/40px 'Genericons';
   content: '\f408';
 }
-/* line 427, ../scss/style.scss */
+/* line 409, ../scss/style-new.scss */
 ul.method-social li a:hover::before {
   color: white;
 }
-/* line 429, ../scss/style.scss */
+/* line 411, ../scss/style-new.scss */
 ul.method-social li a[href*="codepen.io"]::before {
   content: '\f216';
 }
-/* line 430, ../scss/style.scss */
+/* line 412, ../scss/style-new.scss */
 ul.method-social li a[href*="digg.com"]::before {
   content: '\f221';
 }
-/* line 431, ../scss/style.scss */
+/* line 413, ../scss/style-new.scss */
 ul.method-social li a[href*="dribbble.com"]::before {
   content: '\f201';
 }
-/* line 432, ../scss/style.scss */
+/* line 414, ../scss/style-new.scss */
 ul.method-social li a[href*="facebook.com"]::before {
   content: '\f203';
 }
-/* line 433, ../scss/style.scss */
+/* line 415, ../scss/style-new.scss */
 ul.method-social li a[href*="flickr.com"]::before {
   content: '\f211';
 }
-/* line 434, ../scss/style.scss */
+/* line 416, ../scss/style-new.scss */
 ul.method-social li a[href*="plus.google.com"]::before {
   content: '\f206';
 }
-/* line 435, ../scss/style.scss */
+/* line 417, ../scss/style-new.scss */
 ul.method-social li a[href*="github.com"]::before {
   content: '\f200';
 }
-/* line 436, ../scss/style.scss */
+/* line 418, ../scss/style-new.scss */
 ul.method-social li a[href*="instagram.com"]::before {
   content: '\f215';
 }
-/* line 437, ../scss/style.scss */
+/* line 419, ../scss/style-new.scss */
 ul.method-social li a[href*="linkedin.com"]::before {
   content: '\f208';
 }
-/* line 438, ../scss/style.scss */
+/* line 420, ../scss/style-new.scss */
 ul.method-social li a[href*="pinterest.com"]::before {
   content: '\f210';
 }
-/* line 439, ../scss/style.scss */
+/* line 421, ../scss/style-new.scss */
 ul.method-social li a[href*="polldaddy.com"]::before {
   content: '\f217';
 }
-/* line 440, ../scss/style.scss */
+/* line 422, ../scss/style-new.scss */
 ul.method-social li a[href*="getpocket.com"]::before {
   content: '\f224';
 }
-/* line 441, ../scss/style.scss */
+/* line 423, ../scss/style-new.scss */
 ul.method-social li a[href*="reddit.com"]::before {
   content: '\f222';
 }
-/* line 443, ../scss/style.scss */
+/* line 425, ../scss/style-new.scss */
 ul.method-social li a[href*="skype.com"]::before,
 ul.method-social li a[href*="skype:"]::before {
   content: '\f220';
 }
-/* line 444, ../scss/style.scss */
+/* line 426, ../scss/style-new.scss */
 ul.method-social li a[href*="stumbleupon.com"]::before {
   content: '\f223';
 }
-/* line 445, ../scss/style.scss */
+/* line 427, ../scss/style-new.scss */
 ul.method-social li a[href*="tumblr.com"]::before {
   content: '\f214';
 }
-/* line 446, ../scss/style.scss */
+/* line 428, ../scss/style-new.scss */
 ul.method-social li a[href*="twitter.com"]::before {
   content: '\f202';
 }
-/* line 447, ../scss/style.scss */
+/* line 429, ../scss/style-new.scss */
 ul.method-social li a[href*="vimeo.com"]::before {
   content: '\f212';
 }
-/* line 449, ../scss/style.scss */
+/* line 431, ../scss/style-new.scss */
 ul.method-social li a[href*="wordpress.org"]::before,
 ul.method-social li a[href*="wordpress.com"]::before {
   content: '\f205';
 }
-/* line 450, ../scss/style.scss */
+/* line 432, ../scss/style-new.scss */
 ul.method-social li a[href*="youtube.com"]::before {
   content: '\f213';
 }
-/* line 453, ../scss/style.scss */
+/* line 435, ../scss/style-new.scss */
 ul.method-social li a[href$="/feed/"]::before,
 ul.method-social li a[href$="/feed"]::before,
 ul.method-social li a[href$="?feed=rss2"]::before {
   content: '\f413';
 }
 
+/* line 438, ../scss/style-new.scss */
+div#share-buttons {
+  background: red;
+  text-align: center;
+}
+/* line 443, ../scss/style-new.scss */
+div#share-buttons ul.method-social-share {
+  list-style: none;
+  text-align: center;
+}
+/* line 449, ../scss/style-new.scss */
+div#share-buttons ul.method-social-share li {
+  width: 2em;
+  height: 2em;
+  display: inline;
+}
+/* line 454, ../scss/style-new.scss */
+div#share-buttons ul.method-social-share li a {
+  text-decoration: none;
+  margin: 2px;
+  display: block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: center;
+  border-radius: 50%;
+  background: #dddddd;
+}
+
 /** == == == == == == == == == == 
     FOOTER
 == == == == == == == == == == **/
-/* line 461, ../scss/style.scss */
+/* line 478, ../scss/style-new.scss */
 .site-footer {
   margin-top: 20px;
-  background: url("../images/footer.jpg") left center #555555;
+  background: url("../images/footer.png") left center #555555;
   margin-bottom: 10px;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
+  font-weight: 400;
   padding: 10px;
   font-size: .8em;
-  line-height: 1.2em;
 }
-/* line 472, ../scss/style.scss */
+/* line 487, ../scss/style-new.scss */
 .site-footer a {
   color: white;
   text-decoration: none;
 }
-/* line 479, ../scss/style.scss */
+/* line 494, ../scss/style-new.scss */
 .site-footer ul {
   margin-bottom: 20px;
 }
-/* line 482, ../scss/style.scss */
+/* line 497, ../scss/style-new.scss */
 .site-footer .credits {
   float: left;
   line-height: 5rem;
@@ -620,78 +625,76 @@ ul.method-social li a[href$="?feed=rss2"]::before {
   font-size: 1.25rem;
   vertical-align: text-bottom;
 }
+/* line 506, ../scss/style-new.scss */
+.site-footer #license img {
+  float: right;
+  height: 3rem;
+}
 
-/* line 494, ../scss/style.scss */
+/* line 513, ../scss/style-new.scss */
 .site-footer-single {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  line-height: 60px;
-  margin-top: 20px;
   padding: 0 0 0 0;
-  background: #2bcbf9 url("../images/header.png") center center;
-  height: 60px;
 }
-/* line 506, ../scss/style.scss */
-.site-footer-single p {
+/* line 521, ../scss/style-new.scss */
+.site-footer-single .credits {
+  padding: 0 0 10px 10px;
   margin: 0;
-}
-/* line 510, ../scss/style.scss */
-.site-footer-single a {
-  margin: 20px;
+  font-size: 1.25rem;
   color: white;
-  text-decoration: none;
-  font-size: .9em;
-  text-transform: uppercase;
+  line-height: 1em;
+  text-align: bottom;
 }
-/* line 516, ../scss/style.scss */
-.site-footer-single a:hover {
-  color: #404040;
+/* line 530, ../scss/style-new.scss */
+.site-footer-single #license img {
+  padding-right: 10px;
+  float: right;
+  height: 3rem;
+  margin-top: -4rem;
 }
 
 /** == == == == == == == == == == 
     MAIN PAGE LAYOUTS
 == == == == == == == == == == **/
-/* line 559, ../scss/style.scss */
+/* line 586, ../scss/style-new.scss */
 .row {
   overflow: hidden;
 }
 
-/* line 562, ../scss/style.scss */
+/* line 589, ../scss/style-new.scss */
 .row article {
   margin-top: 20px;
   padding-bottom: 99999px;
   margin-bottom: -99999px;
   border-top: 10px solid white;
 }
-/* line 575, ../scss/style.scss */
+/* line 602, ../scss/style-new.scss */
 .row article.tag-featured {
   border-top: 10px solid #2bcbf9;
   background: #e3f8fe;
 }
 
-/* line 582, ../scss/style.scss */
-article-meta, .page-title a, .entry-title a, .entry-meta a {
+/* line 609, ../scss/style-new.scss */
+article-meta, .entry-title a, .entry-meta a {
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-decoration: none;
-  line-height: 1.2em;
+  line-height: 1em;
   margin-top: 0;
   display: block;
-  font-size: 1.9rem;
+  font-size: 2rem;
 }
 
-/* line 596, ../scss/style.scss */
+/* line 623, ../scss/style-new.scss */
 .entry-meta a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: italic;
   font-size: 1.4rem;
   text-decoration: none;
-  margin-top: 4px;
-  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
-/* line 605, ../scss/style.scss */
+/* line 631, ../scss/style-new.scss */
 .entry-content {
   margin-top: 10px;
 }
@@ -699,33 +702,43 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
-/* line 616, ../scss/style.scss */
-#primary .single .site-title {
-  font-family: "Bevan", sans-serif;
+/* line 642, ../scss/style-new.scss */
+.single .site-title {
+  font-family: "Cabin", sans-serif;
+  padding: 20px;
 }
-/* line 618, ../scss/style.scss */
-#primary .single .site-title .remaining-letters {
+/* line 644, ../scss/style-new.scss */
+.single .site-title .first-letter {
+  font-size: 6rem;
+  display: block;
+}
+/* line 648, ../scss/style-new.scss */
+.single .site-title .remaining-letters {
+  display: none;
+}
+/* line 654, ../scss/style-new.scss */
+.single .site-description {
   display: none;
 }
 
-/* line 632, ../scss/style.scss */
-#primary .single-post .entry-header,
+/* line 662, ../scss/style-new.scss */
+.single-post .entry-header,
 .page-template-default .entry-header {
   overflow: hidden;
 }
-/* line 635, ../scss/style.scss */
-#primary .single-post .entry-header img,
+/* line 665, ../scss/style-new.scss */
+.single-post .entry-header img,
 .page-template-default .entry-header img {
   max-width: none;
   height: 200px;
 }
 
-/* line 646, ../scss/style.scss */
-.single #primary .entry-header, .page #primary .entry-header {
+/* line 677, ../scss/style-new.scss */
+.single .entry-header, .page .entry-header {
   text-align: center;
 }
-/* line 649, ../scss/style.scss */
-.single #primary .entry-header a, .page #primary .entry-header a {
+/* line 680, ../scss/style-new.scss */
+.single .entry-header a, .page .entry-header a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -733,32 +746,21 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   text-decoration: none;
   font-size: 1.8rem;
 }
-/* line 656, ../scss/style.scss */
-.single #primary .entry-content, .page #primary .entry-content {
+/* line 687, ../scss/style-new.scss */
+.single .entry-content, .page .entry-content {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 662, ../scss/style.scss */
-.single .page-title, .single .entry-title, .page .page-title, .page .entry-title {
+/* line 693, ../scss/style-new.scss */
+.single .entry-title, .page .entry-title {
   font-size: 3.5rem;
-  margin-top: 10px;
 }
-/* line 667, ../scss/style.scss */
+/* line 697, ../scss/style-new.scss */
 .single .entry-excerpt, .page .entry-excerpt {
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.8rem;
-}
-
-/** == == == == == == == == == == 
-    MISC ADDITIONS
-== == == == == == == == == == **/
-/* line 681, ../scss/style.scss */
-.author-page {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  font-family: "Roboto", sans-serif;
 }
 
 /** == == == == == == == == == == 
@@ -781,7 +783,7 @@ TODO: http://webdesignetc.co/faking-css-nth-child-support-in-ie8/
 column, column-full, .page-header,
 .issue-box,
 footer,
-#primary .single-post article,
+.single-post article,
 article.type-page,
 .site-branding, column-third, #issue-headers,
 .row article,
@@ -797,7 +799,7 @@ article.type-page,
 column-full, .page-header,
 .issue-box,
 footer,
-#primary .single-post article,
+.single-post article,
 article.type-page,
 .site-branding {
   float: none;
@@ -957,8 +959,7 @@ body {
   }
 
   /* line 213, ../scss/_respond.scss */
-  collapsed-column, #issue-listing h1,
-  .single .entry-content,
+  collapsed-column, .single .entry-content,
   #issue-description,
   .main-navigation .method-navigation li,
   .page-header,
@@ -967,7 +968,7 @@ body {
   #issue-headers,
   .issue-image,
   .row article,
-  #primary .single-post article,
+  .single-post article,
   article.type-page,
   footer,
   .site-branding {
@@ -979,38 +980,42 @@ body {
   }
 
   /* specific overrides */
-  /* line 244, ../scss/_respond.scss */
-  .site-branding,
-  #primary .single-post article,
+  /* line 242, ../scss/_respond.scss */
+  .single-post article,
   article.type-page,
   .page-header, .issue-image {
     margin-top: 0;
   }
 
-  /* line 249, ../scss/_respond.scss */
+  /* line 247, ../scss/_respond.scss */
   .site-title {
     font-size: 5rem;
   }
-
-  /* line 256, ../scss/_respond.scss */
-  .site-description {
-    padding-bottom: 10px;
+  /* line 249, ../scss/_respond.scss */
+  .site-title .first-letter {
+    font-size: 7.5rem;
   }
 
-  /* line 262, ../scss/_respond.scss */
+  /* line 254, ../scss/_respond.scss */
+  .site-description {
+    padding-bottom: 20px;
+    font-size: 1.8rem;
+  }
+
+  /* line 261, ../scss/_respond.scss */
   #menu-menu {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 268, ../scss/_respond.scss */
+  /* line 267, ../scss/_respond.scss */
   .main-navigation {
     background: #dddddd;
     width: 100%;
   }
 
-  /* line 274, ../scss/_respond.scss */
+  /* line 273, ../scss/_respond.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -1018,43 +1023,43 @@ body {
     text-align: left;
   }
 
-  /* line 280, ../scss/_respond.scss */
+  /* line 279, ../scss/_respond.scss */
   .menu-toggle {
     font-size: 3rem;
     line-height: 3rem;
     padding: 5px 10px;
   }
 
-  /* line 286, ../scss/_respond.scss */
+  /* line 285, ../scss/_respond.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 292, ../scss/_respond.scss */
+  /* line 291, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -100px;
   }
 
-  /* line 299, ../scss/_respond.scss */
+  /* line 298, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0;
   }
-  /* line 302, ../scss/_respond.scss */
+  /* line 301, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 307, ../scss/_respond.scss */
+  /* line 306, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(5n+6) {
     clear: none;
   }
-  /* line 310, ../scss/_respond.scss */
+  /* line 309, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(4n+5) {
     clear: none;
   }
-  /* line 313, ../scss/_respond.scss */
+  /* line 312, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(3n+4) {
     clear: both;
   }
@@ -1063,18 +1068,18 @@ body {
 ================================================== */
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 760px) {
-  /* line 331, ../scss/_respond.scss */
+  /* line 330, ../scss/_respond.scss */
   body {
     width: 480px;
     margin: 0 auto;
   }
 
   /* keep everything as above, but never let the body get wider than 480px */
-  /* line 338, ../scss/_respond.scss */
+  /* line 337, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0 -10px;
   }
-  /* line 341, ../scss/_respond.scss */
+  /* line 340, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 146.66667px;
     margin-left: 10px;
@@ -1084,7 +1089,7 @@ body {
 /* #Clearing
 ================================================== */
 /* Self Clearing Goodness */
-/* line 355, ../scss/_respond.scss */
+/* line 354, ../scss/_respond.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -1095,7 +1100,7 @@ body {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 362, ../scss/_respond.scss */
+/* line 361, ../scss/_respond.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -1108,20 +1113,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 370, ../scss/_respond.scss */
+/* line 369, ../scss/_respond.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 373, ../scss/_respond.scss */
+/* line 372, ../scss/_respond.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 377, ../scss/_respond.scss */
+/* line 376, ../scss/_respond.scss */
 .clear {
   clear: both;
   display: block;

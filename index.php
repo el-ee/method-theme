@@ -48,41 +48,41 @@ if(isset($parent_id)) {
    
    query_posts('cat='.$cat);
     
-          // CREATE ISSUE HEADER 
+   // CREATE ISSUE HEADER 
           
-            $image_id = get_option( '_wpfifc_taxonomy_term_'.$cat.'_thumbnail_id_', 0 );
+   $image_id = get_option( '_wpfifc_taxonomy_term_'.$cat.'_thumbnail_id_', 0 );
         
-            $image_url = wp_get_attachment_image_src($image_id, 'method-header');
+   $image_url = wp_get_attachment_image_src($image_id, 'method-header');
         
-            printf( '<div class="issue-image"><img src="%s"></img></div>', $image_url[0]);
+   printf( '<div class="issue-image"><img src="%s"></img></div>', $image_url[0]);
 
-             ?>
+   ?>
 
-<div class="row">
-            <div id="issue-headers">
-    				<h1 class="issue-number">
-    					<?php
-              echo ("Issue ");
-              $issue_numbers = get_option('issue_numbers');
-              echo($issue_numbers[$cat]);
-              ?>
-              </h1>
-                <h1 class="issue-title">
-                <?php     single_cat_title();     ?>
-    				</h1>
-          </div>
-          <div id="issue-description">
+     <div class="row">
+        <div id="issue-headers">
+				<h1 class="issue-number">
+					<?php
+            echo ("Issue ");
+            $issue_numbers = get_option('issue_numbers');
+            echo($issue_numbers[$cat]);
+          ?>
+          </h1>
+            <h1 class="issue-title">
+            <?php     single_cat_title();     ?>
+				  </h1>
+        </div>
+        <div id="issue-description">
 				
-    	<?php
-    		$term_description = term_description();
-    		if ( ! empty( $term_description ) ) :
-    			printf( '<p>%s</p>', $term_description );    
-    		endif;
+    	  <?php
+      		$term_description = term_description();
+      		if ( ! empty( $term_description ) ) :
+      			printf( '<p>%s</p>', $term_description );    
+      		endif;
         ?>
-               </div><!-- #issue-description -->
-             </div><!-- .row -->
+        </div><!-- #issue-description -->
+     </div><!-- .row -->
  
-           </header><!-- .page-header -->
+   </header><!-- .page-header -->
            
 <?php } 
 else {

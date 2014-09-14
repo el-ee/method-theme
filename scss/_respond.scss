@@ -59,7 +59,7 @@ body {
 .page-header,
 .issue-box,
 footer,
-.single-post article,
+#primary .single-post article,
 article.type-page ,
 .site-branding {
   @extend column-full;
@@ -218,6 +218,7 @@ collapsed-column {
   margin: $padding 0 0 0;
 }
 
+#issue-listing h1,
 .single .entry-content,
 #issue-description,
 .main-navigation .method-navigation li,
@@ -228,7 +229,7 @@ collapsed-column {
 .issue-image,
 .row article,
   .row article,
-  .single-post article,
+  #primary .single-post article,
   article.type-page,
   footer,
   .site-branding {
@@ -236,8 +237,9 @@ collapsed-column {
   }
   
   
-  /* specific overrides */  
-  .single-post article,
+  /* specific overrides */ 
+  .site-branding, 
+  #primary .single-post article,
   article.type-page,
     .page-header, .issue-image {
       margin-top: 0;
@@ -246,14 +248,13 @@ collapsed-column {
 
  .site-title {
       font-size: 5rem;
-      .first-letter {
-        font-size: 5rem * 1.5;
-      }
+//      .first-letter {
+//        font-size: 5rem * 1.5;
+//      }
     }
     
     .site-description {
-      padding-bottom: $padding;
-      font-size: 1.8rem;
+      padding-bottom: $margin;
     }
 
    

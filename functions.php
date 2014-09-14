@@ -323,6 +323,48 @@ function method_edit_fields ($tag) {
       return $image_ID;
   }
   
+  function print_recent_articles($issue_category_id, $current_post_id) {
+    //Print three most recent articles from a category
+    // -- Excluding current_article
+    
+    /* Create new query to loop other articles in this issue */
+    $query2 = new WP_Query( 'cat='.$issue_category_id );
+    $num_posts_printed = 0;
+
+    // The 2nd Loop
+    while ( $query2->have_posts() && $num_posts_printed < 3) {
+      $query2->next_post();
+      
+      if ($query2->post->ID != $current_post_id) {
+        
+        
+        ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('', $query2->post->ID); ?>>
+        <?php
+        echo('<header class="entry-header">');
+           
+        echo ('<a class="post-thumbnail" href="' . get_permalink($query2->post->ID) . '">');
+        echo(get_the_post_thumbnail($query2->post->ID, "post-thumbnail"));
+        echo('</a>');
+        
+        echo '<h2 class="entry-title"><a href="' . get_permalink($query2->post->ID) . '">' . get_the_title( $query2->post->ID ) . '</a></h1>';
+        echo '<div class="entry-meta">';
+        echo '<a class="author"> by ' . get_the_author($query2->post->ID) . '</a>';
+        echo('</div>');
+        echo('</header>');
+        echo('</article>');
+        ?>
+        
+       
+     
+        <?php     
+        $num_posts_printed = $num_posts_printed + 1;  
+      }
+    }
+
+    wp_reset_postdata();
+  }
+  
   function print_issue_header($issue_category) {
         
     $child_id = $issue_category->term_id;

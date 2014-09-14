@@ -23,20 +23,47 @@
 		
 	</div><!-- .entry-content -->
   
-  <h1>Share this article:</h1>
-  <div id="share-buttons">
-    <ul class="method-social-share">
-      <li>
-        <a href="http://twitter.com"><span class="genericon genericon-facebook"></span></a>
-      </li>
-      <li>
-        <a href="http://twitter.com"><span class="genericon genericon-twitter"></span></a>
-      </li>
-    </ul>
+  
   </div>
 
-  
-  <h1>Also in this issue:</h1>
+         <?php 
+        
+        $category_to_list = NULL;
+        $category_to_list_id = 0;
+        
+
+        $article_categories = get_the_category();
+        foreach($article_categories as $a_category){
+        
+          $a_parent = $a_category->category_parent;
+          if($a_parent != 0) {
+       
+            $a_parent = get_category($a_parent);   
+            if($a_parent->slug == 'issues') {
+              $category_to_list = $a_category;
+            }
+          }
+        }
+        
+        $category_to_list_id = $category_to_list->term_id;
+        $category_to_list_name = $category_to_list->cat_name;
+
+        $category_link = get_category_link( $category_to_list_id );
+        $category_link_html = '<a href="'.esc_url( $category_link ).'"title="'.$category_to_list_name.'">'.$category_to_list_name.'</a>';
+        
+        printf('<div id="issue-listing">');        
+        
+        // display other articles in this issue
+        
+        printf('<h1 class="also-in">Also in the %s issue:</h1>', $category_link_html );
+        printf('<div class="row">');
+        
+        print_recent_articles($category_to_list_id, get_the_ID());
+     
+        printf('</div>');
+       
+      
+  ?>
 
 	<footer class="entry-footer">
 	</footer><!-- .entry-footer -->
