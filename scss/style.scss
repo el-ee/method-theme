@@ -1,6 +1,6 @@
 /*
-Threme Name: Method
-Threme URI: #
+Theme Name: Method
+Theme URI: #
 Author: Ellie Harmon
 Author URI: http://ellieharmon.com
 Description: Custom magazine threme for WordPress.
@@ -25,7 +25,7 @@ and Blueprint http://www.blueprintcss.org/
 @import url(http://fonts.googleapis.com/css?family=Cabin:400,600;);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-//@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,300italic,600italic);
+@import url(http://fonts.googleapis.com/css?family=Bevan);
 
 
 /** == == == == == == == == == == 
@@ -87,7 +87,7 @@ $margin-thin: $margin/5;
 body {
 	font-family: $font-regular;
 	font-weight: $weight-regular;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8em;
   
   p {
@@ -100,7 +100,7 @@ body {
 
 h1 {
 	font-family: $font-headings;
-	font-weight: $weight-h-bold;
+	font-weight: $weight-h;
 	font-size: 1.5rem;
   line-height: 1.2em;
 }
@@ -124,11 +124,12 @@ a, a:visited, a:link {
   color: $color-text-alt;
 }
 
+
 /** == == == == == == == == == == 
     HEADER & BRANDING
 == == == == == == == == == == **/
 .site-branding {
- background-color: $color-brand; 
+ background: $color-brand url("../images/header.png"); 
 }
 
 .main-navigation a:hover,
@@ -138,30 +139,26 @@ a, a:visited, a:link {
 
 .site-title {
   font-family: $font-logo;
-  .first-letter {
-    font-size: 6rem*1.5;
-    font-weight: $weight-logo-light;
-  }
   font-weight: $weight-logo;
   font-size: 6rem;
-  text-transform: uppercase;
 	line-height: 1em;
 	text-shadow: -.1em 0 $color-text-light; 
   letter-spacing: .1em;
   a {
     text-decoration: none;
   }
-  padding: $padding $padding 0 $padding;
+  padding: $padding $padding 0 $padding; //TODO: X wants top padding smaller?
+  color: $color-text-light;
 }
 
 .site-description {
   color: $color-text-light;
   font-family: $font-headings;
   font-weight: $weight-h-light;
-  text-transform: lowercase;
-  font-size: 2rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
   line-height: .8em;
-  padding: $margin $padding $padding $padding;
+  padding: $margin $padding $margin $padding;
 }
 
 /** == == == == == == == == == == 
@@ -173,7 +170,7 @@ a, a:visited, a:link {
   font-weight: $weight-h;
   text-transform: uppercase;
   font-size: 1.1rem;
-  line-height: 1rem;
+  line-height: .5rem;
   margin: $margin-thin*2 0 ;
   text-align: center;
   
@@ -370,6 +367,15 @@ h1 {
 
 
 /** == == == == == == == == == == 
+    SHARING BUTTONS
+== == == == == == == == == == **/
+
+.ssba {
+  margin-top: $padding;
+  margin-bottom: $padding;
+}
+
+/** == == == == == == == == == == 
     SOCIAL MENU
 == == == == == == == == == == **/
 
@@ -381,8 +387,6 @@ h1 {
   height: 0px; // because it takes up space in the header otherwise.
   // TODO: not sure if this is x-browser compatible. needs testing.
 }
-
-
 
 ul.method-social {
   padding: 0;
@@ -396,8 +400,8 @@ ul.method-social {
   }
 
 	li a {
-		padding-left: 8px;
-		padding-right: 8px;
+		padding-left: 5px; // TODO: does this mess up alignment?
+		padding-right: 5px; // TODO: was 8
 		line-height: 1;
     text-decoration: none;
 	}
@@ -435,41 +439,6 @@ ul.method-social {
 	li a[href$="?feed=rss2"]::before      { content: '\f413'; }
 }
 
-div#share-buttons {
-  background: red;
-
-  text-align: center;
-  
-  ul.method-social-share {
-
-    list-style: none;
-
-    text-align: center;
-  
-    li {
-      width: 2em;
-      height: 2em;
-      display: inline;
-  
-      a {
-
-        text-decoration: none;
-        margin: $margin-thin;
-        display: block;
-        width: 2em;
-        height: 2em;
-        line-height: 2em;
-        vertical-align: center;
-    
-        border-radius: 50%;
-  
-        background: $color-light-fill;
-
-      }
-
-    }
-  }
-}
 
 /** == == == == == == == == == == 
     FOOTER
@@ -477,12 +446,16 @@ div#share-buttons {
 
 .site-footer { // 940 x 150
   margin-top: $padding;
-  background: url('../images/footer.png') left center #555;
+  background: url('../images/footer.jpg') left center #555; 
+  //TODO: replace footer image in repository
+  //TODO: ask for larger base image?
   margin-bottom: $margin;
   font-family: $font-headings;
-  font-weight: $weight-h;
+  font-weight: $weight-h-light;
+  text-transform: uppercase;
   padding: $margin;
   font-size: .8em;
+  line-height: 1.2em;
   //opacity: .9;
   a {
     color: $color-text-light;
@@ -503,76 +476,58 @@ div#share-buttons {
     font-size: 1.25rem;
     vertical-align: text-bottom;
   }
-  #license img {
-    float: right;
-    height: 3rem;
-  }
 }
 
 
 .site-footer-single {
   
-//  font-family: $font-headings;
-//  font-weight: $weight-h;
+  font-family: $font-headings;
+  font-weight: $weight-h-light;
   
   padding: 0 0 0 0;
-//  background: $color-light-fill;
+  background: $color-brand url('../images/header.png');
   
-  .credits {
-    padding: 0 0 $margin $margin;
-    margin: 0;
-    font-size: 1.25rem;
+  height: 60px;
+  
+  a {
+    margin: $padding;
     color: $color-text-light;
-    line-height: 1em;
-    text-align: bottom;
+    text-decoration: none;
+    font-size: .9em;
+    text-transform: uppercase;
+    &:hover {
+     color: $color-text; 
+    }
   }
   
-  #license img {
-    padding-right: $margin;
-    float: right;
-    height: 3rem;
-    margin-top: -4rem;
-  }
-
-
-  //.issue-image {
-//    overflow: hidden;
-//    height: 200px;
-//  }
-
-//  .issue-image img {
-//    opacity: .8;
-//  }
-  
- // #footer-issue-title {
-//    h1 {
-//      text-transform: uppercase;
-//      font-size: 2.5rem;
-//      padding-left: $margin;
-//      padding-top: 0;
-//    }
+  #footer-issue-title {
+    h1 {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      padding-left: $margin;
+      padding-top: 0;
+    }
     
-//  }
+  }
   
-  //#footer-article-listing {
-//    padding: $margin;
-//    font-family: $font-regular;
-//    p {
-//      padding: 0;
-//      margin: 0;
-//      font-style: italic;
-//      font-weight: .9em;
-//    }
-//    ul {
-//      padding: 0;
-//      margin: $margin 0 0 0;
-//      .author {
-//        font-style: italic;
-//        font-size: .8em;
-//      }
-//    }
-//  }
-
+  #footer-article-listing {
+    padding: $margin;
+    font-family: $font-regular;
+    p {
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+      font-weight: .9em;
+    }
+    ul {
+      padding: 0;
+      margin: $margin 0 0 0;
+      .author {
+        font-style: italic;
+        font-size: .8em;
+      }
+    }
+  }
 }
 
 
@@ -608,12 +563,12 @@ border-top: $margin  solid #ffffff ;
 
 article-meta {
   font-family: $font-headings;
-  font-weight: $weight-h;
+  font-weight: $weight-h-light;
   text-decoration: none;
   line-height: 1em;
-  margin-top: 0;
+  margin-top: $margin; // TODO: Was zero. Does this make anything weird?
   display: block;
-  font-size: 2rem;
+  font-size: 1.9rem;
 }
 
 .entry-title a {
@@ -623,13 +578,14 @@ article-meta {
 .entry-meta a {
   @extend article-meta;
   @include author-text;
-  margin-top: $margin;
+  margin-top: $margin - 3; // TODO: was just margin, does this look funky?
+  font-size: 1.2rem;
 }
 
 
 
 .entry-content {
-  margin-top: $margin;
+  margin-top: $margin + 5; // TODO: was just margin, does this look funky?
 }
 
 /** == == == == == == == == == == 
@@ -642,17 +598,18 @@ article-meta {
   .site-title {
     font-family: $font-logo;
     .first-letter {
-      font-size: 6rem;
-      display: block;
+      font-size: 7rem;
+      display: block; // TODO: why was this removed?
     }
     .remaining-letters {
       display: none;
     }
-    padding: $padding;    
+    padding: $margin; 
+    // TODO: how's this? was $padding, but X added -20px m-bottom and -6px m-top.     
   }
 
   .site-description {
-    display: none;
+   // display: none;
   }
   
 }
@@ -661,6 +618,7 @@ article-meta {
 .page-template-default .entry-header
  {
    overflow: hidden;
+   //TODO: x wants -20px bottom margin here. why?
 
    img {
    max-width: none;
@@ -692,15 +650,32 @@ article-meta {
 
   .entry-title {
     font-size: 3.5rem;
+    margin-top: $padding; // TODO: X wants 15 px here?
   }
 
   .entry-excerpt {
     font-family: $font-headings;
-    font-weight: $weight-h;
+    font-weight: $weight-h-light;
     font-size: 1.8rem;
   }
   
   
+}
+
+/** == == == == == == == == == == 
+    MISC ADDITIONS
+== == == == == == == == == == **/
+
+//TODO: What's this for? Does this margin look ok? X wants 25. What's this overriding?
+.page-title {
+  font-size: 1.5em;
+  margin-top: $padding;
+}
+
+.author-page {
+  font-size: 1.5em;
+  margin-bottom: $margin;
+  font-family: $font-headings;
 }
 
 /** == == == == == == == == == == 
