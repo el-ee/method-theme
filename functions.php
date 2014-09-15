@@ -397,13 +397,33 @@ function method_edit_fields ($tag) {
   }
   
   function method_share_buttons($div_id) {
+    
+    //TODO: new lines not working on email body ?
+    
+		$urlCurrentPage = get_permalink($post->ID);
+		$strPageTitle = get_the_title($post->ID);
+    $strPageExcerpt = get_the_excerpt($post->ID);
+    
+    $twitterShareText = 'Check out ' . $strPageTitle . ' on @methodquarterly ' . $urlCurrentPage;
+    $twitter_url = "http://twitter.com/share?url='" . $urlCurrentPage . "'&amp;text='" . $twitterShareText ."'";
+    
+    $tumblr_url = 'http://tumblr.com/share/link?description=' . $strPageTitle . ' // ' . $strPageExcerpt . '&amp;name=Method Quarterly&amp;url=' . $urlCurrentPage;
+    
+    $facebook_url = 'http://facebook.com/sharer.php?u=' . $urlCurrentPage;
+    
+    $email_url = 'mailto:?Subject=Method Quarterly: ' . $strPageTitle . '&amp;Body=I%20thought%20you might be interested in this article on Method Quarterly. ' . $strPageTitle . ' %0d%0a%0d%0a ' . $strPageExcerpt . ' %0d%0a%0d%0a ' . $urlCurentPage; 
+    
+    $reddit_url = "http://reddit.com/submit?url=" . $urlCurrentPage . "&amp;title=" . $strPageTitle;
+    
+    $google_url = "http://plus.google.com/share?url=" . $urlCurrentPage;
+    
     echo '<div class="method_share" id="' . $div_id . '">';
-    echo '<a href="#" title="Tumble this article"><span class="genericon genericon-tumblr"></span></a>';
-    echo '<a href="#" title="Tweet this article"><span class="genericon genericon-twitter"></span></a>';
-    echo '<a href="#" title="Share this article on facebook"><span class="genericon genericon-facebook-alt"></span></a>';
-    echo '<a href="#" title="Email this article"><span class="genericon genericon-mail"></span></a>';
-    echo '<a href="#" title="Share this article on Reddit"><span class="genericon genericon-reddit"></span></a>';
-    echo '<a href="#" title="Share this article on Google+"><span class="genericon genericon-googleplus-alt"></span></a>';
+    echo '<a href="' . $tumblr_url . '" title="Share this on Tumblr" target="_blank" rel="nofollow"><span class="genericon genericon-tumblr"></span></a>';
+    echo '<a href="' . $twitter_url . '" title="Share this on Twitter" target="_blank" rel="nofollow"><span class="genericon genericon-twitter"></span></a>';
+    echo '<a href="' . $facebook_url . '" title="Share this on facebook" target="_blank" rel="nofollow"><span class="genericon genericon-facebook-alt"></span></a>';
+    echo '<a href="' . $email_url . '" title="Email this article" target="_blank" rel="nofollow"><span class="genericon genericon-mail"></span></a>';
+    echo '<a href="' . $reddit_url . '" title="Share this on Reddit" target="_blank" rel="nofollow"><span class="genericon genericon-reddit"></span></a>';
+    echo '<a href="' . $google_url . '" title="Share this on Google+" target="_blank" rel="nofollow"><span class="genericon genericon-googleplus-alt"></span></a>';
     echo '</div>';
     
   }

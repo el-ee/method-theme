@@ -26,7 +26,7 @@
       <span class="sep"> | </span>
       <?php printf( __( 'Theme: %1$s by %2$s.', 'method' ), 'method', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?> -->
         
-        <p class="credits">Unless noted, images are in the public domain, sourced from the <a href="http://phil.cdc.gov/phil/home.asp">CDC Public Health image library</a>.</p>
+        <p class="credits">Unless noted, images are in the public domain, sourced from the <a href="http://phil.cdc.gov/phil/">CDC Public Health image library</a>.</p>
         
         
     </div><!-- .site-info -->
