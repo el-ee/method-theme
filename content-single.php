@@ -14,7 +14,7 @@
 
     <h2 class="entry-excerpt"><?php the_excerpt(); ?></h2>
     
-    <?php the_author_link(); ?>
+    <?php the_author_posts_link(); ?>
 
 	</header><!-- .entry-header -->
 

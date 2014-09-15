@@ -427,3 +427,16 @@ function method_edit_fields ($tag) {
     echo '</div>';
     
   }
+  
+
+  function my_new_contactmethods( $contactmethods ) {
+  // Add Twitter
+  $contactmethods['twitter'] = 'Twitter';
+  //add Facebook
+  $contactmethods['facebook'] = 'Facebook';
+
+
+ 
+  return $contactmethods;
+  }
+  add_filter('user_contactmethods','my_new_contactmethods',10,1);

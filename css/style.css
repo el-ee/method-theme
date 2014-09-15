@@ -47,7 +47,7 @@ and Blueprint http://www.blueprintcss.org/
 
 */
 @import url(../css/underscores.css);
-@import url(../css/genericons.css);
+@import url(../css/genericons/genericons.css);
 /* line 22, ../scss/_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -751,32 +751,32 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
-/* line 673, ../scss/style.scss */
+/* line 674, ../scss/style.scss */
 #primary .single .site-title {
   font-family: "Bevan", sans-serif;
 }
-/* line 675, ../scss/style.scss */
+/* line 676, ../scss/style.scss */
 #primary .single .site-title .remaining-letters {
   display: none;
 }
 
-/* line 689, ../scss/style.scss */
+/* line 690, ../scss/style.scss */
 #primary .single-post .entry-header,
 .page-template-default .entry-header {
   overflow: hidden;
 }
-/* line 692, ../scss/style.scss */
+/* line 693, ../scss/style.scss */
 #primary .single-post .entry-header img,
 .page-template-default .entry-header img {
   max-width: none;
   height: 200px;
 }
 
-/* line 703, ../scss/style.scss */
+/* line 704, ../scss/style.scss */
 .single #primary .entry-header, .page #primary .entry-header {
   text-align: center;
 }
-/* line 706, ../scss/style.scss */
+/* line 707, ../scss/style.scss */
 .single #primary .entry-header a, .page #primary .entry-header a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -785,18 +785,18 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   text-decoration: none;
   font-size: 1.8rem;
 }
-/* line 713, ../scss/style.scss */
+/* line 714, ../scss/style.scss */
 .single #primary .entry-content, .page #primary .entry-content {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 719, ../scss/style.scss */
+/* line 720, ../scss/style.scss */
 .single .page-title, .single .entry-title, .page .page-title, .page .entry-title {
   font-size: 3.5rem;
   margin-top: 10px;
 }
-/* line 724, ../scss/style.scss */
+/* line 725, ../scss/style.scss */
 .single .entry-excerpt, .page .entry-excerpt {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -804,16 +804,34 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 }
 
 /** == == == == == == == == == == 
+    AUTHOR PAGE
+== == == == == == == == == == **/
+/* line 739, ../scss/style.scss */
+body.author h1.author-name {
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+/* line 746, ../scss/style.scss */
+body.author p.author-homepage a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: .9em;
+}
+
+/** == == == == == == == == == == 
     MISC ADDITIONS
 == == == == == == == == == == **/
-/* line 738, ../scss/style.scss */
+/* line 759, ../scss/style.scss */
 .author-page {
   font-size: 1.5em;
   margin-bottom: 10px;
   font-family: "Roboto", sans-serif;
 }
 
-/* line 744, ../scss/style.scss */
+/* line 765, ../scss/style.scss */
 img#wpstats {
   width: 0px;
   height: 0px;
@@ -1070,35 +1088,50 @@ body {
   }
 
   /* line 272, ../scss/_respond.scss */
+  .single-post .entry-title {
+    font-size: 2.1rem;
+  }
+
+  /* line 276, ../scss/_respond.scss */
+  .single-post .entry-excerpt {
+    font-size: 1.6rem;
+  }
+
+  /* line 280, ../scss/_respond.scss */
+  .single #primary .entry-header a {
+    font-size: 1.6rem;
+  }
+
+  /* line 286, ../scss/_respond.scss */
   .site-title {
     font-size: 5rem;
   }
 
-  /* line 276, ../scss/_respond.scss */
+  /* line 290, ../scss/_respond.scss */
   .site-description {
     padding-bottom: 10px;
   }
 
-  /* line 280, ../scss/_respond.scss */
+  /* line 294, ../scss/_respond.scss */
   ul.method-social li a:before {
     font-size: 18px;
     line-height: 49px;
   }
 
-  /* line 285, ../scss/_respond.scss */
+  /* line 299, ../scss/_respond.scss */
   #menu-menu {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 291, ../scss/_respond.scss */
+  /* line 305, ../scss/_respond.scss */
   .main-navigation {
     background: #dddddd;
     width: 100%;
   }
 
-  /* line 297, ../scss/_respond.scss */
+  /* line 311, ../scss/_respond.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -1106,33 +1139,33 @@ body {
     text-align: left;
   }
 
-  /* line 303, ../scss/_respond.scss */
+  /* line 317, ../scss/_respond.scss */
   .menu-toggle {
     font-size: 3rem;
     line-height: 3rem;
     padding: 5px 10px;
   }
 
-  /* line 309, ../scss/_respond.scss */
+  /* line 323, ../scss/_respond.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 315, ../scss/_respond.scss */
+  /* line 329, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -100px;
   }
 
-  /* line 322, ../scss/_respond.scss */
+  /* line 336, ../scss/_respond.scss */
   .method_library .entry-content h1 {
     text-align: center;
   }
-  /* line 325, ../scss/_respond.scss */
+  /* line 339, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0;
   }
-  /* line 328, ../scss/_respond.scss */
+  /* line 342, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 100%;
     margin-left: auto;
@@ -1141,7 +1174,7 @@ body {
     display: block;
     text-align: center;
   }
-  /* line 335, ../scss/_respond.scss */
+  /* line 349, ../scss/_respond.scss */
   .method_library .entry-content li ul {
     max-width: 300px;
     margin-left: auto;
@@ -1154,33 +1187,33 @@ body {
 == == == == == == == == == == **/
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 760px) {
-  /* line 359, ../scss/_respond.scss */
+  /* line 373, ../scss/_respond.scss */
   body {
     width: 480px;
     margin: 0 auto;
   }
 
   /* keep everything as above, but never let the body get wider than 480px */
-  /* line 366, ../scss/_respond.scss */
+  /* line 380, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0 -10px;
   }
-  /* line 369, ../scss/_respond.scss */
+  /* line 383, ../scss/_respond.scss */
   .method_library .entry-content li {
     float: left;
     width: 146.66667px;
     margin-left: 10px;
     margin-right: 10px;
   }
-  /* line 375, ../scss/_respond.scss */
+  /* line 389, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(5n+6) {
     clear: none;
   }
-  /* line 378, ../scss/_respond.scss */
+  /* line 392, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(4n+5) {
     clear: none;
   }
-  /* line 381, ../scss/_respond.scss */
+  /* line 395, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(3n+4) {
     clear: both;
   }
@@ -1189,7 +1222,7 @@ body {
     CLEARING
 == == == == == == == == == == **/
 /* Self Clearing Goodness */
-/* line 394, ../scss/_respond.scss */
+/* line 408, ../scss/_respond.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -1200,7 +1233,7 @@ body {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 401, ../scss/_respond.scss */
+/* line 415, ../scss/_respond.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -1213,20 +1246,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 409, ../scss/_respond.scss */
+/* line 423, ../scss/_respond.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 412, ../scss/_respond.scss */
+/* line 426, ../scss/_respond.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 416, ../scss/_respond.scss */
+/* line 430, ../scss/_respond.scss */
 .clear {
   clear: both;
   display: block;

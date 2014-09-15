@@ -76,7 +76,7 @@ $margin-thin: $margin/5;
 @import 'reset';
 //@import '../css/skeleton.css';
 @import "../css/underscores.css";
-@import "../css/genericons.css";
+@import "../css/genericons/genericons.css";
 
 
 // underscores overrides
@@ -663,6 +663,7 @@ article-meta {
   margin-top: $margin; 
 }
 
+
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
@@ -730,6 +731,26 @@ article-meta {
   
 }
 
+/** == == == == == == == == == == 
+    AUTHOR PAGE
+== == == == == == == == == == **/
+body.author {
+  
+  h1.author-name {
+    margin-top: $margin;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+
+  p.author-homepage a {
+    font-family: $font-headings;
+    font-weight: $weight-h-light;
+    text-decoration: none;
+    font-size: .9em;
+  }
+  
+}
 /** == == == == == == == == == == 
     MISC ADDITIONS
 == == == == == == == == == == **/
