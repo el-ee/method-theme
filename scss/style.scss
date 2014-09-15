@@ -110,6 +110,15 @@ body {
     font-size: .85em;
     font-weight: $weight-h-light;
   }
+  blockquote, q {
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-style: italic;
+    border-left: solid 4px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
 }
 
 
