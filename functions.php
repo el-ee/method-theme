@@ -353,7 +353,7 @@ function method_edit_fields ($tag) {
                 
         echo '<h2 class="entry-title"><a href="' . get_permalink($query2->post->ID) . '">' . get_the_title( $query2->post->ID ) . '</a></h1>';
         echo '<div class="entry-meta">';
-        echo '<a class="author" href="' . get_permalink($query2->post->ID) . '"> by ' . get_the_author_meta('display_name', $query2->post->post_author) . '</a>';
+        echo '<a class="author" href="' . get_permalink($query2->post->ID) . '"> by ' . get_the_author_meta('display_name', $query2->post->post_author) . '</a>';     
         
             
         echo('</div>');
@@ -411,17 +411,17 @@ function method_edit_fields ($tag) {
     $strPageExcerpt = get_the_excerpt($post->ID);
     
     $twitterShareText = 'Check out ' . $strPageTitle . ' on @methodquarterly ' . $urlCurrentPage;
-    $twitter_url = "http://twitter.com/share?url='" . $urlCurrentPage . "'&amp;text='" . $twitterShareText ."'";
+    $twitter_url = "http://twitter.com/share?url='" . htmlspecialchars($urlCurrentPage) . "'&amp;text='" . htmlspecialchars($twitterShareText) ."'";
     
-    $tumblr_url = 'http://tumblr.com/share/link?description=' . $strPageTitle . ' // ' . $strPageExcerpt . '&amp;name=Method Quarterly&amp;url=' . $urlCurrentPage;
+    $tumblr_url = 'http://tumblr.com/share/link?description=' . htmlspecialchars($strPageTitle) . ' // ' . htmlspecialchars($strPageExcerpt) . '&amp;name=Method Quarterly&amp;url=' . htmlspecialchars($urlCurrentPage);
     
-    $facebook_url = 'http://facebook.com/sharer.php?u=' . $urlCurrentPage;
+    $facebook_url = 'http://facebook.com/sharer.php?u=' . htmlspecialchars($urlCurrentPage);
     
-    $email_url = 'mailto:?Subject=Method Quarterly: ' . $strPageTitle . '&amp;Body=I%20thought%20you might be interested in this article on Method Quarterly. ' . $strPageTitle . ' %0d%0a%0d%0a ' . $strPageExcerpt . ' %0d%0a%0d%0a ' . $urlCurentPage; 
+    $email_url = 'mailto:?Subject=Method Quarterly: ' . htmlspecialchars($strPageTitle) . '&amp;Body=I%20thought%20you might be interested in this article on Method Quarterly. ' . htmlspecialchars($strPageTitle) . '%0d%0a%0d%0a' . htmlspecialchars($strPageExcerpt) . '%0d%0a%0d%0a' . htmlspecialchars($urlCurrentPage); 
     
-    $reddit_url = "http://reddit.com/submit?url=" . $urlCurrentPage . "&amp;title=" . $strPageTitle;
+    $reddit_url = "http://reddit.com/submit?url=" . htmlspecialchars($urlCurrentPage) . "&amp;title=" . htmlspecialchars($strPageTitle);
     
-    $google_url = "http://plus.google.com/share?url=" . $urlCurrentPage;
+    $google_url = "http://plus.google.com/share?url=" . htmlspecialchars($urlCurrentPage);
     
     echo '<div class="method_share" id="' . $div_id . '">';
     echo '<a href="' . $tumblr_url . '" title="Share this on Tumblr" target="_blank" rel="nofollow"><span class="genericon genericon-tumblr"></span></a>';
