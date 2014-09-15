@@ -8,15 +8,15 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main page" role="main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
           <img src=" <?php echo get_template_directory_uri(); ?>/images/404-image.png"></img>
-          <h1 class="page-title">Page missing</h1>
+          <h1 class="entry-title">Oops! That page seems to be missing!</h1>
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below?', 'method' ); ?></p>
+					<p>It looks like nothing was found at this location. Maybe try checking out <a href="<?php echo get_site_url(); ?>">the most recent issue?</a> </p>
 
           
 

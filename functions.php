@@ -101,7 +101,7 @@ function method_widgets_init() {
 //     'after_title'   => '</h1>',
 //   ) );
 
-// no sidebar. TODO: possibly add make widget area in footer? 
+// no sidebar. 
 
 }
 add_action( 'widgets_init', 'method_widgets_init' );
@@ -205,6 +205,7 @@ function method_create_fields ($tag) {
     
 	$cat_ID = $tag->term_id;
   
+
 	?>
 	<div class="form-field">
 	  <label for="issue_number"><?php _e('Issue Number', ''); ?></label>
@@ -352,7 +353,9 @@ function method_edit_fields ($tag) {
                 
         echo '<h2 class="entry-title"><a href="' . get_permalink($query2->post->ID) . '">' . get_the_title( $query2->post->ID ) . '</a></h1>';
         echo '<div class="entry-meta">';
-        echo '<a class="author" href="' . get_permalink($query2->post->ID) . '"> by ' . get_the_author_meta('display_name', $query2->post->author) . '</a>';
+        echo '<a class="author" href="' . get_permalink($query2->post->ID) . '"> by ' . get_the_author_meta('display_name', $query2->post->post_author) . '</a>';
+        
+            
         echo('</div>');
         echo('</header>');
         echo('</article></a>');
@@ -431,15 +434,6 @@ function method_edit_fields ($tag) {
     
   }
   
-
-  function my_new_contactmethods( $contactmethods ) {
-  // Add Twitter
-  $contactmethods['twitter'] = 'Twitter';
-  //add Facebook
-  $contactmethods['facebook'] = 'Facebook';
-
-
- 
-  return $contactmethods;
+  function get_recent_issue() {
+    return 127;
   }
-  add_filter('user_contactmethods','my_new_contactmethods',10,1);

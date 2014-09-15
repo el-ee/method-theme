@@ -43,7 +43,8 @@ if(isset($parent_id)) {
 
   //
    $cat = $issue_array[$last_key];
- 
+   
+
    $cat_object = get_the_category_by_ID( $cat );
    
    query_posts('cat='.$cat);
