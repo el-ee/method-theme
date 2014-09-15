@@ -1057,15 +1057,16 @@ body {
     margin-right: 4px;
   }
 
-  /* line 235, ../scss/_respond.scss */
+  /* line 236, ../scss/_respond.scss */
   header.page-header,
-  header.site-header, footer.site-footer-single {
+  header.site-header, footer.site-footer-single, footer.site-footer,
+  .page-template-default header.entry-header {
     margin-left: -4px;
     margin-right: -4px;
-    width: inherit;
+    width: auto;
   }
 
-  /* line 242, ../scss/_respond.scss */
+  /* line 243, ../scss/_respond.scss */
   collapsed-column, #issue-listing h1,
   .single .entry-content,
   #issue-description,
@@ -1088,7 +1089,7 @@ body {
   }
 
   /* specific overrides */
-  /* line 273, ../scss/_respond.scss */
+  /* line 274, ../scss/_respond.scss */
   .site-branding,
   #primary .single-post article,
   article.type-page,
@@ -1096,56 +1097,56 @@ body {
     margin-top: 0;
   }
 
-  /* line 277, ../scss/_respond.scss */
+  /* line 278, ../scss/_respond.scss */
   #issue-listing h1.also-in {
     margin-left: 0;
   }
 
-  /* line 281, ../scss/_respond.scss */
+  /* line 282, ../scss/_respond.scss */
   .single-post .entry-title {
     font-size: 2.1rem;
   }
 
-  /* line 285, ../scss/_respond.scss */
+  /* line 286, ../scss/_respond.scss */
   .single-post .entry-excerpt {
     font-size: 1.6rem;
   }
 
-  /* line 289, ../scss/_respond.scss */
+  /* line 290, ../scss/_respond.scss */
   .single #primary .entry-header a {
     font-size: 1.6rem;
   }
 
-  /* line 294, ../scss/_respond.scss */
+  /* line 295, ../scss/_respond.scss */
   .site-title {
     font-size: 5rem;
   }
 
-  /* line 298, ../scss/_respond.scss */
+  /* line 299, ../scss/_respond.scss */
   .site-description {
     padding-bottom: 10px;
   }
 
-  /* line 302, ../scss/_respond.scss */
+  /* line 303, ../scss/_respond.scss */
   ul.method-social li a:before {
     font-size: 18px;
     line-height: 49px;
   }
 
-  /* line 307, ../scss/_respond.scss */
+  /* line 308, ../scss/_respond.scss */
   #menu-menu {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 313, ../scss/_respond.scss */
+  /* line 314, ../scss/_respond.scss */
   .main-navigation {
     background: #dddddd;
     width: 100%;
   }
 
-  /* line 319, ../scss/_respond.scss */
+  /* line 320, ../scss/_respond.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -1153,46 +1154,65 @@ body {
     text-align: left;
   }
 
-  /* line 325, ../scss/_respond.scss */
+  /* line 326, ../scss/_respond.scss */
   .menu-toggle {
     font-size: 3rem;
     line-height: 3rem;
     padding: 5px 10px;
   }
 
-  /* line 331, ../scss/_respond.scss */
+  /* line 332, ../scss/_respond.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 337, ../scss/_respond.scss */
+  /* line 338, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -100px;
   }
 
-  /* line 342, ../scss/_respond.scss */
+  /* line 344, ../scss/_respond.scss */
+  .page-template-default header.entry-header .page-header-image,
   .issue-image {
-    height: 100px;
+    height: 120px;
     overflow: hidden;
   }
 
-  /* line 348, ../scss/_respond.scss */
+  /* line 349, ../scss/_respond.scss */
+  #issue-listing .issue-name h1 {
+    top: -140px;
+    font-size: 2.5rem;
+    line-height: 120px;
+  }
+
+  /* line 356, ../scss/_respond.scss */
   #issue-headers,
   #issue-description {
     padding-left: 4px;
     padding-right: 4px;
   }
+  /* line 360, ../scss/_respond.scss */
+  #issue-headers h1,
+  #issue-description h1 {
+    display: inline;
+    text-align: left;
+  }
 
-  /* line 357, ../scss/_respond.scss */
+  /* line 367, ../scss/_respond.scss */
+  #issue-description {
+    margin-top: 10px;
+  }
+
+  /* line 373, ../scss/_respond.scss */
   .method_library .entry-content h1 {
     text-align: center;
   }
-  /* line 360, ../scss/_respond.scss */
+  /* line 376, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0;
   }
-  /* line 363, ../scss/_respond.scss */
+  /* line 379, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 100%;
     margin-left: auto;
@@ -1201,7 +1221,7 @@ body {
     display: block;
     text-align: center;
   }
-  /* line 370, ../scss/_respond.scss */
+  /* line 386, ../scss/_respond.scss */
   .method_library .entry-content li ul {
     max-width: 300px;
     margin-left: auto;
@@ -1214,33 +1234,33 @@ body {
 == == == == == == == == == == **/
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 760px) {
-  /* line 395, ../scss/_respond.scss */
+  /* line 411, ../scss/_respond.scss */
   body {
     width: 480px;
     margin: 0 auto;
   }
 
   /* keep everything as above, but never let the body get wider than 480px */
-  /* line 402, ../scss/_respond.scss */
+  /* line 418, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0 -10px;
   }
-  /* line 405, ../scss/_respond.scss */
+  /* line 421, ../scss/_respond.scss */
   .method_library .entry-content li {
     float: left;
     width: 146.66667px;
     margin-left: 10px;
     margin-right: 10px;
   }
-  /* line 411, ../scss/_respond.scss */
+  /* line 427, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(5n+6) {
     clear: none;
   }
-  /* line 414, ../scss/_respond.scss */
+  /* line 430, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(4n+5) {
     clear: none;
   }
-  /* line 417, ../scss/_respond.scss */
+  /* line 433, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(3n+4) {
     clear: both;
   }
@@ -1249,7 +1269,7 @@ body {
     CLEARING
 == == == == == == == == == == **/
 /* Self Clearing Goodness */
-/* line 430, ../scss/_respond.scss */
+/* line 446, ../scss/_respond.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -1260,7 +1280,7 @@ body {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 437, ../scss/_respond.scss */
+/* line 453, ../scss/_respond.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -1273,20 +1293,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 445, ../scss/_respond.scss */
+/* line 461, ../scss/_respond.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 448, ../scss/_respond.scss */
+/* line 464, ../scss/_respond.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 452, ../scss/_respond.scss */
+/* line 468, ../scss/_respond.scss */
 .clear {
   clear: both;
   display: block;

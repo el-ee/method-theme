@@ -232,10 +232,11 @@ article.type-page ,
   }
   
   header.page-header,
-  header.site-header, footer.site-footer-single {
+  header.site-header, footer.site-footer-single, footer.site-footer, 
+   .page-template-default header.entry-header {
     margin-left: -$margin-thin*2;
     margin-right: -$margin-thin*2; 
-    width: inherit;
+    width: auto;
   }
   
  
@@ -339,18 +340,33 @@ article.type-page ,
   
     }
 
+    .page-template-default header.entry-header .page-header-image,
     .issue-image {
-      height: 100px;
+      height: 120px;
       overflow: hidden;
     }
+
+#issue-listing .issue-name h1 {
+  top: -140px;
+  font-size: 2.5rem;
+  line-height: 120px;
+}
 
     #issue-headers,
     #issue-description {
 
       padding-left: $margin-thin*2;
       padding-right: $margin-thin*2; 
+      h1 {
+        display: inline;
+        text-align: left;
+      
+      }
+
     }
-  
+    #issue-description {
+      margin-top: $margin;
+    }
   
     .method_library {
       .entry-content {  
