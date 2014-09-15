@@ -225,11 +225,20 @@ article.type-page ,
   
   body { 
     width: auto;
-    margin-left: $margin-thin*2;
-    margin-right: $margin-thin*2; 
+  
+      margin-left: $margin-thin*2;
+      margin-right: $margin-thin*2; 
+  
   }
   
+  header.page-header,
+  header.site-header, footer.site-footer-single {
+    margin-left: -$margin-thin*2;
+    margin-right: -$margin-thin*2; 
+    width: inherit;
+  }
   
+ 
   collapsed-column {
     width: 100%;
     float: none;
@@ -280,8 +289,7 @@ article.type-page ,
   .single #primary .entry-header a {
     font-size: 1.6rem;
   }
-  
-  
+
 
   .site-title {
     font-size: 5rem;
@@ -328,9 +336,22 @@ article.type-page ,
     .page-template-default .entry-header img,
     .issue-image img {
       margin-left: -($first-break-width - $collapse-width) / 2;
+  
     }
 
+    .issue-image {
+      height: 100px;
+      overflow: hidden;
+    }
 
+    #issue-headers,
+    #issue-description {
+
+      padding-left: $margin-thin*2;
+      padding-right: $margin-thin*2; 
+    }
+  
+  
     .method_library {
       .entry-content {  
         h1 {
@@ -356,6 +377,7 @@ article.type-page ,
   
       }
     }
+
 
     
 }

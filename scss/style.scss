@@ -105,6 +105,11 @@ body {
     font-style: italic;
   }
   
+  figcaption {
+    font-family: $font-headings;
+    font-size: .85em;
+    font-weight: $weight-h-light;
+  }
 }
 
 
@@ -162,7 +167,7 @@ a, a:visited, a:link {
      color: $color-text-light; 
     }
   }
-  padding: $margin; //TODO: check with X about this value
+  padding: $margin $margin $margin $padding; //TODO: check with X about this value
   color: $color-text-light;
   margin-bottom: -4px; // trying to even out margins; this font doesn't fill line
 }
@@ -174,7 +179,7 @@ a, a:visited, a:link {
   text-transform: uppercase;
   font-size: 1.4rem;
   line-height: .8em;
-  padding: 0 $margin $margin $margin; //TODO: Check with X about this
+  padding: 0 $margin $margin $padding; //TODO: Check with X about this
 }
 
 /** == == == == == == == == == == 
