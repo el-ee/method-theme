@@ -414,8 +414,8 @@ div.method_share {
 
   text-align: center;
   
-  margin-top: $margin;
-  margin-bottom: $margin;
+  margin-top: $padding ;
+  margin-bottom: $padding * 2;
   
   .genericon { 
     font-size: $padding; 
@@ -428,8 +428,6 @@ div.method_share {
     height: $padding + $margin;
     padding-left: 1px; // for some reason these don't quite center
 
-    border-radius: 50%;
-
     background: darken($color-light-fill, 10%);
     display: inline-block;
     margin: $margin-thin * 2;
@@ -440,15 +438,15 @@ div.method_share {
 div#method_share_sidebar {
   position: absolute;
   a {
-    border-radius: 0;
     
     display: block;
 //    margin: $margin;
-margin-left: $margin;
+  margin-left: 75px;
     padding-left: 0px; // and they look more centered here? maybe this is my eyes.. 
   }
   margin-left: 0;
-  margin-top: $margin * 2;
+  margin-top: $margin * 2; // align with top of text or image here. 
+  margin-bottom: 0;
 }
 
 /** == == == == == == == == == == 

@@ -177,6 +177,11 @@ article.type-page ,
   
   #issue-description { width: ($collapse-width - (3 * 2 * $margin)) / 3 * 2; }
   
+  div#method_share_sidebar a {
+
+    margin-left: 0px;
+  }
+  
   .main-navigation .method-navigation li {
     width: (($collapse-width) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
   }
