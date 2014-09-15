@@ -18,11 +18,14 @@
 
 	</header><!-- .entry-header -->
 
+<?php  method_share_buttons('method_share_sidebar');?>
+
 	<div class="entry-content">
 		<?php the_content(); ?>
 		
 	</div><!-- .entry-content -->
   
+  <?php  method_share_buttons('method_share_end');?>
   
   </div>
 
@@ -66,4 +69,7 @@
   ?>
 
 
+
+
 </article><!-- #post-## -->
+

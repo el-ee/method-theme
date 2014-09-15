@@ -79,6 +79,11 @@ $margin-thin: $margin/5;
 @import "../css/genericons.css";
 
 
+// underscores overrides
+.hentry{
+  margin-bottom: 0;
+}
+
 /** == == == == == == == == == == 
     TYPOGRAPHY
 == == == == == == == == == == **/
@@ -128,6 +133,8 @@ a, a:visited, a:link {
   font-size: .9em;
   font-style: italic;
   color: $color-text-alt;
+  margin-bottom: 0;
+  margin-top: $padding;
 }
 
 
@@ -355,6 +362,9 @@ h1 {
     h1 {
       font-size: 1.5em;
       text-transform: uppercase;
+      background: $color-light-fill url(../images/header.png);
+      line-height: 2em;
+      margin-top: $padding;
     }
     
     ul {
@@ -363,6 +373,9 @@ h1 {
     }
      li {
        margin-top: $padding *2;
+       font-size: .95em;
+       line-height: 1.1em;
+       overflow: hidden;
       
        ul {
          
@@ -370,10 +383,12 @@ h1 {
        li {
          /* author name */
          margin-top: $margin;
+
          
          a {
            /* Book link */
            font-style: italic; 
+           text-decoration: none;
          }
          
        }
@@ -386,9 +401,45 @@ h1 {
     SHARING BUTTONS
 == == == == == == == == == == **/
 
-.ssba {
-  margin-top: $padding;
-  margin-bottom: $padding;
+div.method_share {
+
+  text-align: center;
+  
+  margin-top: $margin;
+  margin-bottom: $margin;
+  
+  .genericon { 
+    font-size: $padding; 
+    line-height: $padding + $margin;
+    color: $color-text-light;
+    }
+
+  a {
+    width: $padding + $margin;
+    height: $padding + $margin;
+    padding-left: 1px; // for some reason these don't quite center
+
+    border-radius: 50%;
+
+    background: darken($color-light-fill, 10%);
+    display: inline-block;
+    margin: $margin-thin * 2;
+    text-decoration: none;
+  }
+}
+
+div#method_share_sidebar {
+  float: left;
+  a {
+    border-radius: 0;
+    
+    display: block;
+//    margin: $margin;
+margin-left: $margin;
+    padding-left: 0px; // and they look more centered here? maybe this is my eyes.. 
+  }
+  margin-left: 0;
+  margin-top: $padding * 3;
 }
 
 /** == == == == == == == == == == 

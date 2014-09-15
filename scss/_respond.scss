@@ -219,6 +219,10 @@ article.type-page ,
 
 @media screen and (max-width: $collapse-width - 1) { 
   
+  div#method_share_sidebar {
+    display: none;
+  }
+  
   body { 
     width: auto;
     margin-left: $margin-thin*2;
@@ -315,23 +319,27 @@ article.type-page ,
 
     .method_library {
       .entry-content {  
+        h1 {
+          text-align: center;
+        }
         ul {
           margin: 0;
         }
          li { 
            width: 100%;
-           margin-left: 0;
-           margin-right: 0;
+           margin-left: auto;
+           margin-right: auto;
+           float: none;
+           display: block;
+           text-align: center;
+           ul {
+             max-width: 300px;
+             margin-left: auto;
+             margin-right: auto;
+             text-align: center;
+           }
          }
-         li:nth-child(5n+6) {
-              clear: none;
-         }
-         li:nth-child(4n+5) {
-              clear: none;
-         }
-         li:nth-child(3n+4) {
-              clear: both;
-         }
+  
       }
     }
 
@@ -359,9 +367,19 @@ article.type-page ,
             margin: 0 -10px;
           }
            li {
+             float: left;
              width: (480px - (2 * 2 * $margin)) / 3;
              margin-left: $margin;
              margin-right: $margin;
+           }
+           li:nth-child(5n+6) {
+                clear: none;
+           }
+           li:nth-child(4n+5) {
+                clear: none;
+           }
+           li:nth-child(3n+4) {
+                clear: both;
            }
         }
       }

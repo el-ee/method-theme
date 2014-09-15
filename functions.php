@@ -395,3 +395,15 @@ function method_edit_fields ($tag) {
     printf('<div class="issue-description"><p>%s</p></div>', $child_description);
   
   }
+  
+  function method_share_buttons($div_id) {
+    echo '<div class="method_share" id="' . $div_id . '">';
+    echo '<a href="#" title="Tumble this article"><span class="genericon genericon-tumblr"></span></a>';
+    echo '<a href="#" title="Tweet this article"><span class="genericon genericon-twitter"></span></a>';
+    echo '<a href="#" title="Share this article on facebook"><span class="genericon genericon-facebook-alt"></span></a>';
+    echo '<a href="#" title="Email this article"><span class="genericon genericon-mail"></span></a>';
+    echo '<a href="#" title="Share this article on Reddit"><span class="genericon genericon-reddit"></span></a>';
+    echo '<a href="#" title="Share this article on Google+"><span class="genericon genericon-googleplus-alt"></span></a>';
+    echo '</div>';
+    
+  }
