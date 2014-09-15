@@ -338,7 +338,10 @@ function method_edit_fields ($tag) {
       if ($query2->post->ID != $current_post_id) {
         
         
+        
+        echo ('<a href="' . get_permalink($query2->post->ID) . '">');
         ?>
+        
         <article id="post-<?php the_ID(); ?>" <?php post_class('', $query2->post->ID); ?>>
         <?php
         echo('<header class="entry-header">');
@@ -346,13 +349,13 @@ function method_edit_fields ($tag) {
         echo ('<a class="post-thumbnail" href="' . get_permalink($query2->post->ID) . '">');
         echo(get_the_post_thumbnail($query2->post->ID, "post-thumbnail"));
         echo('</a>');
-        
+                
         echo '<h2 class="entry-title"><a href="' . get_permalink($query2->post->ID) . '">' . get_the_title( $query2->post->ID ) . '</a></h1>';
         echo '<div class="entry-meta">';
-        echo '<a class="author"> by ' . get_the_author($query2->post->ID) . '</a>';
+        echo '<a class="author" href="' . get_permalink($query2->post->ID) . '"> by ' . get_the_author_meta('display_name', $query2->post->author) . '</a>';
         echo('</div>');
         echo('</header>');
-        echo('</article>');
+        echo('</article></a>');
         ?>
         
        
