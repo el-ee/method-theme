@@ -348,6 +348,10 @@ h1 {
 
 }
 
+.entry-content figure {
+  margin-top: $margin;
+}
+
 
 /** == == == == == == == == == == 
     LIBRARY PAGE
@@ -439,7 +443,7 @@ margin-left: $margin;
     padding-left: 0px; // and they look more centered here? maybe this is my eyes.. 
   }
   margin-left: 0;
-  margin-top: $padding * 3;
+  margin-top: $margin * 2;
 }
 
 /** == == == == == == == == == == 

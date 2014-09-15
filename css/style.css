@@ -425,10 +425,15 @@ a:hover, a:visited:hover, a:link:hover {
   margin: 0;
 }
 
+/* line 351, ../scss/style.scss */
+.entry-content figure {
+  margin-top: 10px;
+}
+
 /** == == == == == == == == == == 
     LIBRARY PAGE
 == == == == == == == == == == **/
-/* line 362, ../scss/style.scss */
+/* line 366, ../scss/style.scss */
 .method_library .entry-content h1 {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -436,19 +441,19 @@ a:hover, a:visited:hover, a:link:hover {
   line-height: 2em;
   margin-top: 20px;
 }
-/* line 374, ../scss/style.scss */
+/* line 378, ../scss/style.scss */
 .method_library .entry-content li {
   margin-top: 40px;
   font-size: .95em;
   line-height: 1.1em;
   overflow: hidden;
 }
-/* line 383, ../scss/style.scss */
+/* line 387, ../scss/style.scss */
 .method_library .entry-content li li {
   /* author name */
   margin-top: 10px;
 }
-/* line 388, ../scss/style.scss */
+/* line 392, ../scss/style.scss */
 .method_library .entry-content li li a {
   /* Book link */
   font-style: italic;
@@ -458,19 +463,19 @@ a:hover, a:visited:hover, a:link:hover {
 /** == == == == == == == == == == 
     SHARING BUTTONS
 == == == == == == == == == == **/
-/* line 404, ../scss/style.scss */
+/* line 408, ../scss/style.scss */
 div.method_share {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 411, ../scss/style.scss */
+/* line 415, ../scss/style.scss */
 div.method_share .genericon {
   font-size: 20px;
   line-height: 30px;
   color: white;
 }
-/* line 417, ../scss/style.scss */
+/* line 421, ../scss/style.scss */
 div.method_share a {
   width: 30px;
   height: 30px;
@@ -482,13 +487,13 @@ div.method_share a {
   text-decoration: none;
 }
 
-/* line 431, ../scss/style.scss */
+/* line 435, ../scss/style.scss */
 div#method_share_sidebar {
   position: absolute;
   margin-left: 0;
-  margin-top: 60px;
+  margin-top: 20px;
 }
-/* line 433, ../scss/style.scss */
+/* line 437, ../scss/style.scss */
 div#method_share_sidebar a {
   border-radius: 0;
   display: block;
@@ -499,7 +504,7 @@ div#method_share_sidebar a {
 /** == == == == == == == == == == 
     SOCIAL MENU
 == == == == == == == == == == **/
-/* line 450, ../scss/style.scss */
+/* line 454, ../scss/style.scss */
 #social-menu {
   float: right;
   position: relative;
@@ -507,7 +512,7 @@ div#method_share_sidebar a {
   height: 0px;
 }
 
-/* line 458, ../scss/style.scss */
+/* line 462, ../scss/style.scss */
 ul.method-social {
   padding: 0;
   list-style: none;
@@ -515,120 +520,120 @@ ul.method-social {
   margin-right: 10px;
   color: transparent;
 }
-/* line 465, ../scss/style.scss */
+/* line 469, ../scss/style.scss */
 ul.method-social li {
   display: inline;
 }
-/* line 469, ../scss/style.scss */
+/* line 473, ../scss/style.scss */
 ul.method-social li a {
   padding-left: 4px;
   padding-right: 4px;
   line-height: 1;
   text-decoration: none;
 }
-/* line 476, ../scss/style.scss */
+/* line 480, ../scss/style.scss */
 ul.method-social li:hover {
   background: none;
 }
-/* line 477, ../scss/style.scss */
+/* line 481, ../scss/style.scss */
 ul.method-social a span {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
-/* line 479, ../scss/style.scss */
+/* line 483, ../scss/style.scss */
 ul.method-social li a::before {
   color: white;
   font: normal 20px/46px 'Genericons';
   content: '\f408';
 }
-/* line 480, ../scss/style.scss */
+/* line 484, ../scss/style.scss */
 ul.method-social li a:hover::before {
   color: white;
 }
-/* line 482, ../scss/style.scss */
+/* line 486, ../scss/style.scss */
 ul.method-social li a[href*="codepen.io"]::before {
   content: '\f216';
 }
-/* line 483, ../scss/style.scss */
+/* line 487, ../scss/style.scss */
 ul.method-social li a[href*="digg.com"]::before {
   content: '\f221';
 }
-/* line 484, ../scss/style.scss */
+/* line 488, ../scss/style.scss */
 ul.method-social li a[href*="dribbble.com"]::before {
   content: '\f201';
 }
-/* line 485, ../scss/style.scss */
+/* line 489, ../scss/style.scss */
 ul.method-social li a[href*="facebook.com"]::before {
   content: '\f203';
 }
-/* line 486, ../scss/style.scss */
+/* line 490, ../scss/style.scss */
 ul.method-social li a[href*="flickr.com"]::before {
   content: '\f211';
 }
-/* line 487, ../scss/style.scss */
+/* line 491, ../scss/style.scss */
 ul.method-social li a[href*="plus.google.com"]::before {
   content: '\f206';
 }
-/* line 488, ../scss/style.scss */
+/* line 492, ../scss/style.scss */
 ul.method-social li a[href*="github.com"]::before {
   content: '\f200';
 }
-/* line 489, ../scss/style.scss */
+/* line 493, ../scss/style.scss */
 ul.method-social li a[href*="instagram.com"]::before {
   content: '\f215';
 }
-/* line 490, ../scss/style.scss */
+/* line 494, ../scss/style.scss */
 ul.method-social li a[href*="linkedin.com"]::before {
   content: '\f208';
 }
-/* line 491, ../scss/style.scss */
+/* line 495, ../scss/style.scss */
 ul.method-social li a[href*="pinterest.com"]::before {
   content: '\f210';
 }
-/* line 492, ../scss/style.scss */
+/* line 496, ../scss/style.scss */
 ul.method-social li a[href*="polldaddy.com"]::before {
   content: '\f217';
 }
-/* line 493, ../scss/style.scss */
+/* line 497, ../scss/style.scss */
 ul.method-social li a[href*="getpocket.com"]::before {
   content: '\f224';
 }
-/* line 494, ../scss/style.scss */
+/* line 498, ../scss/style.scss */
 ul.method-social li a[href*="reddit.com"]::before {
   content: '\f222';
 }
-/* line 496, ../scss/style.scss */
+/* line 500, ../scss/style.scss */
 ul.method-social li a[href*="skype.com"]::before,
 ul.method-social li a[href*="skype:"]::before {
   content: '\f220';
 }
-/* line 497, ../scss/style.scss */
+/* line 501, ../scss/style.scss */
 ul.method-social li a[href*="stumbleupon.com"]::before {
   content: '\f223';
 }
-/* line 498, ../scss/style.scss */
+/* line 502, ../scss/style.scss */
 ul.method-social li a[href*="tumblr.com"]::before {
   content: '\f214';
 }
-/* line 499, ../scss/style.scss */
+/* line 503, ../scss/style.scss */
 ul.method-social li a[href*="twitter.com"]::before {
   content: '\f202';
 }
-/* line 500, ../scss/style.scss */
+/* line 504, ../scss/style.scss */
 ul.method-social li a[href*="vimeo.com"]::before {
   content: '\f212';
 }
-/* line 502, ../scss/style.scss */
+/* line 506, ../scss/style.scss */
 ul.method-social li a[href*="wordpress.org"]::before,
 ul.method-social li a[href*="wordpress.com"]::before {
   content: '\f205';
 }
-/* line 503, ../scss/style.scss */
+/* line 507, ../scss/style.scss */
 ul.method-social li a[href*="youtube.com"]::before {
   content: '\f213';
 }
-/* line 506, ../scss/style.scss */
+/* line 510, ../scss/style.scss */
 ul.method-social li a[href$="/feed/"]::before,
 ul.method-social li a[href$="/feed"]::before,
 ul.method-social li a[href$="?feed=rss2"]::before {
@@ -638,7 +643,7 @@ ul.method-social li a[href$="?feed=rss2"]::before {
 /** == == == == == == == == == == 
     FOOTER
 == == == == == == == == == == **/
-/* line 514, ../scss/style.scss */
+/* line 518, ../scss/style.scss */
 .site-footer {
   margin-top: 20px;
   background: url("../images/footer.jpg") left center #555555;
@@ -650,16 +655,16 @@ ul.method-social li a[href$="?feed=rss2"]::before {
   font-size: .8em;
   line-height: 1.2em;
 }
-/* line 525, ../scss/style.scss */
+/* line 529, ../scss/style.scss */
 .site-footer a {
   color: white;
   text-decoration: none;
 }
-/* line 532, ../scss/style.scss */
+/* line 536, ../scss/style.scss */
 .site-footer ul {
   margin-bottom: 20px;
 }
-/* line 535, ../scss/style.scss */
+/* line 539, ../scss/style.scss */
 .site-footer .credits {
   line-height: 1em;
   padding: 0;
@@ -668,7 +673,7 @@ ul.method-social li a[href$="?feed=rss2"]::before {
   margin-bottom: 0;
 }
 
-/* line 547, ../scss/style.scss */
+/* line 551, ../scss/style.scss */
 .site-footer-single {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -678,11 +683,11 @@ ul.method-social li a[href$="?feed=rss2"]::before {
   background: #2bcbf9 url("../images/header.png") center center;
   height: 60px;
 }
-/* line 559, ../scss/style.scss */
+/* line 563, ../scss/style.scss */
 .site-footer-single p {
   margin: 0;
 }
-/* line 563, ../scss/style.scss */
+/* line 567, ../scss/style.scss */
 .site-footer-single a {
   margin: 20px;
   color: white;
@@ -690,7 +695,7 @@ ul.method-social li a[href$="?feed=rss2"]::before {
   font-size: .9em;
   text-transform: uppercase;
 }
-/* line 569, ../scss/style.scss */
+/* line 573, ../scss/style.scss */
 .site-footer-single a:hover {
   color: #404040;
 }
@@ -698,25 +703,25 @@ ul.method-social li a[href$="?feed=rss2"]::before {
 /** == == == == == == == == == == 
     MAIN PAGE LAYOUTS
 == == == == == == == == == == **/
-/* line 612, ../scss/style.scss */
+/* line 616, ../scss/style.scss */
 .row {
   overflow: hidden;
 }
 
-/* line 615, ../scss/style.scss */
+/* line 619, ../scss/style.scss */
 .row article {
   margin-top: 20px;
   padding-bottom: 99999px;
   margin-bottom: -99999px;
   border-top: 10px solid white;
 }
-/* line 628, ../scss/style.scss */
+/* line 632, ../scss/style.scss */
 .row article.tag-featured {
   border-top: 10px solid #2bcbf9;
   background: #e3f8fe;
 }
 
-/* line 635, ../scss/style.scss */
+/* line 639, ../scss/style.scss */
 article-meta, .page-title a, .entry-title a, .entry-meta a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -727,7 +732,7 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   font-size: 1.9rem;
 }
 
-/* line 649, ../scss/style.scss */
+/* line 653, ../scss/style.scss */
 .entry-meta a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -738,7 +743,7 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   font-size: 1.2rem;
 }
 
-/* line 658, ../scss/style.scss */
+/* line 662, ../scss/style.scss */
 .entry-content {
   margin-top: 10px;
 }
@@ -746,32 +751,32 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
-/* line 669, ../scss/style.scss */
+/* line 673, ../scss/style.scss */
 #primary .single .site-title {
   font-family: "Bevan", sans-serif;
 }
-/* line 671, ../scss/style.scss */
+/* line 675, ../scss/style.scss */
 #primary .single .site-title .remaining-letters {
   display: none;
 }
 
-/* line 685, ../scss/style.scss */
+/* line 689, ../scss/style.scss */
 #primary .single-post .entry-header,
 .page-template-default .entry-header {
   overflow: hidden;
 }
-/* line 688, ../scss/style.scss */
+/* line 692, ../scss/style.scss */
 #primary .single-post .entry-header img,
 .page-template-default .entry-header img {
   max-width: none;
   height: 200px;
 }
 
-/* line 699, ../scss/style.scss */
+/* line 703, ../scss/style.scss */
 .single #primary .entry-header, .page #primary .entry-header {
   text-align: center;
 }
-/* line 702, ../scss/style.scss */
+/* line 706, ../scss/style.scss */
 .single #primary .entry-header a, .page #primary .entry-header a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -780,18 +785,18 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   text-decoration: none;
   font-size: 1.8rem;
 }
-/* line 709, ../scss/style.scss */
+/* line 713, ../scss/style.scss */
 .single #primary .entry-content, .page #primary .entry-content {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 715, ../scss/style.scss */
+/* line 719, ../scss/style.scss */
 .single .page-title, .single .entry-title, .page .page-title, .page .entry-title {
   font-size: 3.5rem;
   margin-top: 10px;
 }
-/* line 720, ../scss/style.scss */
+/* line 724, ../scss/style.scss */
 .single .entry-excerpt, .page .entry-excerpt {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -801,14 +806,14 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     MISC ADDITIONS
 == == == == == == == == == == **/
-/* line 734, ../scss/style.scss */
+/* line 738, ../scss/style.scss */
 .author-page {
   font-size: 1.5em;
   margin-bottom: 10px;
   font-family: "Roboto", sans-serif;
 }
 
-/* line 740, ../scss/style.scss */
+/* line 744, ../scss/style.scss */
 img#wpstats {
   width: 0px;
   height: 0px;
