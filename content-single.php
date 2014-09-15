@@ -18,10 +18,17 @@
 
 	</header><!-- .entry-header -->
 
-<?php  method_share_buttons('method_share_sidebar');?>
+  <?php  method_share_buttons('method_share_sidebar');?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
+    
+    <div id="article-author-bio">
+      
+      <p><?php the_author_meta( 'description' ); ?></p>
+      
+    
+    </div>
 		
 	</div><!-- .entry-content -->
   
