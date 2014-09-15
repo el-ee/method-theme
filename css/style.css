@@ -879,35 +879,36 @@ body {
   width: 100%;
 }
 
-/* line 127, ../scss/_respond.scss */
-.method_library .entry-content {
+/* line 125, ../scss/_respond.scss */
+.method_library #primary .entry-content {
   width: 100%;
   max-width: none;
 }
-/* line 130, ../scss/_respond.scss */
+
+/* line 134, ../scss/_respond.scss */
 .method_library .entry-content ul {
   margin-left: -10px;
   margin-right: -10px;
   clear: both;
   overflow: auto;
 }
-/* line 136, ../scss/_respond.scss */
+/* line 140, ../scss/_respond.scss */
 .method_library .entry-content p {
   clear: both;
 }
-/* line 140, ../scss/_respond.scss */
+/* line 144, ../scss/_respond.scss */
 .method_library .entry-content li:nth-child(5n+6) {
   clear: both;
 }
-/* line 144, ../scss/_respond.scss */
+/* line 148, ../scss/_respond.scss */
 .method_library .entry-content li {
   display: inline;
 }
-/* line 148, ../scss/_respond.scss */
+/* line 152, ../scss/_respond.scss */
 .method_library .entry-content li ul {
   margin-left: 0;
 }
-/* line 151, ../scss/_respond.scss */
+/* line 155, ../scss/_respond.scss */
 .method_library .entry-content li li {
   margin-left: 0;
   margin-right: 0;
@@ -918,48 +919,48 @@ body {
     FIRST BREAK
 == == == == == == == == == == **/
 @media only screen and (min-width: 761px) and (max-width: 960px) {
-  /* line 167, ../scss/_respond.scss */
+  /* line 171, ../scss/_respond.scss */
   body {
     width: 761px;
   }
 
-  /* line 172, ../scss/_respond.scss */
+  /* line 176, ../scss/_respond.scss */
   #issue-headers,
   .row article {
     width: 233.66667px;
   }
 
-  /* line 174, ../scss/_respond.scss */
+  /* line 178, ../scss/_respond.scss */
   #issue-description {
     width: 467.33333px;
   }
 
-  /* line 176, ../scss/_respond.scss */
+  /* line 180, ../scss/_respond.scss */
   .main-navigation .method-navigation li {
     width: 145px;
   }
 
-  /* line 181, ../scss/_respond.scss */
+  /* line 185, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: 0;
   }
 
-  /* line 185, ../scss/_respond.scss */
+  /* line 189, ../scss/_respond.scss */
   .single-post #primary {
     margin-left: 10px;
     margin-right: 10px;
   }
 
-  /* line 192, ../scss/_respond.scss */
+  /* line 196, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 170.25px;
   }
-  /* line 195, ../scss/_respond.scss */
+  /* line 199, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(5n+6) {
     clear: none;
   }
-  /* line 198, ../scss/_respond.scss */
+  /* line 202, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(4n+5) {
     clear: both;
   }
@@ -969,14 +970,14 @@ body {
     (MOBILE PORTRAIT)
 == == == == == == == == == == **/
 @media screen and (max-width: 760px) {
-  /* line 218, ../scss/_respond.scss */
+  /* line 222, ../scss/_respond.scss */
   body {
     width: auto;
     margin-left: 4px;
     margin-right: 4px;
   }
 
-  /* line 225, ../scss/_respond.scss */
+  /* line 229, ../scss/_respond.scss */
   collapsed-column, #issue-listing h1,
   .single .entry-content,
   #issue-description,
@@ -999,7 +1000,7 @@ body {
   }
 
   /* specific overrides */
-  /* line 256, ../scss/_respond.scss */
+  /* line 260, ../scss/_respond.scss */
   .site-branding,
   #primary .single-post article,
   article.type-page,
@@ -1007,41 +1008,41 @@ body {
     margin-top: 0;
   }
 
-  /* line 260, ../scss/_respond.scss */
+  /* line 264, ../scss/_respond.scss */
   #issue-listing h1.also-in {
     margin-left: 0;
   }
 
-  /* line 264, ../scss/_respond.scss */
+  /* line 268, ../scss/_respond.scss */
   .site-title {
     font-size: 5rem;
   }
 
-  /* line 268, ../scss/_respond.scss */
+  /* line 272, ../scss/_respond.scss */
   .site-description {
     padding-bottom: 10px;
   }
 
-  /* line 272, ../scss/_respond.scss */
+  /* line 276, ../scss/_respond.scss */
   ul.method-social li a:before {
     font-size: 18px;
     line-height: 49px;
   }
 
-  /* line 277, ../scss/_respond.scss */
+  /* line 281, ../scss/_respond.scss */
   #menu-menu {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 283, ../scss/_respond.scss */
+  /* line 287, ../scss/_respond.scss */
   .main-navigation {
     background: #dddddd;
     width: 100%;
   }
 
-  /* line 289, ../scss/_respond.scss */
+  /* line 293, ../scss/_respond.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -1049,43 +1050,43 @@ body {
     text-align: left;
   }
 
-  /* line 295, ../scss/_respond.scss */
+  /* line 299, ../scss/_respond.scss */
   .menu-toggle {
     font-size: 3rem;
     line-height: 3rem;
     padding: 5px 10px;
   }
 
-  /* line 301, ../scss/_respond.scss */
+  /* line 305, ../scss/_respond.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 307, ../scss/_respond.scss */
+  /* line 311, ../scss/_respond.scss */
   .page-template-default .entry-header img,
   .issue-image img {
     margin-left: -100px;
   }
 
-  /* line 314, ../scss/_respond.scss */
+  /* line 318, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0;
   }
-  /* line 317, ../scss/_respond.scss */
+  /* line 321, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 322, ../scss/_respond.scss */
+  /* line 326, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(5n+6) {
     clear: none;
   }
-  /* line 325, ../scss/_respond.scss */
+  /* line 329, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(4n+5) {
     clear: none;
   }
-  /* line 328, ../scss/_respond.scss */
+  /* line 332, ../scss/_respond.scss */
   .method_library .entry-content li:nth-child(3n+4) {
     clear: both;
   }
@@ -1095,18 +1096,18 @@ body {
 == == == == == == == == == == **/
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 760px) {
-  /* line 347, ../scss/_respond.scss */
+  /* line 351, ../scss/_respond.scss */
   body {
     width: 480px;
     margin: 0 auto;
   }
 
   /* keep everything as above, but never let the body get wider than 480px */
-  /* line 354, ../scss/_respond.scss */
+  /* line 358, ../scss/_respond.scss */
   .method_library .entry-content ul {
     margin: 0 -10px;
   }
-  /* line 357, ../scss/_respond.scss */
+  /* line 361, ../scss/_respond.scss */
   .method_library .entry-content li {
     width: 146.66667px;
     margin-left: 10px;
@@ -1117,7 +1118,7 @@ body {
     CLEARING
 == == == == == == == == == == **/
 /* Self Clearing Goodness */
-/* line 372, ../scss/_respond.scss */
+/* line 376, ../scss/_respond.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -1128,7 +1129,7 @@ body {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 379, ../scss/_respond.scss */
+/* line 383, ../scss/_respond.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -1141,20 +1142,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 387, ../scss/_respond.scss */
+/* line 391, ../scss/_respond.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 390, ../scss/_respond.scss */
+/* line 394, ../scss/_respond.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 394, ../scss/_respond.scss */
+/* line 398, ../scss/_respond.scss */
 .clear {
   clear: both;
   display: block;

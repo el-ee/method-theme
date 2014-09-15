@@ -122,11 +122,15 @@ article.type-page ,
   }
 }
 
+.method_library #primary .entry-content {
+  width: 100%;
+  max-width: none;
+}
+
 .method_library {
 
   .entry-content {
-    width: 100%;
-    max-width: none;
+
     ul {
       margin-left: -10px;
       margin-right: -10px;
