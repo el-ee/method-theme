@@ -23,7 +23,9 @@ $number-menu-items: 5;
 $third-width: 300px;
 $two-thirds-width: 2 * $third-width;
 
-/** BASE **/
+/** == == == == == == == == == == 
+    BASE
+== == == == == == == == == == **/
 
 
 column {
@@ -49,7 +51,9 @@ column-book {
   width: ($first-break-width - (5 * 2 * $margin)) / 5;
 }
 
-/** SPECIFIC ELEMENTS **/
+/** == == == == == == == == == == 
+    SPECIFIC ELEMENTS
+== == == == == == == == == == **/
 
 body {
   position: relative; width: $first-break-width; margin: 0 auto; padding: 0;  
@@ -94,8 +98,9 @@ article.type-page ,
   margin-right: 0; /* already has a right margin bc inside header */
 }
 
-
-
+  #issue-listing h1.also-in {
+       margin-left: $margin;
+  }
 
 .main-navigation  {
   padding-left: $margin - $margin-thin;
@@ -153,27 +158,33 @@ article.type-page ,
 }
 
 
-/* FIRST BREAK 
-================================================== */
+/** == == == == == == == == == == 
+    FIRST BREAK
+== == == == == == == == == == **/
 
 @media only screen and (min-width: $collapse-width) and (max-width: $first-break-width - 1) {
 
   body             { width: $collapse-width; }
 
-  #issue-listing  { width: $collapse-width; }
+ // #issue-listing  { width: $collapse-width; }
     
   #issue-headers,  
   .row article     { width: ($collapse-width - (3 * 2 * $margin)) / 3 }
   
   #issue-description { width: ($collapse-width - (3 * 2 * $margin)) / 3 * 2; }
   
-  .main-navigation  .method-navigation li {
-  width: (($collapse-width) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
+  .main-navigation .method-navigation li {
+    width: (($collapse-width) - (($number-menu-items * 2 * $margin-thin) + 2 * ($margin - $margin-thin)) )  / $number-menu-items;
   }
   
    .page-template-default .entry-header img,
   .issue-image img {
     margin-left: 0;
+  }
+  
+  .single-post #primary {
+    margin-left: $margin;
+    margin-right: $margin;
   }
   
   .method_library {
@@ -195,39 +206,40 @@ article.type-page ,
 
 
 
-/* COLLAPSE EVERYTHING
-================================================== */
-
-/*  #Mobile (Portrait)
-================================================== */
+/** == == == == == == == == == == 
+    COLLAPSE EVERYTHING 
+    (MOBILE PORTRAIT)
+== == == == == == == == == == **/
 
 
 
 @media screen and (max-width: $collapse-width - 1) { 
   
-  body { width: auto;
-  margin-left: $margin;
-margin-right: $margin; }
+  body { 
+    width: auto;
+    margin-left: $margin-thin*2;
+    margin-right: $margin-thin*2; 
+  }
   
   
-collapsed-column {
-  width: 100%;
-  float: none;
-  display: block;
-  padding: 0;
-  margin: $padding 0 0 0;
-}
+  collapsed-column {
+    width: 100%;
+    float: none;
+    display: block;
+    padding: 0;
+    margin: $padding 0 0 0;
+  }
 
-#issue-listing h1,
-.single .entry-content,
-#issue-description,
-.main-navigation .method-navigation li,
-.page-header,
-.issue-box,
-#issue-listing,
-#issue-headers,
-.issue-image,
-.row article,
+  #issue-listing h1,
+  .single .entry-content,
+  #issue-description,
+  .main-navigation .method-navigation li,
+  .page-header,
+  .issue-box,
+  #issue-listing,
+  #issue-headers,
+  .issue-image,
+  .row article,
   .row article,
   #primary .single-post article,
   article.type-page,
@@ -241,23 +253,26 @@ collapsed-column {
   .site-branding, 
   #primary .single-post article,
   article.type-page,
-    .page-header, .issue-image {
-      margin-top: 0;
-    }
+  .page-header, .issue-image {
+    margin-top: 0;
+  }
     
+  #issue-listing h1.also-in {
+    margin-left: 0;
+  }
 
- .site-title {
-      font-size: 5rem;
-//      .first-letter {
-//        font-size: 5rem * 1.5;
-//      }
-    }
+  .site-title {
+    font-size: 5rem;
+  }
     
-    .site-description {
-      padding-bottom: $margin;
-    }
+  .site-description {
+    padding-bottom: $margin;
+  }
 
-   
+  ul.method-social li a:before {
+    font-size: 18px;
+    line-height: 49px;
+  }
    
     #menu-menu {
       margin-left: 0;
@@ -322,8 +337,9 @@ collapsed-column {
 
 
 
-/* #Mobile (Landscape)
-================================================== */
+/** == == == == == == == == == == 
+    MOBILE (LANDSCAPE)
+== == == == == == == == == == **/
 
     /* Note: Design for a width of 480px */
 
@@ -348,8 +364,9 @@ collapsed-column {
 
     }
 
-/* #Clearing
-================================================== */
+/** == == == == == == == == == == 
+    CLEARING
+== == == == == == == == == == **/
 
     /* Self Clearing Goodness */
     .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }

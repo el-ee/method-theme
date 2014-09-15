@@ -106,7 +106,7 @@ body {
 
 h1 {
 	font-family: $font-headings;
-	font-weight: $weight-h;
+	font-weight: $weight-h-light;
 	font-size: 1.5rem;
   line-height: 1.2em;
 }
@@ -146,7 +146,7 @@ a, a:visited, a:link {
 .site-title {
   font-family: $font-logo;
   font-weight: $weight-logo;
-  font-size: 6rem;
+  font-size: 7rem;
 	line-height: .9em;
   a {
     color: $color-text-light;
@@ -165,7 +165,7 @@ a, a:visited, a:link {
   font-family: $font-headings;
   font-weight: $weight-h-light;
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: .8em;
   padding: 0 $margin $margin $margin; //TODO: Check with X about this
 }
@@ -241,10 +241,12 @@ a, a:visited, a:link {
 
 #issue-listing {
  h1 {
-   text-transform: none;
+   text-transform: uppercase;
    font-size: 1.8rem;
-   margin-left: $margin;
    font-weight: $weight-h-light;
+   &.also-in {
+     text-transform: none;
+   }
  } 
  .issue-number {
    clear: both;
@@ -480,14 +482,14 @@ ul.method-social {
     margin-bottom: $padding;
   }
   .credits {
-    float: left;
-    line-height: 5rem;
-    margin: 0 0 -2.5rem;
+    line-height: 1em;
     padding: 0;
     color: $color-text-light;
     font-size: 1.25rem;
-    vertical-align: text-bottom;
+    margin-bottom: 0;
+//    vertical-align: text-bottom;
   }
+  
 }
 
 
