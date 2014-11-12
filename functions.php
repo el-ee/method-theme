@@ -329,7 +329,11 @@ function method_edit_fields ($tag) {
     // -- Excluding current_article
     
     /* Create new query to loop other articles in this issue */
-    $query2 = new WP_Query( 'cat='.$issue_category_id );
+    $query_args = array(
+      'cat' => $issue_category_id,
+      'orderby' => 'rand'
+    );
+    $query2 = new WP_Query($query_args);
     $num_posts_printed = 0;
 
     // The 2nd Loop
