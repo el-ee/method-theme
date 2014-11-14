@@ -438,6 +438,4 @@ function method_edit_fields ($tag) {
     
   }
   
-  function get_recent_issue() {
-    return 127;
-  }
+  
