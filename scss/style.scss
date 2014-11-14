@@ -524,9 +524,11 @@ ul.method-social {
 	li a[href*="wordpress.org"]::before,
 	li a[href*="wordpress.com"]::before   { content: '\f205'; }
 	li a[href*="youtube.com"]::before     { content: '\f213'; }
+  li a[href*="tinyletter.com"]::before  { content: '\f410'; }
 	li a[href$="/feed/"]::before,
 	li a[href$="/feed"]::before,
 	li a[href$="?feed=rss2"]::before      { content: '\f413'; }
+
 }
 
 
