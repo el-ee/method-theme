@@ -405,6 +405,30 @@ function method_edit_fields ($tag) {
     printf('<div class="issue-description"><p>%s</p></div>', $child_description);
   
   }
+      
+    /**
+     * Outputs the co-authors email addresses
+     *
+     * @param string $between Delimiter that should appear between the email addresses
+     * @param string $betweenLast Delimiter that should appear between the last two email addresses
+     * @param string $before What should appear before the presentation of email addresses
+     * @param string $after What should appear after the presentation of email addresses
+     * @param bool $echo Whether the co-authors should be echoed or returned. Defaults to true.
+     */
+    function method_coauthors_bios($between = '</p><p>', $betweenLast = '</p><p>', $before = null, $after = null, $echo = true ) {
+      
+      if ( function_exists( 'coauthors__echo' ) ) {
+      	return coauthors__echo('get_the_author_meta', 'tag', array(
+      		'between' => $between,
+      		'betweenLast' => $betweenLast,
+      		'before' => $before,
+      		'after' => $after
+      	), 'description', $echo );
+      } else {
+        the_author_meta( 'description' );
+      } 
+    }
+    
   
   function method_share_buttons($div_id) {
     

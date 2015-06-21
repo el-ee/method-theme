@@ -18,9 +18,15 @@ if(($wp_query->current_post)==0) {
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php the_author_posts_link(); ?>
-		</div><!-- .entry-meta -->
+		<div class="entry-meta"><p>
+			<?php 
+      if ( function_exists( 'coauthors_posts_links' ) ) {
+        coauthors_posts_links();
+      } else {
+        the_author_posts_link();
+      } 
+      ?>
+    </p></div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 

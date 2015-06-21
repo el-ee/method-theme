@@ -671,11 +671,15 @@ article-meta {
   @extend article-meta;
 }
 
-.entry-meta a {
+.entry-meta p{
   @extend article-meta;
   @include author-text;
   margin-top: $margin-thin * 2; 
   font-size: 1.2rem;
+  a {
+    display: inline;
+    text-decoration: none;
+  }
 }
 
 
@@ -725,7 +729,7 @@ article-meta {
   #primary .entry-header {
     text-align: center;
     
-    a { // this is the author link
+    p.byline, a { // this is the author link
       @include author-text;
       font-size: 1.8rem;
     }

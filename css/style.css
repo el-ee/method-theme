@@ -747,7 +747,7 @@ ul.method-social li a[href$="?feed=rss2"]::before {
 }
 
 /* line 660, ../scss/style.scss */
-article-meta, .page-title a, .entry-title a, .entry-meta a {
+article-meta, .page-title a, .entry-title a, .entry-meta p {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   text-decoration: none;
@@ -758,7 +758,7 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 }
 
 /* line 674, ../scss/style.scss */
-.entry-meta a {
+.entry-meta p {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -767,8 +767,13 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   margin-top: 4px;
   font-size: 1.2rem;
 }
+/* line 679, ../scss/style.scss */
+.entry-meta p a {
+  display: inline;
+  text-decoration: none;
+}
 
-/* line 683, ../scss/style.scss */
+/* line 687, ../scss/style.scss */
 .entry-content {
   margin-top: 10px;
 }
@@ -776,33 +781,33 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     SINGLE ARTICLE AND PAGE LAYOUT
 == == == == == == == == == == **/
-/* line 695, ../scss/style.scss */
+/* line 699, ../scss/style.scss */
 #primary .single .site-title {
   font-family: "Bevan", sans-serif;
 }
-/* line 697, ../scss/style.scss */
+/* line 701, ../scss/style.scss */
 #primary .single .site-title .remaining-letters {
   display: none;
 }
 
-/* line 711, ../scss/style.scss */
+/* line 715, ../scss/style.scss */
 #primary .single-post .entry-header,
 .page-template-default .entry-header {
   overflow: hidden;
 }
-/* line 714, ../scss/style.scss */
+/* line 718, ../scss/style.scss */
 #primary .single-post .entry-header img,
 .page-template-default .entry-header img {
   max-width: none;
   height: 200px;
 }
 
-/* line 725, ../scss/style.scss */
+/* line 729, ../scss/style.scss */
 .single #primary .entry-header, .page #primary .entry-header {
   text-align: center;
 }
-/* line 728, ../scss/style.scss */
-.single #primary .entry-header a, .page #primary .entry-header a {
+/* line 732, ../scss/style.scss */
+.single #primary .entry-header p.byline, .single #primary .entry-header a, .page #primary .entry-header p.byline, .page #primary .entry-header a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -810,18 +815,18 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
   text-decoration: none;
   font-size: 1.8rem;
 }
-/* line 735, ../scss/style.scss */
+/* line 739, ../scss/style.scss */
 .single #primary .entry-content, .page #primary .entry-content {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 741, ../scss/style.scss */
+/* line 745, ../scss/style.scss */
 .single .page-title, .single .entry-title, .page .page-title, .page .entry-title {
   font-size: 3.5rem;
   margin-top: 10px;
 }
-/* line 746, ../scss/style.scss */
+/* line 750, ../scss/style.scss */
 .single .entry-excerpt, .page .entry-excerpt {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -831,14 +836,14 @@ article-meta, .page-title a, .entry-title a, .entry-meta a {
 /** == == == == == == == == == == 
     AUTHOR PAGE
 == == == == == == == == == == **/
-/* line 760, ../scss/style.scss */
+/* line 764, ../scss/style.scss */
 body.author h1.author-name {
   margin-top: 10px;
   text-transform: uppercase;
   font-size: 2.2rem;
   font-weight: 300;
 }
-/* line 767, ../scss/style.scss */
+/* line 771, ../scss/style.scss */
 body.author p.author-homepage a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -849,14 +854,14 @@ body.author p.author-homepage a {
 /** == == == == == == == == == == 
     MISC ADDITIONS
 == == == == == == == == == == **/
-/* line 780, ../scss/style.scss */
+/* line 784, ../scss/style.scss */
 .author-page {
   font-size: 1.5em;
   margin-bottom: 10px;
   font-family: "Roboto", sans-serif;
 }
 
-/* line 786, ../scss/style.scss */
+/* line 790, ../scss/style.scss */
 img#wpstats {
   width: 0px;
   height: 0px;

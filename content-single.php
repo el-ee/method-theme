@@ -14,7 +14,15 @@
 
     <h2 class="entry-excerpt"><?php the_excerpt(); ?></h2>
     
-    <?php the_author_posts_link(); ?>
+    <p class="byline">
+			<?php 
+      if ( function_exists( 'coauthors_posts_links' ) ) {
+        coauthors_posts_links();
+      } else {
+        the_author_posts_link();
+      } 
+      ?>
+      <p>
 
 	</header><!-- .entry-header -->
 
@@ -25,9 +33,8 @@
     
     <div id="article-author-bio">
       
-      <p><?php the_author_meta( 'description' ); ?></p>
-      
-    
+      <p><?php method_coauthors_bios(); ?></p>
+          
     </div>
 		
 	</div><!-- .entry-content -->
