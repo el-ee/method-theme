@@ -29,18 +29,27 @@ get_header(); ?>
         if($this_category->cat_name == "Issues" || $this_category->cat_name == "issues" ) {
             $hide_posts = true;
           
-            // get child categories; for each:
-            // display header image for that child category
-            // display child category name 
-            // display description of child category
-            printf('<div id="issue-listing">');
+
+          printf('<div id="issue-listing">');
         
-            $child_categories = get_categories('child_of='.$cat); 
-       
-            foreach ($child_categories as $child_category) {
-              
-              print_issue_header($child_category);
+            // get all the issues
+            $all_issues = get_categories('child_of='.$cat); 
             
+            $issue_numbers = get_option('issue_numbers');
+            $issue_array = array();
+
+            foreach($all_issues as $an_issue) {
+              $cat = $an_issue->cat_ID;
+              $issue_array[$issue_numbers[$cat]] = $an_issue;
+            }
+            
+            // sort the array by keys (which are the issue numbers)
+            ksort($issue_array);
+       
+            // display issue details in order of the sorted array
+            // this printing function is in functions.php
+            foreach ($issue_array as $an_issue) {   
+              print_issue_header($an_issue);
             } // end for each issue loop
        
           printf('</div> <!-- end of #issue-listing -->');

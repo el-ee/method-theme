@@ -32,18 +32,15 @@ if(isset($parent_id)) {
   $issue_array = array();
 
   foreach($all_issues as $an_issue) {
-
     $cat = $an_issue->cat_ID;
     $issue_array[$issue_numbers[$cat]] = $cat;
   }
 
-  // get last key in issue array, this is most recent issue 
-  // (this is by issue number not by date)
-  $last_key = key( array_slice( $issue_array, -1, 1, TRUE ) );
-
-  //
+   // sort the array by keys (which are the issue numbers)
+   // and then get the last one (the highest issue number)
+   ksort($issue_array);
+   $last_key = key( array_slice( $issue_array, -1, 1, TRUE ) );
    $cat = $issue_array[$last_key];
-   
 
    $cat_object = get_the_category_by_ID( $cat );
    

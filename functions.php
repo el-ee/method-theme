@@ -375,6 +375,11 @@ function method_edit_fields ($tag) {
     wp_reset_postdata();
   }
   
+  
+  // display issue number and date of this post category (an issue)
+  // display header image of this post category (an issue)
+  // display name of this post category (an issue)
+  // display description of this post category (an issue)
   function print_issue_header($issue_category) {
         
     $child_id = $issue_category->term_id;
