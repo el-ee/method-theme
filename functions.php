@@ -407,13 +407,13 @@ function method_edit_fields ($tag) {
   }
       
     /**
-     * Outputs the co-authors email addresses
+     * Outputs the co-authors bios
      *
-     * @param string $between Delimiter that should appear between the email addresses
-     * @param string $betweenLast Delimiter that should appear between the last two email addresses
-     * @param string $before What should appear before the presentation of email addresses
-     * @param string $after What should appear after the presentation of email addresses
-     * @param bool $echo Whether the co-authors should be echoed or returned. Defaults to true.
+     * @param string $between Delimiter that should appear between the bios
+     * @param string $betweenLast Delimiter that should appear between the last two bios
+     * @param string $before What should appear before the presentation of bio
+     * @param string $after What should appear after the presentation of bio
+     * @param bool $echo True = echoed; False = returned. Defaults to true.
      */
     function method_coauthors_bios($between = '</p><p>', $betweenLast = '</p><p>', $before = null, $after = null, $echo = true ) {
       
